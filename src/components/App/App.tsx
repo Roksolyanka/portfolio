@@ -1,6 +1,8 @@
+import { Suspense } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import RoutesList from '../Routes';
+import Loader from '../Loader';
 
 import '../../App.css';
 
@@ -16,7 +18,9 @@ export const App = () => (
       <NavLink to='/contact'>Contact</NavLink>
     </nav>
     <main>
-      <RoutesList />
+      <Suspense fallback={<Loader />}>
+        <RoutesList />
+      </Suspense>
     </main>
     <footer></footer>
   </div>

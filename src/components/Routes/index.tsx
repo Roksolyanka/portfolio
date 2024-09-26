@@ -1,12 +1,13 @@
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import HomePage from '../../pages/HomePage';
-import AboutPage from '../../pages/AboutPage';
-import SkillsPage from '../../pages/SkillsPage';
-import ProjectsPage from '../../pages/ProjectsPage';
-import AchievementsPage from '../../pages/AchievementsPage';
-import ContactPage from '../../pages/ContactPage';
-import NotFound from '../NotFound/NotFound';
+const HomePage = lazy(() => import('../../pages/HomePage'));
+const AboutPage = lazy(() => import('../../pages/AboutPage'));
+const SkillsPage = lazy(() => import('../../pages/SkillsPage'));
+const ProjectsPage = lazy(() => import('../../pages/ProjectsPage'));
+const AchievementsPage = lazy(() => import('../../pages/AchievementsPage'));
+const ContactPage = lazy(() => import('../../pages/ContactPage'));
+const NotFound = lazy(() => import('../NotFound/NotFound'));
 
 const routes = [
   { path: '/', element: <HomePage /> },
@@ -20,11 +21,11 @@ const routes = [
 
 const RoutesList = () => {
   return (
-      <Routes>
-        {routes.map((route, index) => (
-          <Route key={index} path={route.path} element={route.element} />
-        ))}
-      </Routes>
+    <Routes>
+      {routes.map((route, index) => (
+        <Route key={index} path={route.path} element={route.element} />
+      ))}
+    </Routes>
   );
 };
 
