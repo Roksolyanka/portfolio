@@ -7,7 +7,7 @@ const SkillsPage = lazy(() => import('../../pages/SkillsPage'));
 const ProjectsPage = lazy(() => import('../../pages/ProjectsPage'));
 const AchievementsPage = lazy(() => import('../../pages/AchievementsPage'));
 const ContactPage = lazy(() => import('../../pages/ContactPage'));
-const NotFound = lazy(() => import('../NotFound/NotFound'));
+const NotFound = lazy(() => import('../../pages/NotFound'));
 
 const routes = [
   { path: '/', element: <HomePage /> },
