@@ -13,8 +13,8 @@ export const LoaderContainer = styled.div`
 
   background: radial-gradient(
     circle,
-    rgba(255, 231, 36, 0.3982843137254902) 1%,
-    rgba(18, 12, 7, 0.6671918767507004) 100%
+    rgba(190, 160, 138, 0.8716736694677871) 0%,
+    rgba(174, 205, 231, 0.5579481792717087) 100%
   );
 
   z-index: 1000;
