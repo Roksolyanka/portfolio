@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import App from './components/App/App';
+import App from './components/App';
 
 import theme from './theme';
 import './normalize.css';
