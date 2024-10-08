@@ -3,14 +3,13 @@ import { Suspense } from 'react';
 import RoutesList from '../Routes';
 import Loader from '../Loader';
 
-import '../../App.css';
 import Layout from '../Layout';
 
 export const App = () => (
   <Layout>
-        <Suspense fallback={<Loader />}>
-          <RoutesList />
-        </Suspense>
+    <Suspense fallback={<Loader />}>
+      <RoutesList />
+    </Suspense>
   </Layout>
 );
 
