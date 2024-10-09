@@ -9,6 +9,7 @@ import App from './components/App';
 
 import theme from './theme';
 import './normalize.css';
+import './fonts.css';
 import './index.css';
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
