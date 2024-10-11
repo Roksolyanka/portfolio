@@ -12,7 +12,7 @@ const theme = {
       '#573e37',
       '#2e201c',
     ],
-    blue: ['#aecde7'],
+    blue: ['#aecde7', '#507BC0'],
     red: ['#8b2605'],
     backdropColor: 'rgba(46, 47, 66, 0.4)',
     boxShadow: '13px 13px 24px 1px rgba(46,32,28,1);',
