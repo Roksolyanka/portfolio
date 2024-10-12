@@ -11,6 +11,7 @@ export const FooterStyle = styled.footer`
 
 export const Creator = styled.a`
   color: ${({ theme }) => theme.colors.browns[9]};
+  transition: color 0.3s ease;
 
   &: hover {
     color: ${({ theme }) => theme.colors.blue[1]};
