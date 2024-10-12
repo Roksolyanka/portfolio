@@ -6,7 +6,9 @@ export const HeaderStyle = styled.header`
   align-items: center;
   padding: 16px;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}px) {
+    padding-left: 150px;
+    padding-right: 150px;
   }
 `;
 
@@ -15,10 +17,4 @@ export const Logo = styled.a`
   font-weight: 700;
   font-size: 50px;
   color: ${({ theme }) => theme.colors.blue[1]};
-`;
-
-export const ThemeTogglerButton = styled.button`
-  background: none;
-  border: none;
-  cursor: pointer;
 `;
