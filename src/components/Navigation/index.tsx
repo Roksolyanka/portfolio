@@ -1,23 +1,30 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Icon } from '../Icon';
+import theme from '../../theme';
+import { Nav, StyledNavLink } from './styled';
 
 const navLinks = [
-  { path: '/', label: 'Home' },
-  { path: '/about', label: 'About me' },
-  { path: '/skills', label: 'Skills' },
-  { path: '/projects', label: 'Projects' },
-  { path: '/achievements', label: 'Achievements' },
-  { path: '/contact', label: 'Contact' },
+  { path: '/', icon: 'icon-home', label: 'Home' },
+  { path: '/about', icon: 'icon-user-check', label: 'About me' },
+  { path: '/skills', icon: 'icon-cogs', label: 'Skills' },
+  { path: '/projects', icon: 'icon-books', label: 'Projects' },
+  { path: '/achievements', icon: 'icon-trophy', label: 'Achievements' },
+  { path: '/contact', icon: 'icon-quill', label: 'Contact' },
 ];
 
 const Navigation = () => (
-  <nav>
+  <Nav>
     {navLinks.map((item) => (
-      <NavLink key={item.path} to={item.path}>
-        {item.label}
-      </NavLink>
+      <StyledNavLink key={item.path} to={item.path} title={item.label}>
+        <Icon
+          name={item.icon}
+          width='24px'
+          height='24px'
+          fill={theme.colors.browns[9]}
+        />
+      </StyledNavLink>
     ))}
-  </nav>
+  </Nav>
 );
 
 export default Navigation;
