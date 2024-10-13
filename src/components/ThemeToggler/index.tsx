@@ -29,7 +29,7 @@ const ThemeToggler = () => {
         name={isDarkTheme ? 'icon-sun-fill' : 'icon-moon-fill'}
         width='30px'
         height='30px'
-        fill={theme.colors.blue[1]}
+        fill={theme.colors.blue[5]}
       ></AnimatedIcon>
     </ThemeTogglerButton>
   );

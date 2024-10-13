@@ -16,5 +16,5 @@ export const Logo = styled.a`
   font-family: 'Splash', cursive;
   font-weight: 700;
   font-size: 50px;
-  color: ${({ theme }) => theme.colors.blue[1]};
+  color: ${({ theme }) => theme.colors.blue[5]};
 `;
