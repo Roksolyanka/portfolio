@@ -6,7 +6,15 @@ export const FooterStyle = styled.footer`
   text-align: center;
   font-family: 'Dancing Script', cursive;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 18px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}px) {
+    font-size: 20px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}px) {
+    font-size: 24px;
+  }
 `;
 
 export const Creator = styled.a`
@@ -14,6 +22,6 @@ export const Creator = styled.a`
   transition: color 0.3s ease;
 
   &: hover {
-    color: ${({ theme }) => theme.colors.blue[1]};
+    color: ${({ theme }) => theme.colors.blue[6]};
   }
 `;
