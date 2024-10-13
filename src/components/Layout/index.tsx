@@ -3,12 +3,16 @@ import Navigation from '../Navigation';
 import Footer from '../Footer';
 import Header from '../Header';
 
-const Layout = ({ children }: { children: React.ReactNode }) => (
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => (
   <div id='layout-container'>
-    <Header></Header>
+    <Header />
     <Navigation />
     <main>{children}</main>
-    <Footer></Footer>
+    <Footer />
   </div>
 );
 

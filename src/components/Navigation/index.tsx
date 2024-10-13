@@ -3,7 +3,13 @@ import { Icon } from '../Icon';
 import theme from '../../theme';
 import { Nav, StyledNavLink } from './styled';
 
-const navLinks = [
+interface NavLink {
+  path: string;
+  icon: string;
+  label: string;
+}
+
+const navLinks: NavLink[] = [
   { path: '/', icon: 'icon-home', label: 'Home' },
   { path: '/about', icon: 'icon-user-check', label: 'About me' },
   { path: '/skills', icon: 'icon-cogs', label: 'Skills' },

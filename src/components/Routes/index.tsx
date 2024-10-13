@@ -10,7 +10,12 @@ const AchievementsPage = lazy(() => import('../../pages/AchievementsPage'));
 const ContactPage = lazy(() => import('../../pages/ContactPage'));
 const NotFound = lazy(() => import('../../pages/NotFound'));
 
-const routes = [
+interface RouteConfig {
+  path: string;
+  element: React.ReactNode;
+}
+
+const routes: RouteConfig[] = [
   { path: '/', element: <HomePage /> },
   { path: '/about', element: <AboutPage /> },
   { path: '/skills', element: <SkillsPage /> },
