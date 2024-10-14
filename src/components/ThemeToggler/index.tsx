@@ -1,15 +1,16 @@
 import { useState } from 'react';
 
+import useTheme from '../../hooks/useTheme';
+
 import { AnimatedIcon, ThemeTogglerButton } from './styled';
 import theme from '../../theme';
 
 const ThemeToggler = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
+  const { isDarkTheme, toggleTheme } = useTheme();
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  const toggleTheme = () => {
-    setIsDarkTheme((prevTheme) => !prevTheme);
-    document.body.classList.toggle('dark', !isDarkTheme);
+  const handleToggleTheme = () => {
+    toggleTheme();
     setIsAnimating(true);
 
     setTimeout(() => {
@@ -22,7 +23,7 @@ const ThemeToggler = () => {
       type='button'
       role='switch'
       aria-label='theme mode switch'
-      onClick={toggleTheme}
+      onClick={handleToggleTheme}
     >
       <AnimatedIcon
         className={isAnimating ? 'animate' : ''}
