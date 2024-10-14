@@ -12,10 +12,10 @@ interface IconProps {
 
 export const Icon: React.FC<IconProps> = ({
   name,
-  width,
-  height,
-  fill,
-  className,
+  width = '24px',
+  height = '24px',
+  fill = '#6a4b42',
+  className = '',
 }) => (
   <svg width={width} height={height} fill={fill} className={className}>
     <use href={`${sprite}#${name}`} />

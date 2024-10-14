@@ -2,6 +2,7 @@ import React from 'react';
 import { Icon } from '../Icon';
 import theme from '../../theme';
 import { Nav, StyledNavLink } from './styled';
+import { ROUTES } from '../../constants';
 
 interface NavLink {
   path: string;
@@ -10,12 +11,12 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { path: '/', icon: 'icon-home', label: 'Home' },
-  { path: '/about', icon: 'icon-user-check', label: 'About me' },
-  { path: '/skills', icon: 'icon-cogs', label: 'Skills' },
-  { path: '/projects', icon: 'icon-books', label: 'Projects' },
-  { path: '/achievements', icon: 'icon-trophy', label: 'Achievements' },
-  { path: '/contact', icon: 'icon-quill', label: 'Contact' },
+  { path: ROUTES.HOME, icon: 'icon-home', label: 'Home' },
+  { path: ROUTES.ABOUT, icon: 'icon-user-check', label: 'About me' },
+  { path: ROUTES.SKILLS, icon: 'icon-cogs', label: 'Skills' },
+  { path: ROUTES.PROJECTS, icon: 'icon-books', label: 'Projects' },
+  { path: ROUTES.ACHIEVEMENTS, icon: 'icon-trophy', label: 'Achievements' },
+  { path: ROUTES.CONTACT, icon: 'icon-quill', label: 'Contact' },
 ];
 
 const Navigation = () => (
