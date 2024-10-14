@@ -14,7 +14,6 @@ export const Nav = styled.nav`
   transform: translate(-50%, -50%);
   border-radius: 50px;
   box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px) saturate(80%);
   background: ${({ theme }) => theme.colors.browns[0]};
   opacity: 0.8;
   transition: background 0.15s cubic-bezier(0.4, 0, 0.2, 1);
