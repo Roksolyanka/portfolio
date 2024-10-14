@@ -8,12 +8,12 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => (
-  <div id='layout-container'>
+  <>
     <Header />
     <Navigation />
     <main>{children}</main>
     <Footer />
-  </div>
+  </>
 );
 
 export default Layout;
