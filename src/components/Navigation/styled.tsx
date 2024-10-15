@@ -21,7 +21,7 @@ const spin = keyframes`
   }
   to {
     opacity: 1;
-    transform: scale(1.5) rotate(360deg);
+    transform: scale(1.3) rotate(360deg);
   }
 `;
 
@@ -55,7 +55,7 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
   align-items: center;
   color: ${({ theme }) => theme.colors.browns[9]};
   text-decoration: none;
-  padding: 18px;
+  padding: 13px;
   border-radius: 50px;
   transition: color 0.3s, background 0.7s ease-in-out;
 
@@ -71,7 +71,7 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
   }
 
   &:hover svg {
-    transform: scale(1.5);
+    transform: scale(1.3);
     transition: transform 0.3s ease;
   }
 
