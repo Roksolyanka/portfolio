@@ -22,7 +22,7 @@ const navLinks: NavLink[] = [
 const Navigation = () => (
   <Nav>
     {navLinks.map((item) => (
-      <StyledNavLink key={item.path} to={item.path} title={item.label}>
+      <StyledNavLink key={item.path} to={item.path} tooltip={item.label}>
         <Icon
           name={item.icon}
           width='24px'
