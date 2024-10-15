@@ -2,20 +2,27 @@ import React from 'react';
 import { Icon } from '../Icon';
 import theme from '../../theme';
 import { Nav, StyledNavLink } from './styled';
+import { ROUTES } from '../../constants';
 
-const navLinks = [
-  { path: '/', icon: 'icon-home', label: 'Home' },
-  { path: '/about', icon: 'icon-user-check', label: 'About me' },
-  { path: '/skills', icon: 'icon-cogs', label: 'Skills' },
-  { path: '/projects', icon: 'icon-books', label: 'Projects' },
-  { path: '/achievements', icon: 'icon-trophy', label: 'Achievements' },
-  { path: '/contact', icon: 'icon-quill', label: 'Contact' },
+interface NavLink {
+  path: string;
+  icon: string;
+  label: string;
+}
+
+const navLinks: NavLink[] = [
+  { path: ROUTES.HOME, icon: 'icon-home', label: 'Home' },
+  { path: ROUTES.ABOUT, icon: 'icon-user-check', label: 'About me' },
+  { path: ROUTES.SKILLS, icon: 'icon-cogs', label: 'Skills' },
+  { path: ROUTES.PROJECTS, icon: 'icon-books', label: 'Projects' },
+  { path: ROUTES.ACHIEVEMENTS, icon: 'icon-trophy', label: 'Achievements' },
+  { path: ROUTES.CONTACT, icon: 'icon-quill', label: 'Contact' },
 ];
 
 const Navigation = () => (
   <Nav>
     {navLinks.map((item) => (
-      <StyledNavLink key={item.path} to={item.path} title={item.label}>
+      <StyledNavLink key={item.path} to={item.path} tooltip={item.label}>
         <Icon
           name={item.icon}
           width='24px'

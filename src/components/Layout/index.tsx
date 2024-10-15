@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 import Header from '../Header';
+import { Main } from './styled';
+import Loader from '../Loader';
 
-const Layout = ({ children }: { children: React.ReactNode }) => (
-  <div id='layout-container'>
-    <Header></Header>
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => (
+  <>
+    <Header />
     <Navigation />
-    <main>{children}</main>
-    <Footer></Footer>
-  </div>
+    <Suspense fallback={<Loader />}>
+      <Main>{children}</Main>
+    </Suspense>
+    <Footer />
+  </>
 );
 
 export default Layout;

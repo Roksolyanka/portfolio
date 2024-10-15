@@ -5,6 +5,9 @@ export const HeaderStyle = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(5px) saturate(100%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}px) {
     padding-left: 150px;

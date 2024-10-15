@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const FooterStyle = styled.footer`
-  padding: 20px 0;
   color: ${({ theme }) => theme.colors.browns[9]};
   text-align: center;
   font-family: 'Dancing Script', cursive;
   font-weight: 700;
   font-size: 18px;
+  padding: 20px 0 140px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}px) {
     font-size: 20px;
@@ -14,6 +14,7 @@ export const FooterStyle = styled.footer`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}px) {
     font-size: 24px;
+    padding: 30px 0;
   }
 `;
 

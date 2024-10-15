@@ -7,12 +7,10 @@ const Loader = () => {
   return (
     <LoaderContainer>
       <Bars
-        height='80'
-        width='80'
+        height={80}
+        width={80}
         color='#aecde7'
         ariaLabel='bars-loading'
-        wrapperStyle={{}}
-        wrapperClass=''
         visible={true}
       />
     </LoaderContainer>
