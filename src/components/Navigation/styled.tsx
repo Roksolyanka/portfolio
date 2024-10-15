@@ -87,8 +87,8 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
   &::after {
     content: attr(tooltip);
     position: absolute;
-    bottom: 80%;
-    left: 80%;
+    bottom: 100%;
+    left: 50%;
     background-color: ${({ theme }) => theme.colors.browns[9]};
     color: ${({ theme }) => theme.colors.blue[0]};
     padding: 5px;
@@ -96,14 +96,24 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
     opacity: 0;
     white-space: nowrap;
     pointer-events: none;
-    transform: translate(20%, 20px);
+    transform: translateX(-50%);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
 
   &:hover::after {
-    opacity: 0.8;
-    transform: translate(5%, 0px);
-    transition: transform 2s ease;
+    opacity: 2;
   }
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}px) {
+    &::after {
+      bottom: 80%;
+      left: 80%;
+      transform: translate(20%, 20px);
+    }
+
+    &:hover::after {
+      transform: translate(5%, 0px);
+      transition: transform 2s ease;
+    }
+  }
 `;
