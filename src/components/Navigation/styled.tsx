@@ -14,32 +14,33 @@ const hoverAnimation = keyframes`
   }
 `;
 
-const spin = keyframes`
-  from {
-    opacity: 0;
-    transform: scale(0.2) rotate(0deg);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1.3) rotate(360deg);
-  }
-`;
-
 export const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   max-width: fit-content;
-  bottom: 0;
   padding: 10px;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50px;
-  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.4);
-  background: ${({ theme }) => theme.colors.browns[0]};
-  opacity: 0.8;
+  box-shadow: ${({ theme }) => theme.colors.boxShadow[3]};
+  backdrop-filter: blur(2px);
   transition: background 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    background: ${({ theme }) => theme.colors.browns[0]};
+    opacity: 0.8;
+    z-index: -1;
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}px) {
     flex-direction: column;
@@ -60,8 +61,7 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
   transition: color 0.3s, background 0.7s ease-in-out;
 
   &.active svg {
-    fill: ${({ theme }) => theme.colors.blue[8]};
-    animation: ${spin} 0.5s ease forwards;
+    fill: ${({ theme }) => theme.colors.blue[6]};
   }
 
   &:hover {

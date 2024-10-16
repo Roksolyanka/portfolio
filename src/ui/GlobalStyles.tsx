@@ -19,6 +19,12 @@ export const GlobalStyle = createGlobalStyle`
   color: ${({ theme }) => theme.colors.browns[1]};
   }
 
+   // !------------------------NAVIGATION--------------------
+
+  body.dark nav {
+  box-shadow: ${({ theme }) => theme.colors.boxShadow[2]};
+  }
+
   // !--------------------------FOOTER-----------------------
 
   body.dark footer {
