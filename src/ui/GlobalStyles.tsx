@@ -2,21 +2,26 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
-   background: linear-gradient(
-    90deg,
-    rgba(190, 160, 138, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-    transition: background 0.3s ease, color 0.3s ease;
+   background: ${({ theme }) => theme.colors.gradient[2]};
+   transition: background 0.3s ease, color 0.3s ease;
   }
 
   body.dark {
-  background: linear-gradient(
-    90deg,
-    rgba(87, 62, 55, 1) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  color: ${({ theme }) => theme.colors.browns[1]};
+  background: ${({ theme }) => theme.colors.gradient[3]};
+  }
+
+   body.dark h1,
+  body.dark h2,
+  body.dark h3,
+  body.dark p,
+  body.dark a {
+    color: ${({ theme }) => theme.colors.browns[1]};
+  }
+
+  // !--------------------------HEADER-----------------------
+
+   body.dark header a {
+    color: ${({ theme }) => theme.colors.blue[5]};
   }
 
    // !------------------------NAVIGATION--------------------
@@ -25,14 +30,28 @@ export const GlobalStyle = createGlobalStyle`
   box-shadow: ${({ theme }) => theme.colors.boxShadow[2]};
   }
 
+  // !-------------------------HOMEPAGE----------------------
+
+   body.dark .sectionHome img {
+    box-shadow: ${({ theme }) => theme.colors.boxShadow[2]};
+  }
+
+   body.dark .sectionHome .buttonDownload {
+    box-shadow: ${({ theme }) => theme.colors.boxShadow[2]};
+  }
+
+  body.dark .sectionHome .navigation-link {
+  color: ${({ theme }) => theme.colors.blue[6]};
+
+   &:hover {
+    color: ${({ theme }) => theme.colors.blue[8]};
+  }
+  }
+
   // !--------------------------FOOTER-----------------------
 
   body.dark footer {
     color: ${({ theme }) => theme.colors.browns[1]};
-  }
-
-  body.dark footer a {
-  color: ${({ theme }) => theme.colors.browns[1]};
   }
  
 `;

@@ -5,16 +5,12 @@ export const FooterStyle = styled.footer`
   text-align: center;
   font-family: 'Dancing Script', cursive;
   font-weight: 700;
-  font-size: 18px;
-  padding: 20px 0 140px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}px) {
-    font-size: 20px;
-  }
+  font-size: 16px;
+  padding: 10px 0 80px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}px) {
-    font-size: 24px;
-    padding: 30px 0;
+    font-size: 18px;
+    padding: 14px;
   }
 `;
 

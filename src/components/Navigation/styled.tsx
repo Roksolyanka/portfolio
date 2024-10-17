@@ -10,7 +10,7 @@ const hoverAnimation = keyframes`
     transform: scale(1);
   }
   100% {
-    transform: scale(1.3);
+    transform: scale(1.2);
   }
 `;
 
@@ -20,10 +20,10 @@ export const Nav = styled.nav`
   align-items: center;
   position: fixed;
   max-width: fit-content;
-  padding: 10px;
+  padding: 5px;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -35%);
   border-radius: 50px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow[3]};
   backdrop-filter: blur(2px);
@@ -42,6 +42,10 @@ export const Nav = styled.nav`
     z-index: -1;
   }
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}px) {
+    padding: 10px;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}px) {
     flex-direction: column;
     max-height: fit-content;
@@ -56,9 +60,14 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
   align-items: center;
   color: ${({ theme }) => theme.colors.browns[9]};
   text-decoration: none;
-  padding: 13px;
+  padding: 12px;
   border-radius: 50px;
   transition: color 0.3s, background 0.7s ease-in-out;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
 
   &.active svg {
     fill: ${({ theme }) => theme.colors.blue[6]};
@@ -89,6 +98,9 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
     position: absolute;
     bottom: 100%;
     left: 50%;
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 12px;
     background-color: ${({ theme }) => theme.colors.browns[9]};
     color: ${({ theme }) => theme.colors.blue[0]};
     padding: 5px;
@@ -101,7 +113,20 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
   }
 
   &:hover::after {
-    opacity: 2;
+    opacity: 1;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}px) {
+    padding: 13px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &::after {
+      font-size: 14px;
+    }
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}px) {
