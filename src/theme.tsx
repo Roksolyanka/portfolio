@@ -26,9 +26,14 @@ const theme = {
       '#242f47',
     ],
     red: ['#8b2605'],
+    boxShadow: [
+      '13px 13px 24px 1px rgba(240,235,228);',
+      '13px 13px 13px 3px rgba(174,205,231,1);',
+      '13px 13px 24px 1px rgba(54,73,114);',
+      '13px 13px 24px 1px rgba(36,47,71);',
+      '13px 13px 24px 1px rgba(46,32,28,1);',
+    ],
     backdropColor: 'rgba(46, 47, 66, 0.4)',
-    boxShadow: '13px 13px 24px 1px rgba(46,32,28,1);',
-    boxShadowAccent: '13px 13px 13px 3px rgba(174,205,231,1)',
   },
   breakpoints: {
     values: {
