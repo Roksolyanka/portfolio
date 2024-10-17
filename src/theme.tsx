@@ -29,9 +29,15 @@ const theme = {
     boxShadow: [
       '13px 13px 24px 1px rgba(240,235,228);',
       '13px 13px 13px 3px rgba(174,205,231,1);',
-      '13px 13px 24px 1px rgba(54,73,114);',
+      '8px 5px 24px 1px rgba(54,73,114);',
       '13px 13px 24px 1px rgba(36,47,71);',
       '13px 13px 24px 1px rgba(46,32,28,1);',
+    ],
+    gradient: [
+      'radial-gradient(circle, rgba(130,174,216,1) 0%, rgba(62,87,143,1) 100%);',
+      'radial-gradient(circle, rgba(62,87,143,1) 0%, rgba(130,174,216,1) 100%);',
+      'linear-gradient(90deg,rgba(190, 160, 138, 1) 0%,rgba(255, 255, 255, 1) 100%);',
+      'linear-gradient(90deg,rgba(87, 62, 55, 1) 0%,rgba(0, 0, 0, 1) 100%);',
     ],
     backdropColor: 'rgba(46, 47, 66, 0.4)',
   },

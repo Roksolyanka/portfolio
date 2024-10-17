@@ -25,8 +25,6 @@ const Navigation = () => (
       <StyledNavLink key={item.path} to={item.path} tooltip={item.label}>
         <Icon
           name={item.icon}
-          width='24px'
-          height='24px'
           fill={theme.colors.browns[9]}
         />
       </StyledNavLink>
