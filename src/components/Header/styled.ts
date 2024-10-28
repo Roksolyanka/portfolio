@@ -8,8 +8,9 @@ export const HeaderStyle = styled.header`
   position: sticky;
   top: 0;
   backdrop-filter: blur(5px) saturate(100%);
+  z-index: 10;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     padding: 14px 120px;
   }
 `;
@@ -18,5 +19,5 @@ export const Logo = styled.a`
   font-family: 'Splash', cursive;
   font-weight: 700;
   font-size: 50px;
-  color: ${({ theme }) => theme.colors.blue[5]};
+  color: ${({ theme }) => theme.accentColor};
 `;
