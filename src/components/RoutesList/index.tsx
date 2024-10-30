@@ -2,7 +2,15 @@ import React from 'react';
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { ROUTES } from '../../constants';
+import {
+  ROUTE_ABOUT,
+  ROUTE_ACHIEVEMENTS,
+  ROUTE_CONTACT,
+  ROUTE_HOME,
+  ROUTE_NOT_FOUND,
+  ROUTE_PROJECTS,
+  ROUTE_SKILLS,
+} from '../../constants';
 
 const HomePage = lazy(() => import('../../pages/HomePage'));
 const AboutPage = lazy(() => import('../../pages/AboutPage'));
@@ -18,13 +26,13 @@ interface RouteConfig {
 }
 
 const routes: RouteConfig[] = [
-  { path: ROUTES.HOME, element: <HomePage /> },
-  { path: ROUTES.ABOUT, element: <AboutPage /> },
-  { path: ROUTES.SKILLS, element: <SkillsPage /> },
-  { path: ROUTES.PROJECTS, element: <ProjectsPage /> },
-  { path: ROUTES.ACHIEVEMENTS, element: <AchievementsPage /> },
-  { path: ROUTES.CONTACT, element: <ContactPage /> },
-  { path: ROUTES.NOT_FOUND, element: <NotFound /> },
+  { path: ROUTE_HOME, element: <HomePage /> },
+  { path: ROUTE_ABOUT, element: <AboutPage /> },
+  { path: ROUTE_SKILLS, element: <SkillsPage /> },
+  { path: ROUTE_PROJECTS, element: <ProjectsPage /> },
+  { path: ROUTE_ACHIEVEMENTS, element: <AchievementsPage /> },
+  { path: ROUTE_CONTACT, element: <ContactPage /> },
+  { path: ROUTE_NOT_FOUND, element: <NotFound /> },
 ];
 
 const RoutesList = () => {
