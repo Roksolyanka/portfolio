@@ -9,7 +9,7 @@ const Header = () => {
       <Logo as={Link} to='./'>
         RK
       </Logo>
-      <ThemeToggler></ThemeToggler>
+      <ThemeToggler />
     </HeaderStyle>
   );
 };

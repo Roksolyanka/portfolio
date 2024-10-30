@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
-import useTheme from '../../hooks/useTheme';
+import { useTheme } from '../../hooks/useTheme';
 
-import { AnimatedIcon, ThemeTogglerButton } from './styled';
 import theme from '../../theme';
+import { appear, ThemeTogglerButton } from './styled';
+import { AnimatedIcon } from '../Icon';
 
 const ThemeToggler = () => {
   const { isDarkTheme, toggleTheme } = useTheme();
@@ -30,8 +31,12 @@ const ThemeToggler = () => {
         name={isDarkTheme ? 'icon-sun-fill' : 'icon-moon-fill'}
         width='30px'
         height='30px'
-        fill={theme.colors.blue[5]}
-      ></AnimatedIcon>
+        fill={isDarkTheme ? theme.colors.green[3] : theme.colors.green[7]}
+        animName={appear}
+        duration='0.5s'
+        timingFunction='ease'
+        fillMode='forwards'
+      />
     </ThemeTogglerButton>
   );
 };
