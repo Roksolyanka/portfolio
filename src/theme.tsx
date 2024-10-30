@@ -39,7 +39,6 @@ const browns = [
   '#573e37',
   '#2e201c',
 ];
-
 const blue = [
   '#f2f7fc',
   '#e3ecf6',
@@ -55,7 +54,6 @@ const blue = [
   '#22d3eeff',
   '#312e81ff',
 ];
-
 const red = ['#f87171ff', '#8b2605'];
 const pink = ['#ec4899ff', '#f54c7a'];
 const orange = [
@@ -89,8 +87,8 @@ const gray = ['#9ca3afff'];
 const white = ['#ffffffff'];
 
 const boxShadow = [
-  '13px 13px 24px 1px rgba(240,235,228)',
-  '13px 13px 13px 3px rgba(174,205,231,1)',
+  '13px 13px 24px 1px rgb(39,81,22)',
+  '8px 5px 50px 2px rgb(44,96,20)',
   '8px 5px 24px 1px rgba(54,73,114)',
   '13px 13px 24px 1px rgba(36,47,71)',
   '13px 13px 24px 1px rgba(46,32,28,1)',
@@ -99,8 +97,8 @@ const boxShadow = [
 const gradient = [
   'linear-gradient(to right, transparent, #fb923c , #78e13a )',
   'linear-gradient(to right,transparent,#78e13a 0%,rgba(124, 58, 237, 0) 100%)',
-  'linear-gradient(90deg,rgba(190, 160, 138, 1) 0%,rgba(255, 255, 255, 1) 100%)',
-  'linear-gradient(90deg,rgba(87, 62, 55, 1) 0%,rgba(0, 0, 0, 1) 100%)',
+  'linear-gradient(140deg, rgba(255,255,255,1) 47%, rgba(64,159,17,1) 100%)',
+  'linear-gradient(140deg, rgba(0,0,0,1) 50%, rgba(64,159,17,1) 100%)',
   'linear-gradient(to right, #141f0f, #050c02)',
 ];
 
@@ -132,20 +130,20 @@ const theme: Theme = {
 
 export const darkTheme: Theme = {
   ...theme,
-  body: 'linear-gradient(140deg, rgba(0,0,0,1) 50%, rgba(64,159,17,1) 100%)',
-  textColor: '#f2fde8',
-  boxShadowNav: '8px 5px 50px 2px rgb(44,96,20)',
-  hoverColor: '#58c71b',
-  accentColor: '#9cee69',
+  body: theme.colors.gradient[3],
+  textColor: theme.colors.green[0],
+  boxShadowNav: theme.colors.boxShadow[1],
+  hoverColor: theme.colors.green[5],
+  accentColor: theme.colors.green[3],
 };
 
 export const lightTheme: Theme = {
   ...theme,
-  body: 'linear-gradient(140deg, rgba(255,255,255,1) 47%, rgba(64,159,17,1) 100%)',
-  textColor: '#102d06',
-  boxShadowNav: '13px 13px 24px 1px rgb(39,81,22)',
-  hoverColor: '#2c6014',
-  accentColor: '#337912',
+  body: theme.colors.gradient[2],
+  textColor: theme.colors.green[10],
+  boxShadowNav: theme.colors.boxShadow[0],
+  hoverColor: theme.colors.green[8],
+  accentColor: theme.colors.green[7],
 };
 
 export default theme;

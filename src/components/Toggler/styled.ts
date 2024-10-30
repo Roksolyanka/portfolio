@@ -6,11 +6,7 @@ export const SwitchButtonFirst = styled.a`
   height: 100%;
 `;
 
-export const SwitchButtonSecond = styled.a`
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-`;
+export const SwitchButtonSecond = styled(SwitchButtonFirst)``;
 
 export const SwitchToggle = styled.div.withConfig({
   shouldForwardProp: (prop) => prop !== 'togglePosition',

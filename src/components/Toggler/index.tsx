@@ -41,7 +41,7 @@ const Toggler: React.FC<TogglerProps> = ({
               setTogglePosition(true);
               if (onToggle) onToggle();
             }}
-          ></SwitchButtonFirst>
+          />
           <SwitchToggle
             onClick={() => {
               if (onToggle) onToggle();
@@ -63,7 +63,7 @@ const Toggler: React.FC<TogglerProps> = ({
               setTogglePosition(false);
               if (onToggle) onToggle();
             }}
-          ></SwitchButtonSecond>
+          />
         </SwitchOuter>
         <SwitchLabel>Cover Letter</SwitchLabel>
       </SwitchInner>

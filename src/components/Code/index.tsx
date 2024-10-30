@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Box, FlexBox } from '../../ui';
 import theme from '../../theme';
 import {
@@ -7,17 +5,11 @@ import {
   ShadowSecond,
   TextAmber,
   TextCyan,
-  TextCyanML,
   TextGray,
-  TextGrayMLFirst,
-  TextGrayMLSecond,
   TextGreen,
   TextOrange,
-  TextOrangeML,
-  TextOrangeMLSecond,
   TextPink,
   TextWhite,
-  TextWhiteML,
   WrapperForCode,
   WrapperMac,
 } from './styled';
@@ -26,8 +18,8 @@ const Code = () => {
   return (
     <WrapperMac>
       <FlexBox flexDirection='row'>
-        <ShadowFirst></ShadowFirst>
-        <ShadowSecond></ShadowSecond>
+        <ShadowFirst />
+        <ShadowSecond />
       </FlexBox>
       <Box padding='16px'>
         <FlexBox flexDirection='row'>
@@ -36,38 +28,38 @@ const Code = () => {
             height='12px'
             borderRadius='50px'
             background={theme.colors.red[0]}
-          ></Box>
+          />
           <Box
             width='12px'
             height='12px'
             borderRadius='50px'
-            background={theme.colors.orange[0]}
+            background={theme.colors.orange[4]}
             margin='0 8px'
-          ></Box>
+          />
           <Box
             width='12px'
             height='12px'
             borderRadius='50px'
             background={theme.colors.green[2]}
-          ></Box>
+          />
         </FlexBox>
       </Box>
       <WrapperForCode>
         <code>
           <div>
             <TextPink>const</TextPink>
-            <TextWhite>coder</TextWhite>
-            <TextPink>=</TextPink>
+            <TextWhite> coder</TextWhite>
+            <TextPink> = </TextPink>
             <TextGray>&#10100;</TextGray>
           </div>
-          <div>
-            <TextWhiteML>name:</TextWhiteML>
-            <TextGray>'</TextGray>
+          <Box margin='0 0 0 16px'>
+            <TextWhite>name:</TextWhite>
+            <TextGray> '</TextGray>
             <TextAmber>Roksolana Kushnir</TextAmber>
             <TextGray>',</TextGray>
-          </div>
+          </Box>
           <Box margin='0 0 0 16px'>
-            <TextWhite>skills:</TextWhite>
+            <TextWhite>skills: </TextWhite>
             <TextGray>['</TextGray>
             <TextAmber>HTML</TextAmber>
             <TextGray>', '</TextGray>
@@ -81,62 +73,62 @@ const Code = () => {
             <TextGray>', '</TextGray>
             <TextAmber>React Native</TextAmber>
             <TextGray>', '</TextGray>
-            <TextAmber>Typescript</TextAmber>
+            <TextAmber>TypeScript</TextAmber>
             <TextGray>'],</TextGray>
           </Box>
-          <div>
-            <TextWhiteML>hardWorker:</TextWhiteML>
-            <TextOrange> true</TextOrange>
-            <TextGray>,</TextGray>
-          </div>
-          <div>
-            <TextWhiteML>quickLearner:</TextWhiteML>
-            <TextOrange> true</TextOrange>
-            <TextGray>,</TextGray>
-          </div>
-          <div>
-            <TextWhiteML>problemSolver:</TextWhiteML>
-            <TextOrange> true</TextOrange>
-            <TextGray>,</TextGray>
-          </div>
-          <div>
-            <TextGreen>hireable:</TextGreen>
-            <TextOrange> function</TextOrange>
-            <TextGray>() &#10100;</TextGray>
-          </div>
-          <div>
-            <TextOrangeML>return</TextOrangeML>
-            <TextGray> (</TextGray>
-          </div>
-          <div>
-            <TextCyanML>this.</TextCyanML>
-            <TextWhite>hardWorker</TextWhite>
-            <TextAmber>&&</TextAmber>
-          </div>
-          <div>
-            <TextCyanML>this.</TextCyanML>
-            <TextWhite>problemSolver</TextWhite>
-            <TextAmber>&&</TextAmber>
-          </div>
-          <div>
-            <TextCyanML>this.</TextCyanML>
-            <TextWhite>skills.length</TextWhite>
-            <TextAmber>&#10095;=</TextAmber>
-            <TextOrange>7</TextOrange>
-          </div>
-          <div>
-            <TextGrayMLFirst>);</TextGrayMLFirst>
-          </div>
-          <div>
-            <TextGrayMLSecond>&#10101;;</TextGrayMLSecond>
-          </div>
-          <div>
-            <TextGreen>funFact:</TextGreen>
-            <TextOrange> function</TextOrange>
-            <TextGray>() &#10100;</TextGray>
-          </div>
           <Box margin='0 0 0 16px'>
-            <TextOrangeMLSecond>console.log</TextOrangeMLSecond>
+            <TextWhite>hardWorker:</TextWhite>
+            <TextOrange> true</TextOrange>
+            <TextGray>,</TextGray>
+          </Box>
+          <Box margin='0 0 0 16px'>
+            <TextWhite>quickLearner:</TextWhite>
+            <TextOrange> true</TextOrange>
+            <TextGray>,</TextGray>
+          </Box>
+          <Box margin='0 0 0 16px'>
+            <TextWhite>problemSolver:</TextWhite>
+            <TextOrange> true</TextOrange>
+            <TextGray>,</TextGray>
+          </Box>
+          <Box margin='0 0 0 16px'>
+            <TextGreen>hireable</TextGreen>
+            <TextGray>() &#10100;</TextGray>
+          </Box>
+          <Box margin='0 0 0 32px'>
+            <TextPink>const</TextPink>
+            <TextGray> &#10100; </TextGray>
+            <TextWhite>hardWorker</TextWhite>
+            <TextGray>, </TextGray>
+            <TextWhite>problemSolver</TextWhite>
+            <TextGray>, </TextGray>
+            <TextWhite>skills</TextWhite>
+            <TextGray> &#10101; </TextGray>
+            <TextPink>= </TextPink>
+            <TextPink>this</TextPink>
+            <TextGray>;</TextGray>
+          </Box>
+          <Box margin='0 0 0 32px'>
+            <TextPink>return </TextPink>
+            <TextWhite>hardWorker</TextWhite>
+            <TextAmber> && </TextAmber>
+            <TextWhite>problemSolver</TextWhite>
+            <TextAmber> && </TextAmber>
+            <TextWhite>skills.length</TextWhite>
+            <TextAmber> &#10095;= </TextAmber>
+            <TextOrange>7</TextOrange>
+            <TextGray>;</TextGray>
+          </Box>
+          <Box margin='0 0 0 16px'>
+            <TextGray>&#10101;,</TextGray>
+          </Box>
+          <Box margin='0 0 0 16px'>
+            <TextGreen>funFact</TextGreen>
+            <TextGray>() &#10100;</TextGray>
+          </Box>
+          <Box margin='0 0 0 32px'>
+            <TextCyan>console.</TextCyan>
+            <TextWhite>log</TextWhite>
             <TextGray>(</TextGray>
             <TextAmber>
               "I once solved a bug at 3 AM without coffee. Let's just say, I'm
@@ -144,23 +136,24 @@ const Code = () => {
             </TextAmber>
             <TextGray>);</TextGray>
           </Box>
-          <div>
-            <TextGrayMLSecond>&#10101;</TextGrayMLSecond>
-          </div>
+          <Box margin='0 0 0 16px'>
+            <TextGray>&#10101;,</TextGray>
+          </Box>
           <div>
             <TextGray>&#10101;;</TextGray>
           </div>
+          <br />
           <div>
             <TextPink>if</TextPink>
-            <TextGray>(</TextGray>
-            <TextCyan>coder.</TextCyan>
-            <TextWhite>hireable</TextWhite>
+            <TextGray> (</TextGray>
+            <TextWhite>coder.</TextWhite>
+            <TextGreen>hireable</TextGreen>
             <TextGray>()</TextGray>
             <TextGray>) &#10100;</TextGray>
           </div>
           <Box margin='0 0 0 8px'>
-            <TextCyan>coder.</TextCyan>
-            <TextWhite>funFact</TextWhite>
+            <TextWhite>coder.</TextWhite>
+            <TextGreen>funFact</TextGreen>
             <TextGray>();</TextGray>
           </Box>
           <Box margin='0 0 0 8px'>
@@ -170,6 +163,21 @@ const Code = () => {
             <TextAmber>
               'Hiring me means getting a hard-working problem-solver with a love
               for learning.'
+            </TextAmber>
+            <TextGray>);</TextGray>
+          </Box>
+          <div>
+            <TextGray>&#10101; </TextGray>
+            <TextPink>else</TextPink>
+            <TextGray> &#10100;</TextGray>
+          </div>
+          <Box margin='0 0 0 8px'>
+            <TextCyan>console.</TextCyan>
+            <TextWhite>log</TextWhite>
+            <TextGray>(</TextGray>
+            <TextAmber>
+              'I may not meet all criteria, but I'm still ready to improve and
+              grow!'
             </TextAmber>
             <TextGray>);</TextGray>
           </Box>

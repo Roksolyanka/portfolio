@@ -105,7 +105,7 @@ const HomePage = () => {
           />
           <StyledLink to={ROUTE_ABOUT}>About me &#10174;</StyledLink>
         </FlexBox>
-        <Code></Code>
+        <Code />
       </GridColumns>
     </HomeSection>
   );

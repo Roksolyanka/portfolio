@@ -4,32 +4,22 @@ import { Icon } from '../../components/Icon';
 
 export const HomeSection = styled.section`
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   align-items: center;
   position: relative;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
-    padding-top: 28px;
-    padding-bottom: 28px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints[3]}) {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
 `;
 
 export const Background = styled.img`
   position: absolute;
-  top: -90px;
+  top: -100px;
   z-index: -10;
   color: transparent;
   max-width: 100%;
   width: 100%;
+  max-height: 100%;
+  height: 100%;
 
   @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     width: 100%;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import sprite from '../../assets/sprite.svg';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes, useTheme } from 'styled-components';
 
 interface IconProps {
   name: string;
@@ -22,13 +22,18 @@ export const Icon: React.FC<IconProps> = ({
   name,
   width = '24px',
   height = '24px',
-  fill = '#9cee69',
+  fill,
   className = '',
-}) => (
-  <svg width={width} height={height} fill={fill} className={className}>
-    <use href={`${sprite}#${name}`} />
-  </svg>
-);
+}) => {
+  const theme = useTheme();
+  const fillColor = fill || theme.colors.green[3];
+
+  return (
+    <svg width={width} height={height} fill={fillColor} className={className}>
+      <use href={`${sprite}#${name}`} />
+    </svg>
+  );
+};
 
 export const AnimatedIcon = styled(Icon)<AnimatedIconProps>`
   &.animate {

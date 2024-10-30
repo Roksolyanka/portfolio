@@ -36,48 +36,22 @@ export const WrapperForCode = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     font-size: 12px;
   }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints[3]}) {
-    font-size: 14px;
-  }
 `;
 
 export const TextPink = styled.span`
   color: ${({ theme }) => theme.colors.pink[0]};
-  margin-right: 5px;
 `;
 
 export const TextWhite = styled.span`
   color: ${({ theme }) => theme.colors.white[0]};
-  margin-right: 5px;
-`;
-
-export const TextWhiteML = styled(TextWhite)`
-  margin-left: 16px;
 `;
 
 export const TextGray = styled.span`
   color: ${({ theme }) => theme.colors.gray[0]};
 `;
 
-export const TextGrayMLFirst = styled(TextGray)`
-  margin-left: 32px;
-`;
-
-export const TextGrayMLSecond = styled(TextGray)`
-  margin-left: 16px;
-`;
-
 export const TextOrange = styled.span`
-  color: ${({ theme }) => theme.colors.orange[0]};
-`;
-
-export const TextOrangeML = styled(TextOrange)`
-  margin-left: 32px;
-`;
-
-export const TextOrangeMLSecond = styled(TextOrange)`
-  margin-left: 16px;
+  color: ${({ theme }) => theme.colors.orange[4]};
 `;
 
 export const TextAmber = styled.span`
@@ -88,11 +62,6 @@ export const TextCyan = styled.span`
   color: ${({ theme }) => theme.colors.blue[11]};
 `;
 
-export const TextCyanML = styled(TextCyan)`
-  margin-left: 48px;
-`;
-
 export const TextGreen = styled.span`
   color: ${({ theme }) => theme.colors.green[5]};
-  margin-left: 16px;
 `;

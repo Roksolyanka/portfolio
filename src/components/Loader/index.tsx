@@ -2,6 +2,7 @@ import React from 'react';
 import { Bars } from 'react-loader-spinner';
 
 import { FlexBox } from '../../ui';
+import theme from '../../theme';
 
 const Loader = () => {
   return (
@@ -17,7 +18,7 @@ const Loader = () => {
       <Bars
         height={80}
         width={80}
-        color='#9cee69'
+        color={theme.colors.green[3]}
         ariaLabel='bars-loading'
         visible={true}
       />

@@ -18,6 +18,7 @@ import {
   left,
   margin,
   maxWidth,
+  minHeight,
   order,
   overflow,
   padding,
@@ -62,6 +63,7 @@ type CustomStyledProps = HTMLProps<HTMLDivElement> & {
   maxWidth?: CSSProperties['maxWidth'] | Array<CSSProperties['maxWidth']>;
   order?: CSSProperties['order'] | Array<CSSProperties['order']>;
   gap?: ResponsiveValue<string | number>;
+  minHeight?: CSSProperties['minHeight'] | Array<CSSProperties['minHeight']>;
 };
 
 export const Box = styled.div.withConfig({
@@ -73,19 +75,21 @@ export const Box = styled.div.withConfig({
       'flexWrap',
       'flexGrow',
       'gridTemplateColumns',
+      'width',
+      'height',
       'maxWidth',
+      'minHeight',
       'gap',
       'borderRadius',
       'position',
       'top',
       'left',
-      'height',
-      'width',
     ].includes(prop),
 })<CustomStyledProps>(
   width,
   maxWidth,
   height,
+  minHeight,
   space,
   padding,
   margin,
