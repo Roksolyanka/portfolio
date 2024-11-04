@@ -104,7 +104,7 @@ export const StyledLink = styled(Link)`
     width: 0;
     height: 2px;
     background-color: ${({ theme }) => theme.hoverColor};
-    transition: width 0.3s ease;
+    transition: all 0.6s ease;
   }
 
   &:hover::after {
@@ -113,13 +113,11 @@ export const StyledLink = styled(Link)`
 
   &:hover {
     color: ${({ theme }) => theme.hoverColor};
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.6s ease, transform 0.6s ease;
     transform: translateX(10px);
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+  &:not(:hover) {
+    transition: all 0.6s ease;
   }
 `;
