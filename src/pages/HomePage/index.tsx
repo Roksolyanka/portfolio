@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 
-import { NameLetters } from '../../components/NameLetters';
+import personalData from '../../data/personalData';
+import NameLetters from '../../components/NameLetters';
 import { Icon } from '../../components/Icon';
 import Code from '../../components/Code';
 import Toggler from '../../components/Toggler';
 import { ROUTE_ABOUT } from '../../constants';
 
-import cv from '../../assets/files/cv.pdf';
-import coverLetter from '../../assets/files/cover_letter.pdf';
 import background from '../../assets/background.svg';
 
 import theme from '../../theme';
@@ -26,10 +25,10 @@ const HomePage = () => {
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = togglePosition ? cv : coverLetter;
+    link.href = togglePosition ? personalData.cv : personalData.coverLetter;
     link.download = togglePosition
-      ? 'Roksolana_Kushnir_CV.pdf'
-      : 'Roksolana_Kushnir_Cover_Letter.pdf';
+      ? personalData.cvName
+      : personalData.coverLetterName;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -44,7 +43,7 @@ const HomePage = () => {
         height='620'
         decoding='async'
         src={background}
-      ></Background>
+      />
       <GridColumns
         gridTemplateColumns={['1fr', '1fr', '1fr', '1fr 1fr']}
         gap='16px'
@@ -61,11 +60,11 @@ const HomePage = () => {
         >
           <TitleH1>
             Hello, this is <br />
-            <NameLetters name='Roksolana Kushnir' /> <br />
-            I'm a <TextSpecialty>Frontend Developer</TextSpecialty>
+            <NameLetters name={personalData.name} /> <br />
+            I'm a <TextSpecialty>{personalData.designation}</TextSpecialty>
           </TitleH1>
           <FlexBox justifyContent='center' gap='20px' margin='18px 0'>
-            <StyledSocial target='_blank' href='https://github.com/Roksolyanka'>
+            <StyledSocial target='_blank' href={personalData.github}>
               <Icon
                 name='icon-github'
                 width='30px'
@@ -74,10 +73,7 @@ const HomePage = () => {
                 className='social-icon'
               />
             </StyledSocial>
-            <StyledSocial
-              target='_blank'
-              href='https://www.linkedin.com/in/roksolanakushnir/'
-            >
+            <StyledSocial target='_blank' href={personalData.linkedIn}>
               <Icon
                 name='icon-linkedin-circle'
                 width='30px'
@@ -86,7 +82,7 @@ const HomePage = () => {
                 className='social-icon'
               />
             </StyledSocial>
-            <StyledSocial target='_blank' href='https://t.me/Roksolanakushnir'>
+            <StyledSocial target='_blank' href={personalData.telegram}>
               <Icon
                 name='icon-telegram'
                 width='30px'
@@ -100,8 +96,8 @@ const HomePage = () => {
             togglePosition={togglePosition}
             setTogglePosition={setTogglePosition}
             handleDownload={handleDownload}
-            cvHref={cv}
-            coverLetterHref={coverLetter}
+            cvHref={personalData.cv}
+            coverLetterHref={personalData.coverLetter}
           />
           <StyledLink to={ROUTE_ABOUT}>About me &#10174;</StyledLink>
         </FlexBox>

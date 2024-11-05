@@ -1,3 +1,5 @@
+import personalData from '../../data/personalData';
+
 import { Box, FlexBox } from '../../ui';
 import theme from '../../theme';
 import {
@@ -55,25 +57,25 @@ const Code = () => {
           <Box margin='0 0 0 16px'>
             <TextWhite>name:</TextWhite>
             <TextGray> '</TextGray>
-            <TextAmber>Roksolana Kushnir</TextAmber>
+            <TextAmber>{personalData.name}</TextAmber>
             <TextGray>',</TextGray>
           </Box>
           <Box margin='0 0 0 16px'>
             <TextWhite>skills: </TextWhite>
             <TextGray>['</TextGray>
-            <TextAmber>HTML</TextAmber>
+            <TextAmber>{personalData.skills[0]}</TextAmber>
             <TextGray>', '</TextGray>
-            <TextAmber>CSS</TextAmber>
+            <TextAmber>{personalData.skills[1]}</TextAmber>
             <TextGray>', '</TextGray>
-            <TextAmber>Js</TextAmber>
+            <TextAmber>{personalData.skills[2]}</TextAmber>
             <TextGray>', '</TextGray>
-            <TextAmber>React</TextAmber>
+            <TextAmber>{personalData.skills[3]}</TextAmber>
             <TextGray>', '</TextGray>
-            <TextAmber>Redux</TextAmber>
+            <TextAmber>{personalData.skills[4]}</TextAmber>
             <TextGray>', '</TextGray>
-            <TextAmber>React Native</TextAmber>
+            <TextAmber>{personalData.skills[5]}</TextAmber>
             <TextGray>', '</TextGray>
-            <TextAmber>TypeScript</TextAmber>
+            <TextAmber>{personalData.skills[6]}</TextAmber>
             <TextGray>'],</TextGray>
           </Box>
           <Box margin='0 0 0 16px'>

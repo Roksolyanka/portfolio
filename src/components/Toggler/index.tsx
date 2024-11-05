@@ -11,6 +11,7 @@ import {
 } from './styled';
 import { Icon } from '../Icon';
 import theme from '../../theme';
+import personalData from '../../data/personalData';
 
 interface TogglerProps {
   togglePosition: boolean;
@@ -36,7 +37,7 @@ const Toggler: React.FC<TogglerProps> = ({
         <SwitchOuter>
           <SwitchButtonFirst
             href={cvHref}
-            download='Roksolana_Kushnir_CV.pdf'
+            download={personalData.cvName}
             onClick={() => {
               setTogglePosition(true);
               if (onToggle) onToggle();
@@ -58,7 +59,7 @@ const Toggler: React.FC<TogglerProps> = ({
           </SwitchToggle>
           <SwitchButtonSecond
             href={coverLetterHref}
-            download='Roksolana_Kushnir_Cover_Letter.pdf'
+            download={personalData.coverLetterName}
             onClick={() => {
               setTogglePosition(false);
               if (onToggle) onToggle();

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import avatar from '../../assets/images/avatar.jpg';
-import avatar2x from '../../assets/images/avatar-2x.jpg';
+import personalData from '../../data/personalData';
 import background from '../../assets/background.svg';
 
 import { AboutSection, PersonalPhoto, TextAccent, TextP } from './styled';
@@ -19,20 +18,20 @@ const AboutPage = () => {
         height='620'
         decoding='async'
         src={background}
-      ></Background>
+      />
       <GridColumns
         gridTemplateColumns={['1fr', '1fr', '1fr', '1fr 1fr']}
         gap='16px'
         width='100%'
       >
         <PersonalPhoto
-          alt='Roksolana Kushnir'
+          alt={personalData.name}
           width={1000}
           height={1000}
           loading='lazy'
           decoding='async'
-          src={avatar}
-          srcSet={`${avatar} 1x, ${avatar2x} 2x`}
+          src={personalData.photo.src}
+          srcSet={personalData.photo.srcset}
         />
         <FlexBox
           flexDirection='column'
@@ -46,18 +45,20 @@ const AboutPage = () => {
         >
           <TextP>
             Greetings! <br /> My name is{' '}
-            <TextAccent>Roksolana Kushnir</TextAccent>, and I am a frontend
+            <TextAccent>{personalData.name}</TextAccent>, and I am a frontend
             developer passionate about creating responsive, user-oriented
             websites. My expertise lies in advanced frontend technologies like{' '}
-            <TextAccent>HTML</TextAccent>, <TextAccent>CSS</TextAccent>, and{' '}
-            <TextAccent>JavaScript</TextAccent>. Currently, I am actively
-            working with <TextAccent>React</TextAccent>,{' '}
-            <TextAccent>Redux</TextAccent>,{' '}
-            <TextAccent>React Native</TextAccent>, and{' '}
-            <TextAccent>TypeScript</TextAccent>, always striving to push the
-            boundaries of what's possible. I continuously improve my skills and
-            stay updated on the latest trends to remain at the forefront of our
-            dynamic industry.
+            <TextAccent>{personalData.skills[0]}</TextAccent>,{' '}
+            <TextAccent>{personalData.skills[1]}</TextAccent>, and{' '}
+            <TextAccent>{personalData.skills[2]}</TextAccent>. Currently, I am
+            actively working with{' '}
+            <TextAccent>{personalData.skills[3]}</TextAccent>,{' '}
+            <TextAccent>{personalData.skills[4]}</TextAccent>,{' '}
+            <TextAccent>{personalData.skills[5]}</TextAccent>, and{' '}
+            <TextAccent>{personalData.skills[6]}</TextAccent>, always striving
+            to push the boundaries of what's possible. I continuously improve my
+            skills and stay updated on the latest trends to remain at the
+            forefront of our dynamic industry.
           </TextP>
           <StyledLink to={ROUTE_SKILLS}>My skills &#10174;</StyledLink>
         </FlexBox>
