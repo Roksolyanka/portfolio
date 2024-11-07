@@ -48,17 +48,22 @@ const AboutPage = () => {
             <TextAccent>{personalData.name}</TextAccent>, and I am a frontend
             developer passionate about creating responsive, user-oriented
             websites. My expertise lies in advanced frontend technologies like{' '}
-            <TextAccent>{personalData.skills[0]}</TextAccent>,{' '}
-            <TextAccent>{personalData.skills[1]}</TextAccent>, and{' '}
-            <TextAccent>{personalData.skills[2]}</TextAccent>. Currently, I am
-            actively working with{' '}
-            <TextAccent>{personalData.skills[3]}</TextAccent>,{' '}
-            <TextAccent>{personalData.skills[4]}</TextAccent>,{' '}
-            <TextAccent>{personalData.skills[5]}</TextAccent>, and{' '}
-            <TextAccent>{personalData.skills[6]}</TextAccent>, always striving
-            to push the boundaries of what's possible. I continuously improve my
-            skills and stay updated on the latest trends to remain at the
-            forefront of our dynamic industry.
+            {personalData.skills.slice(0, 3).map((skill, index) => (
+              <React.Fragment key={skill}>
+                <TextAccent>{skill}</TextAccent>
+                {index < 2 && ', '}
+              </React.Fragment>
+            ))}
+            . Currently, I am actively working with{' '}
+            {personalData.skills.slice(3).map((skill, index) => (
+              <React.Fragment key={skill}>
+                <TextAccent>{skill}</TextAccent>
+                {index < personalData.skills.slice(3).length - 1 && ', '}
+              </React.Fragment>
+            ))}
+            , always striving to push the boundaries of what's possible. I
+            continuously improve my skills and stay updated on the latest trends
+            to remain at the forefront of our dynamic industry.
           </TextP>
           <StyledLink to={ROUTE_SKILLS}>My skills &#10174;</StyledLink>
         </FlexBox>

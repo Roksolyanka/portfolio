@@ -1,3 +1,5 @@
+import React from 'react';
+
 import personalData from '../../data/personalData';
 
 import { Box, FlexBox } from '../../ui';
@@ -63,19 +65,14 @@ const Code = () => {
           <Box margin='0 0 0 16px'>
             <TextWhite>skills: </TextWhite>
             <TextGray>['</TextGray>
-            <TextAmber>{personalData.skills[0]}</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>{personalData.skills[1]}</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>{personalData.skills[2]}</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>{personalData.skills[3]}</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>{personalData.skills[4]}</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>{personalData.skills[5]}</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>{personalData.skills[6]}</TextAmber>
+            {personalData.skills.map((skill, index) => (
+              <React.Fragment key={index}>
+                <TextAmber>{skill}</TextAmber>
+                {index < personalData.skills.length - 1 && (
+                  <TextGray>', '</TextGray>
+                )}
+              </React.Fragment>
+            ))}
             <TextGray>'],</TextGray>
           </Box>
           <Box margin='0 0 0 16px'>
