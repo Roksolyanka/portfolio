@@ -8,7 +8,7 @@ interface NameLettersProps {
   name: string;
 }
 
-export const NameLetters: FC<NameLettersProps> = ({ name }) => {
+const NameLetters: FC<NameLettersProps> = ({ name }) => {
   const { activeIndex, animationComplete } = useAnimation(name);
 
   return (
@@ -16,7 +16,7 @@ export const NameLetters: FC<NameLettersProps> = ({ name }) => {
       {name.split('').map((letter, index) => (
         <Letter
           key={index}
-          isCustom={letter === 'R' || letter === 'K'} 
+          isCustom={letter === 'R' || letter === 'K'}
           className={`nameLetter ${
             !animationComplete && (activeIndex === index ? 'active' : '')
           } ${
@@ -32,3 +32,5 @@ export const NameLetters: FC<NameLettersProps> = ({ name }) => {
     </Name>
   );
 };
+
+export default NameLetters;

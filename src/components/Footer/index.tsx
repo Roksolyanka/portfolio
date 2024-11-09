@@ -1,3 +1,4 @@
+import personalData from '../../data/personalData';
 import { getCurrentYear } from '../../helpers';
 import { Creator, FooterStyle } from './styled';
 
@@ -7,7 +8,9 @@ const Footer = () => {
   return (
     <FooterStyle>
       <span>Copyright © {currentYear} </span>
-      <Creator href='https://github.com/Roksolyanka'>Roksolana Kushnir</Creator>
+      <Creator href={personalData.github} target='_blank'>
+        {personalData.name}
+      </Creator>
     </FooterStyle>
   );
 };

@@ -1,3 +1,7 @@
+import React from 'react';
+
+import personalData from '../../data/personalData';
+
 import { Box, FlexBox } from '../../ui';
 import theme from '../../theme';
 import {
@@ -55,25 +59,20 @@ const Code = () => {
           <Box margin='0 0 0 16px'>
             <TextWhite>name:</TextWhite>
             <TextGray> '</TextGray>
-            <TextAmber>Roksolana Kushnir</TextAmber>
+            <TextAmber>{personalData.name}</TextAmber>
             <TextGray>',</TextGray>
           </Box>
           <Box margin='0 0 0 16px'>
             <TextWhite>skills: </TextWhite>
             <TextGray>['</TextGray>
-            <TextAmber>HTML</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>CSS</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>Js</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>React</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>Redux</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>React Native</TextAmber>
-            <TextGray>', '</TextGray>
-            <TextAmber>TypeScript</TextAmber>
+            {personalData.skills.map((skill, index) => (
+              <React.Fragment key={index}>
+                <TextAmber>{skill}</TextAmber>
+                {index < personalData.skills.length - 1 && (
+                  <TextGray>', '</TextGray>
+                )}
+              </React.Fragment>
+            ))}
             <TextGray>'],</TextGray>
           </Box>
           <Box margin='0 0 0 16px'>
