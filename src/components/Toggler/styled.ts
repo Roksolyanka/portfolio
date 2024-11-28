@@ -45,7 +45,6 @@ export const SwitchOuter = styled.div`
 
 export const SwitchLabel = styled.span`
   color: ${({ theme }) => theme.colors.orange[0]};
-  text-transform: uppercase;
   padding: 0;
   font-size: 16px;
   font-weight: 700;

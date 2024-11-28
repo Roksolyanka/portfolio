@@ -9,6 +9,7 @@ import {
   boxShadow,
   color,
   display,
+  flex,
   flexDirection,
   flexGrow,
   flexWrap,
@@ -19,8 +20,11 @@ import {
   margin,
   maxWidth,
   minHeight,
+  minWidth,
+  opacity,
   order,
   overflow,
+  overflowX,
   padding,
   position,
   ResponsiveValue,
@@ -61,9 +65,13 @@ type CustomStyledProps = HTMLProps<HTMLDivElement> & {
   width?: CSSProperties['width'];
   zIndex?: CSSProperties['zIndex'];
   maxWidth?: CSSProperties['maxWidth'] | Array<CSSProperties['maxWidth']>;
+  minWidth?: CSSProperties['minWidth'] | Array<CSSProperties['minWidth']>;
   order?: CSSProperties['order'] | Array<CSSProperties['order']>;
   gap?: ResponsiveValue<string | number>;
   minHeight?: CSSProperties['minHeight'] | Array<CSSProperties['minHeight']>;
+  flex?: CSSProperties['flex'] | Array<CSSProperties['flex']>;
+  opacity?: CSSProperties['opacity'];
+  overflowX?: CSSProperties['overflowX'];
 };
 
 export const Box = styled.div.withConfig({
@@ -78,16 +86,20 @@ export const Box = styled.div.withConfig({
       'width',
       'height',
       'maxWidth',
+      'minWidth',
       'minHeight',
       'gap',
       'borderRadius',
       'position',
       'top',
       'left',
+      'zIndex',
+      'overflowX',
     ].includes(prop),
 })<CustomStyledProps>(
   width,
   maxWidth,
+  minWidth,
   height,
   minHeight,
   space,
@@ -107,7 +119,9 @@ export const Box = styled.div.withConfig({
   left,
   right,
   zIndex,
-  order
+  order,
+  opacity,
+  overflowX
 );
 
 export const FlexBox = styled(Box)`
@@ -125,6 +139,7 @@ export const FlexBox = styled(Box)`
   ${position};
   ${height};
   ${width};
+  ${flex};
 `;
 
 export const AbsoluteBox = styled(Box)`

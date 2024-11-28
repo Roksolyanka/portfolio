@@ -10,7 +10,7 @@ import { ROUTE_SKILLS } from '../../constants';
 
 const AboutPage = () => {
   return (
-    <AboutSection>
+    <AboutSection aria-label='about section'>
       <Background
         alt='Hero'
         loading='lazy'

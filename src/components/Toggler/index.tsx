@@ -18,8 +18,11 @@ interface TogglerProps {
   setTogglePosition: (position: boolean) => void;
   handleDownload?: () => void;
   onToggle?: () => void;
-  cvHref: string;
-  coverLetterHref: string;
+  cvHref?: string;
+  coverLetterHref?: string;
+  labelFirst?: string;
+  labelSecond?: string;
+  iconName: string;
 }
 
 const Toggler: React.FC<TogglerProps> = ({
@@ -29,11 +32,14 @@ const Toggler: React.FC<TogglerProps> = ({
   onToggle,
   cvHref,
   coverLetterHref,
+  labelFirst,
+  labelSecond,
+  iconName,
 }) => {
   return (
     <SwitchFull>
       <SwitchInner>
-        <SwitchLabel>CV</SwitchLabel>
+        <SwitchLabel>{labelFirst}</SwitchLabel>
         <SwitchOuter>
           <SwitchButtonFirst
             href={cvHref}
@@ -51,7 +57,7 @@ const Toggler: React.FC<TogglerProps> = ({
             togglePosition={togglePosition}
           >
             <Icon
-              name='icon-download'
+              name={iconName} 
               width='24px'
               height='24px'
               fill={theme.colors.orange[1]}
@@ -66,7 +72,7 @@ const Toggler: React.FC<TogglerProps> = ({
             }}
           />
         </SwitchOuter>
-        <SwitchLabel>Cover Letter</SwitchLabel>
+        <SwitchLabel>{labelSecond}</SwitchLabel>
       </SwitchInner>
     </SwitchFull>
   );
