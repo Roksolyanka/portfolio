@@ -32,12 +32,3 @@ export const TitleH2 = styled.h2`
     font-size: 30px;
   }
 `;
-
-export const SkillList = styled.ul`
-  list-style: none;
-  padding: 0;
-  width: 100%;
-`;
-
-export const SkillListItem = styled.li`
-`;

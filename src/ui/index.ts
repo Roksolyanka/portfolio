@@ -3,8 +3,12 @@ import styled, { CSSProperties } from 'styled-components';
 import {
   alignItems,
   background,
+  backgroundImage,
   border,
+  borderColor,
   borderRadius,
+  borderStyle,
+  borderWidth,
   bottom,
   boxShadow,
   color,
@@ -13,6 +17,7 @@ import {
   flexDirection,
   flexGrow,
   flexWrap,
+  fontSize,
   gridTemplateColumns,
   height,
   justifyContent,
@@ -43,8 +48,12 @@ type CustomStyledProps = HTMLProps<HTMLDivElement> & {
   flexWrap?: CSSProperties['flexWrap'];
   flexGrow?: CSSProperties['flexGrow'];
   background?: CSSProperties['background'];
+  backgroundImage?: CSSProperties['backgroundImage'];
   border?: CSSProperties['border'];
   borderRadius?: CSSProperties['borderRadius'];
+  borderWidth?: CSSProperties['borderWidth'];
+  borderColor?: CSSProperties['borderColor'];
+  borderStyle?: CSSProperties['borderStyle'];
   bottom?: CSSProperties['bottom'];
   boxShadow?: CSSProperties['boxShadow'];
   color?: CSSProperties['color'];
@@ -60,6 +69,7 @@ type CustomStyledProps = HTMLProps<HTMLDivElement> & {
   position?: CSSProperties['position'];
   right?: CSSProperties['right'];
   space?: ResponsiveValue<string | number>;
+  fontSize?: CSSProperties['fontSize'] | Array<CSSProperties['fontSize']>;
   top?: CSSProperties['top'];
   typography?: CSSProperties['fontSize'] | CSSProperties['fontWeight'] | string;
   width?: CSSProperties['width'];
@@ -90,11 +100,15 @@ export const Box = styled.div.withConfig({
       'minHeight',
       'gap',
       'borderRadius',
+      'borderWidth',
+      'borderColor',
+      'borderStyle',
       'position',
       'top',
       'left',
       'zIndex',
       'overflowX',
+      'backgroundImage',
     ].includes(prop),
 })<CustomStyledProps>(
   width,
@@ -103,6 +117,7 @@ export const Box = styled.div.withConfig({
   height,
   minHeight,
   space,
+  fontSize,
   padding,
   margin,
   color,
@@ -110,8 +125,12 @@ export const Box = styled.div.withConfig({
   display,
   border,
   borderRadius,
+  borderWidth,
+  borderColor,
+  borderStyle,
   boxShadow,
   background,
+  backgroundImage,
   overflow,
   position,
   top,
@@ -182,3 +201,11 @@ export const Button = styled.button<CustomStyledProps>`
   :disabled {
   }
 `;
+
+export const List = styled.ul`
+  list-style: none;
+  padding: 0;
+  width: 100%;
+`;
+
+export const ListItem = styled.li``;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 
 import { SkillsData } from '../../types';
 import SkillCards from './SkillCards';
@@ -13,6 +13,16 @@ interface CarouselProps {
 }
 
 const Carousel: React.FC<CarouselProps> = ({ data }) => {
+const skills = useMemo(() => {
+  return Object.keys(data).flatMap((category) =>
+    data[category as keyof SkillsData].map((skill, index) => ({
+      id: `${category}-${index + 1}`,
+      name: skill.name,
+      displayName: skill.displayName,
+    }))
+  );
+}, [data]);
+
   useEffect(() => {
     const cards = document.querySelectorAll('.WrapperIcon');
 
@@ -40,10 +50,10 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
   return (
     <CarouselInner margin='0 auto' padding='20px 0' overflowX='auto'>
       <Group gap='15px' margin='0' padding='0 15px 0 0'>
-        <SkillCards data={data} />
+        <SkillCards skills={skills} />
       </Group>
       <Group aria-hidden gap='15px' margin='0' padding='0 15px 0 0'>
-        <SkillCards data={data} isHidden />
+        <SkillCards skills={skills} isHidden />
       </Group>
     </CarouselInner>
   );

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Box, FlexBox } from '../../../ui';
+import { AbsoluteBox, Box, FlexBox } from '../../../ui';
 
 export const Wrapper = styled(Box)`
   background: ${({ theme }) => theme.colors.white[0]};
@@ -27,7 +27,7 @@ export const StyledFlexBox = styled(FlexBox)`
   }
 `;
 
-export const Blob = styled(Box)`
+export const Blob = styled(AbsoluteBox)`
   left: calc(20% - 50px);
   background: ${({ theme }) => theme.colors.green[4]};
   filter: blur(40px);
@@ -38,7 +38,7 @@ export const Blob = styled(Box)`
   }
 `;
 
-export const FakeBlob = styled(Box)`
+export const FakeBlob = styled(AbsoluteBox)`
   visibility: hidden;
 `;
 

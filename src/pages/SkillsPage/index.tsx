@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import skillsData from '../../data/skillsData';
 import { SkillsData } from '../../types/index';
 import Toggler from '../../components/Toggler';
+import Carousel from '../../components/Carousel';
+import { ROUTE_PROJECTS } from '../../constants';
 import background from '../../assets/background.svg';
 
+import { Box, List, ListItem } from '../../ui';
 import { Background, StyledLink } from '../HomePage/styled';
-import { SkillList, SkillListItem, SkillsSection, TitleH2 } from './styled';
-import { Box } from '../../ui';
-import { ROUTE_PROJECTS } from '../../constants';
-import Carousel from '../../components/Carousel';
+import { SkillsSection, TitleH2 } from './styled';
 
 const SkillsPage = () => {
   const [isCarousel, setIsCarousel] = useState(true);
@@ -40,19 +40,19 @@ const SkillsPage = () => {
       {isCarousel ? (
         <Carousel data={skillsData as SkillsData} />
       ) : (
-        <SkillList>
+        <List>
           {Object.keys(skillsData).map((category) => (
             <div key={category}>
               {(skillsData as SkillsData)[category as keyof SkillsData].map(
                 (skill) => (
-                  <SkillListItem key={skill.id}>
+                  <ListItem key={skill.id}>
                     {skill.displayName}
-                  </SkillListItem>
+                  </ListItem>
                 )
               )}
             </div>
           ))}
-        </SkillList>
+        </List>
       )}
 
       <StyledLink to={ROUTE_PROJECTS}>My projects &#10174;</StyledLink>
