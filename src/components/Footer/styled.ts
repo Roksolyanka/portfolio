@@ -40,7 +40,7 @@ export const Creator = styled.a`
     width: 100%;
   }
 
-  &: hover {
+  &:hover {
     color: ${({ theme }) => theme.hoverColor};
   }
 `;

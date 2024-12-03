@@ -35,14 +35,12 @@ const routes: RouteConfig[] = [
   { path: ROUTE_NOT_FOUND, element: <NotFound /> },
 ];
 
-const RoutesList = () => {
-  return (
-    <Routes>
-      {routes.map((route, index) => (
-        <Route key={index} path={route.path} element={route.element} />
-      ))}
-    </Routes>
-  );
-};
+const RoutesList = () => (
+  <Routes>
+    {routes.map((route, index) => (
+      <Route key={index} path={route.path} element={route.element} />
+    ))}
+  </Routes>
+);
 
 export default RoutesList;

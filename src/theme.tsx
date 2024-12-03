@@ -25,6 +25,7 @@ export interface Theme {
   boxShadowNav?: string;
   hoverColor?: string;
   accentColor?: string;
+  backdrop?: string;
 }
 
 const browns = [
@@ -100,9 +101,15 @@ const gradient = [
   'linear-gradient(140deg, rgba(255,255,255,1) 47%, rgba(64,159,17,1) 100%)',
   'linear-gradient(140deg, rgba(0,0,0,1) 50%, rgba(64,159,17,1) 100%)',
   'linear-gradient(to right, #141f0f, #050c02)',
+  'radial-gradient(circle, rgba(242,253,232,1) 30%, rgba(64,159,17,1) 100%)',
+  'radial-gradient(circle, rgba(64,159,17,0.6) 30%, rgba(16,45,6,0.8) 100%)',
 ];
 
-const backdropColor = ['rgba(46, 47, 66, 0.4)'];
+const backdropColor = [
+  'rgba(46, 47, 66, 0.4)',
+  'rgba(156, 238, 105, 0.5)',
+  'rgba(51,121,18,0.5)',
+];
 
 const theme: Theme = {
   space: [0, 4, 8, 16, 20, 30, 32, 64, 128, 256, 512],
@@ -135,6 +142,7 @@ export const darkTheme: Theme = {
   boxShadowNav: theme.colors.boxShadow[1],
   hoverColor: theme.colors.green[5],
   accentColor: theme.colors.green[3],
+  backdrop: theme.colors.gradient[5],
 };
 
 export const lightTheme: Theme = {
@@ -144,6 +152,7 @@ export const lightTheme: Theme = {
   boxShadowNav: theme.colors.boxShadow[0],
   hoverColor: theme.colors.green[8],
   accentColor: theme.colors.green[7],
+  backdrop: theme.colors.gradient[6],
 };
 
 export default theme;
