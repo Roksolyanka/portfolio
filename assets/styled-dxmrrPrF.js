@@ -1,11 +1,11 @@
-import{d as t,I as i,L as e}from"./index-CASmeT5j.js";const n="/portfolio/assets/background-DxiBAvkg.svg",s=t.section`
+import{d as t,f as i}from"./index-CmBrs-mE.js";const a="/portfolio/assets/background-DxiBAvkg.svg",n=t.section`
   display: flex;
   align-items: center;
   position: relative;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-`,r=t.img`
+`,s=t.img`
   position: absolute;
   top: -100px;
   z-index: -10;
@@ -15,14 +15,10 @@ import{d as t,I as i,L as e}from"./index-CASmeT5j.js";const n="/portfolio/assets
   max-height: 100%;
   height: 100%;
 
-  @media (min-width: ${({theme:o})=>o.breakpoints[2]}) {
-    width: 100%;
-  }
-
   @media (min-width: ${({theme:o})=>o.breakpoints[3]}) {
     width: 1440px;
   }
-`,l=t.h1`
+`,r=t.h1`
   text-align: center;
   font-family: 'EB Garamond', serif;
   font-weight: 700;
@@ -36,9 +32,9 @@ import{d as t,I as i,L as e}from"./index-CASmeT5j.js";const n="/portfolio/assets
   @media (min-width: ${({theme:o})=>o.breakpoints[2]}) {
     font-size: 30px;
   }
-`,c=t.span`
+`,l=t.span`
   color: ${({theme:o})=>o.colors.orange[5]};
-`,d=t.a`
+`,c=t.a`
   .social-icon {
     fill: ${({theme:o})=>o.textColor};
   }
@@ -66,9 +62,7 @@ import{d as t,I as i,L as e}from"./index-CASmeT5j.js";const n="/portfolio/assets
   @media (min-width: ${({theme:o})=>o.breakpoints[2]}) {
     font-size: 24px;
   }
-`;t(i)`
-  fill: ${({theme:o})=>o.textColor};
-`;const f=t(e)`
+`;const f=t(i)`
   font-family: 'EB Garamond', serif;
   font-size: 20px;
   font-weight: bold;
@@ -102,4 +96,4 @@ import{d as t,I as i,L as e}from"./index-CASmeT5j.js";const n="/portfolio/assets
   &:not(:hover) {
     transition: all 0.6s ease;
   }
-`;export{r as B,s as H,d as S,l as T,c as a,n as b,f as c};
+`;export{s as B,n as H,c as S,r as T,l as a,a as b,f as c};
