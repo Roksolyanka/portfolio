@@ -18,8 +18,11 @@ interface TogglerProps {
   setTogglePosition: (position: boolean) => void;
   handleDownload?: () => void;
   onToggle?: () => void;
-  cvHref: string;
-  coverLetterHref: string;
+  cvHref?: string;
+  coverLetterHref?: string;
+  labelFirst?: string;
+  labelSecond?: string;
+  iconName: string;
 }
 
 const Toggler: React.FC<TogglerProps> = ({
@@ -29,47 +32,48 @@ const Toggler: React.FC<TogglerProps> = ({
   onToggle,
   cvHref,
   coverLetterHref,
-}) => {
-  return (
-    <SwitchFull>
-      <SwitchInner>
-        <SwitchLabel>CV</SwitchLabel>
-        <SwitchOuter>
-          <SwitchButtonFirst
-            href={cvHref}
-            download={personalData.cvName}
-            onClick={() => {
-              setTogglePosition(true);
-              if (onToggle) onToggle();
-            }}
+  labelFirst,
+  labelSecond,
+  iconName,
+}) => (
+  <SwitchFull>
+    <SwitchInner>
+      <SwitchLabel>{labelFirst}</SwitchLabel>
+      <SwitchOuter>
+        <SwitchButtonFirst
+          href={cvHref}
+          download={personalData.cvName}
+          onClick={() => {
+            setTogglePosition(true);
+            if (onToggle) onToggle();
+          }}
+        />
+        <SwitchToggle
+          onClick={() => {
+            if (onToggle) onToggle();
+            if (handleDownload) handleDownload();
+          }}
+          togglePosition={togglePosition}
+        >
+          <Icon
+            name={iconName}
+            width='24px'
+            height='24px'
+            fill={theme.colors.orange[1]}
           />
-          <SwitchToggle
-            onClick={() => {
-              if (onToggle) onToggle();
-              if (handleDownload) handleDownload();
-            }}
-            togglePosition={togglePosition}
-          >
-            <Icon
-              name='icon-download'
-              width='24px'
-              height='24px'
-              fill={theme.colors.orange[1]}
-            />
-          </SwitchToggle>
-          <SwitchButtonSecond
-            href={coverLetterHref}
-            download={personalData.coverLetterName}
-            onClick={() => {
-              setTogglePosition(false);
-              if (onToggle) onToggle();
-            }}
-          />
-        </SwitchOuter>
-        <SwitchLabel>Cover Letter</SwitchLabel>
-      </SwitchInner>
-    </SwitchFull>
-  );
-};
+        </SwitchToggle>
+        <SwitchButtonSecond
+          href={coverLetterHref}
+          download={personalData.coverLetterName}
+          onClick={() => {
+            setTogglePosition(false);
+            if (onToggle) onToggle();
+          }}
+        />
+      </SwitchOuter>
+      <SwitchLabel>{labelSecond}</SwitchLabel>
+    </SwitchInner>
+  </SwitchFull>
+);
 
 export default Toggler;

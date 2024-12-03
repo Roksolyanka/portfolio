@@ -35,7 +35,7 @@ const HomePage = () => {
   };
 
   return (
-    <HomeSection>
+    <HomeSection aria-label='hero section'>
       <Background
         alt='Hero'
         loading='lazy'
@@ -98,6 +98,9 @@ const HomePage = () => {
             handleDownload={handleDownload}
             cvHref={personalData.cv}
             coverLetterHref={personalData.coverLetter}
+            labelFirst='CV'
+            labelSecond='COVER LETTER'
+            iconName='icon-download'
           />
           <StyledLink to={ROUTE_ABOUT}>About me &#10174;</StyledLink>
         </FlexBox>

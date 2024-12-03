@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Icon } from '../../components/Icon';
 
 export const HomeSection = styled.section`
   display: flex;
@@ -20,10 +19,6 @@ export const Background = styled.img`
   width: 100%;
   max-height: 100%;
   height: 100%;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
-    width: 100%;
-  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints[3]}) {
     width: 1440px;
@@ -80,10 +75,6 @@ export const TextDownload = styled.span`
   @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     font-size: 24px;
   }
-`;
-
-export const IconPDF = styled(Icon)`
-  fill: ${({ theme }) => theme.textColor};
 `;
 
 export const StyledLink = styled(Link)`
