@@ -1,10 +1,15 @@
 import { SkillItem } from '../interfaces';
 
-export type SkillsData = {
-  frontend: SkillItem[];
-  backend: SkillItem[];
-  tools: SkillItem[];
-  style: SkillItem[];
-  mobile: SkillItem[];
-  agile: SkillItem[];
+export type SkillCategory = {
+  title: string;
+  skills: SkillItem[];
+};
+
+export type SkillsType = {
+  frontend: SkillCategory;
+  backend: SkillCategory;
+  tools: SkillCategory;
+  style: SkillCategory;
+  mobile: SkillCategory;
+  agile: SkillCategory;
 };

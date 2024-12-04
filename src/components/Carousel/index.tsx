@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 
-import { SkillsData } from '../../types';
 import SkillCards from './SkillCards';
+import { SkillsType } from '../../types';
 
 import {
   CarouselInner,
@@ -9,13 +9,13 @@ import {
 } from './styled';
 
 interface CarouselProps {
-  data: SkillsData;
+  data: SkillsType;
 }
 
 const Carousel: React.FC<CarouselProps> = ({ data }) => {
 const skills = useMemo(() => {
-  return Object.keys(data).flatMap((category) =>
-    data[category as keyof SkillsData].map((skill, index) => ({
+  return Object.entries(data).flatMap(([category, { skills }]) =>
+    skills.map((skill, index) => ({
       id: `${category}-${index + 1}`,
       name: skill.name,
       displayName: skill.displayName,

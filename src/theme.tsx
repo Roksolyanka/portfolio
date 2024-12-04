@@ -24,6 +24,7 @@ export interface Theme {
   textColor?: string;
   boxShadowNav?: string;
   hoverColor?: string;
+  hoverColorReverse?: string;
   accentColor?: string;
   backdrop?: string;
 }
@@ -109,6 +110,7 @@ const backdropColor = [
   'rgba(46, 47, 66, 0.4)',
   'rgba(156, 238, 105, 0.5)',
   'rgba(51,121,18,0.5)',
+  'rgba(0,0,0,0)',
 ];
 
 const theme: Theme = {
@@ -141,6 +143,7 @@ export const darkTheme: Theme = {
   textColor: theme.colors.green[0],
   boxShadowNav: theme.colors.boxShadow[1],
   hoverColor: theme.colors.green[5],
+  hoverColorReverse: theme.colors.green[10],
   accentColor: theme.colors.green[3],
   backdrop: theme.colors.gradient[5],
 };
@@ -151,6 +154,7 @@ export const lightTheme: Theme = {
   textColor: theme.colors.green[10],
   boxShadowNav: theme.colors.boxShadow[0],
   hoverColor: theme.colors.green[8],
+  hoverColorReverse: theme.colors.green[0],
   accentColor: theme.colors.green[7],
   backdrop: theme.colors.gradient[6],
 };

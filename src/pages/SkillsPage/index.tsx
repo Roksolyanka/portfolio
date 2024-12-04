@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 
 import skillsData from '../../data/skillsData';
-import { SkillsData } from '../../types/index';
+import { SkillsType } from '../../types';
 import Toggler from '../../components/Toggler';
 import Carousel from '../../components/Carousel';
 import { ROUTE_PROJECTS } from '../../constants';
 import background from '../../assets/background.svg';
 
-import { Box, List, ListItem } from '../../ui';
+import { Box } from '../../ui';
 import { Background, StyledLink } from '../HomePage/styled';
 import { SkillsSection, TitleH2 } from './styled';
+import Accordeon from '../../components/Accordeon';
 
 const SkillsPage = () => {
   const [isCarousel, setIsCarousel] = useState(true);
 
   return (
-    <SkillsSection aria-label='skills section'>
+    <SkillsSection aria-label='skills section' isAccordeon={!isCarousel}>
       <Background
         alt='Hero'
         loading='lazy'
@@ -24,7 +25,7 @@ const SkillsPage = () => {
         decoding='async'
         src={background}
       />
-      <Box padding={[0, 0, '24px 0']}>
+      <Box padding={[0, 0, '24px 0']} width='100%'>
         <TitleH2>
           I turn these skills into beautiful web projects
           <Toggler
@@ -38,21 +39,9 @@ const SkillsPage = () => {
       </Box>
 
       {isCarousel ? (
-        <Carousel data={skillsData as SkillsData} />
+        <Carousel data={skillsData as SkillsType} />
       ) : (
-        <List>
-          {Object.keys(skillsData).map((category) => (
-            <div key={category}>
-              {(skillsData as SkillsData)[category as keyof SkillsData].map(
-                (skill) => (
-                  <ListItem key={skill.id}>
-                    {skill.displayName}
-                  </ListItem>
-                )
-              )}
-            </div>
-          ))}
-        </List>
+        <Accordeon data={skillsData as SkillsType} />
       )}
 
       <StyledLink to={ROUTE_PROJECTS}>My projects &#10174;</StyledLink>
