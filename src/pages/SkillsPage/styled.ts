@@ -1,6 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-export const SkillsSection = styled.section`
+export const anime = keyframes`
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
+export const SkillsSection = styled('section').withConfig({
+  shouldForwardProp: (prop) => prop !== 'isAccordeon',
+})<{ isAccordeon?: boolean }>`
   display: flex;
   gap: 20px;
   position: relative;
@@ -11,6 +20,8 @@ export const SkillsSection = styled.section`
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
+  flex-direction: ${({ isAccordeon }) => (isAccordeon ? 'column' : 'row')};
+  align-content: ${({ isAccordeon }) => (isAccordeon ? 'center' : 'normal')};
 
   @media (min-width: ${({ theme }) => theme.breakpoints[3]}) {
     gap: 30px;

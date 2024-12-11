@@ -24,7 +24,7 @@ export const PersonalPhoto = styled.img`
     transition: all 0.8s ease;
   }
 
-   &:not(:hover) {
+  &:not(:hover) {
     transform: scale(1);
     filter: grayscale(60%);
     transition: all 0.8s ease;

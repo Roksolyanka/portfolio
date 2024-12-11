@@ -1,12 +1,15 @@
 import React from 'react';
 
 import { Icon } from '../../Icon';
-import { SkillItem } from '../../../interfaces';
 
 import { Blob, FakeBlob, SkillName, StyledFlexBox, Wrapper } from './styled';
 
 interface SkillCardsProps {
-  skills: SkillItem[];
+  skills: {
+    id: string;
+    iconName: string;
+    displayName: string;
+  }[];
   isHidden?: boolean;
 }
 
@@ -37,7 +40,7 @@ const SkillCards: React.FC<SkillCardsProps> = ({
           zIndex='1'
         >
           <Icon
-            name={skill.name}
+            name={skill.iconName}
             width='50px'
             height='50px'
             fill='currentColor'
