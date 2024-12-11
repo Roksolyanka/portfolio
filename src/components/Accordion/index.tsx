@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
 
 import { SkillsType } from '../../types';
+import { SkillItem } from '../../interfaces';
 
-import { AccordeonButton, AccordeonWrapper, Content } from './styled';
+import { AccordionButton, AccordionWrapper, Content } from './styled';
 import { Box } from '../../ui';
 import theme from '../../theme';
 
-interface AccordeonProps {
+interface AccordionProps {
   data: SkillsType;
+  groupByCategory: (
+    skills: SkillsType
+  ) => Record<string, { title: string; skills: SkillItem[] }>;
 }
 
-const Accordeon: React.FC<AccordeonProps> = ({ data }) => {
+const Accordion: React.FC<AccordionProps> = ({ data, groupByCategory }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const toggleAccordeon = (index: number) => {
+  const groupedData = groupByCategory(data);
+  
+  const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
-    <AccordeonWrapper width='100%' maxWidth='800px' margin='0 auto' opacity='0'>
-      {Object.entries(data).map(([key, { title, skills }], index) => (
+    <AccordionWrapper width='100%' maxWidth='800px' margin='0 auto' opacity='0'>
+      {Object.entries(groupedData).map(([key, { title, skills }], index) => (
         <Box
           key={key}
           border={
@@ -28,8 +33,8 @@ const Accordeon: React.FC<AccordeonProps> = ({ data }) => {
               : `0 0 1px 0 solid ${theme.accentColor}`
           }
         >
-          <AccordeonButton
-            onClick={() => toggleAccordeon(index)}
+          <AccordionButton
+            onClick={() => toggleAccordion(index)}
             className={activeIndex === index ? 'active' : ''}
             fontFamily="'EB Garamond', serif"
             fontSize={['20px', '20px', '22px']}
@@ -43,7 +48,7 @@ const Accordeon: React.FC<AccordeonProps> = ({ data }) => {
           >
             <span>{title}</span>
             <span>&#9662;</span>
-          </AccordeonButton>
+          </AccordionButton>
           <Content
             ref={(el) => {
               if (el && activeIndex === index) {
@@ -53,24 +58,15 @@ const Accordeon: React.FC<AccordeonProps> = ({ data }) => {
               }
             }}
             aria-hidden={activeIndex !== index}
-            gridTemplateColumns={['1fr 1fr', '1fr 1fr', '1fr 1fr 1fr']}
-            alignItems='center'
-            fontFamily="'EB Garamond', serif"
-            fontSize={['14px', '14px', '16px', '18px']}
-            fontWeight='600'
-            maxHeight='0'
-            overflow='hidden'
-            padding={[0, 0, '0 10px']}
-            background={theme.colors.backdropColor[3]}
           >
-            {skills.map((item, i) => (
-              <div key={i}>{item.displayName}</div>
+            {skills.map((item) => (
+              <div key={item.displayName}>{item.displayName}</div>
             ))}
           </Content>
         </Box>
       ))}
-    </AccordeonWrapper>
+    </AccordionWrapper>
   );
 };
 
-export default Accordeon;
+export default Accordion;

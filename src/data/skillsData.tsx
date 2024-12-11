@@ -1,70 +1,220 @@
-const skillsData = {
-  frontend: {
+const skillsData = [
+  {
+    iconName: 'icon-html',
+    displayName: 'HTML',
     title: 'Frontend Development',
-    skills: [
-      { name: 'icon-html', displayName: 'HTML' },
-      { name: 'icon-javascript', displayName: 'JavaScript' },
-      { name: 'icon-react', displayName: 'React' },
-      { name: 'icon-redux', displayName: 'Redux' },
-      { name: 'icon-typescript', displayName: 'TypeScript' },
-      { name: 'icon-ajax', displayName: 'Ajax' },
-      { name: 'icon-formik', displayName: 'Formik' },
-    ],
+    category: 'frontend',
   },
-  backend: {
+  {
+    iconName: 'icon-javascript',
+    displayName: 'JavaScript',
+    title: 'Frontend Development',
+    category: 'frontend',
+  },
+  {
+    iconName: 'icon-react',
+    displayName: 'React',
+    title: 'Frontend Development',
+    category: 'frontend',
+  },
+  {
+    iconName: 'icon-redux',
+    displayName: 'Redux',
+    title: 'Frontend Development',
+    category: 'frontend',
+  },
+  {
+    iconName: 'icon-typescript',
+    displayName: 'TypeScript',
+    title: 'Frontend Development',
+    category: 'frontend',
+  },
+  {
+    iconName: 'icon-ajax',
+    displayName: 'Ajax',
+    title: 'Frontend Development',
+    category: 'frontend',
+  },
+  {
+    iconName: 'icon-formik',
+    displayName: 'Formik',
+    title: 'Frontend Development',
+    category: 'frontend',
+  },
+  {
+    iconName: 'icon-node-js',
+    displayName: 'Node.js',
     title: 'Backend Development',
-    skills: [
-      { name: 'icon-node-js', displayName: 'Node.js' },
-      { name: 'icon-next-js', displayName: 'Next.js' },
-      { name: 'icon-mongodb', displayName: 'MongoDB' },
-      { name: 'icon-mongoose', displayName: 'Mongoose' },
-      { name: 'icon-firebase', displayName: 'Firebase' },
-      { name: 'icon-firestore', displayName: 'Firestore' },
-      { name: 'icon-axios', displayName: 'Axios' },
-      { name: 'icon-rest-api', displayName: 'Rest API' },
-    ],
+    category: 'backend',
   },
-  tools: {
+  {
+    iconName: 'icon-next-js',
+    displayName: 'Next.js',
+    title: 'Backend Development',
+    category: 'backend',
+  },
+  {
+    iconName: 'icon-mongodb',
+    displayName: 'MongoDB',
+    title: 'Backend Development',
+    category: 'backend',
+  },
+  {
+    iconName: 'icon-mongoose',
+    displayName: 'Mongoose',
+    title: 'Backend Development',
+    category: 'backend',
+  },
+  {
+    iconName: 'icon-firebase',
+    displayName: 'Firebase',
+    title: 'Backend Development',
+    category: 'backend',
+  },
+  {
+    iconName: 'icon-firestore',
+    displayName: 'Firestore',
+    title: 'Backend Development',
+    category: 'backend',
+  },
+  {
+    iconName: 'icon-axios',
+    displayName: 'Axios',
+    title: 'Backend Development',
+    category: 'backend',
+  },
+  {
+    iconName: 'icon-rest-api',
+    displayName: 'Rest API',
+    title: 'Backend Development',
+    category: 'backend',
+  },
+  {
+    iconName: 'icon-vscode',
+    displayName: 'VSCode',
     title: 'Development Tools',
-    skills: [
-      { name: 'icon-vscode', displayName: 'VSCode' },
-      { name: 'icon-git', displayName: 'Git' },
-      { name: 'icon-github', displayName: 'Github' },
-      { name: 'icon-postman', displayName: 'Postman' },
-      { name: 'icon-npm', displayName: 'NPM' },
-      { name: 'icon-yarn', displayName: 'YARN' },
-      { name: 'icon-webpack', displayName: 'Webpack' },
-      { name: 'icon-vite', displayName: 'Vite' },
-      { name: 'icon-parcel', displayName: 'Parcel' },
-      { name: 'icon-figma', displayName: 'Figma' },
-      { name: 'icon-ui-ux', displayName: 'UI/UX' },
-      { name: 'icon-trello', displayName: 'Trello' },
-    ],
+    category: 'tools',
   },
-  style: {
+  {
+    iconName: 'icon-git',
+    displayName: 'Git',
+    title: 'Development Tools',
+    category: 'tools',
+  },
+  {
+    iconName: 'icon-github',
+    displayName: 'Github',
+    title: 'Development Tools',
+    category: 'tools',
+  },
+  {
+    iconName: 'icon-postman',
+    displayName: 'Postman',
+    title: 'Development Tools',
+    category: 'tools',
+  },
+  {
+    iconName: 'icon-npm',
+    displayName: 'NPM',
+    title: 'Development Tools',
+    category: 'tools',
+  },
+  {
+    iconName: 'icon-yarn',
+    displayName: 'YARN',
+    title: 'Development Tools',
+    category: 'tools',
+  },
+  {
+    iconName: 'icon-webpack',
+    displayName: 'Webpack',
+    title: 'Development Tools',
+    category: 'tools',
+  },
+  {
+    iconName: 'icon-vite',
+    displayName: 'Vite',
+    title: 'Development Tools',
+    category: 'tools',
+  },
+  {
+    iconName: 'icon-parcel',
+    displayName: 'Parcel',
+    title: 'Development Tools',
+    category: 'tools',
+  },
+  {
+    iconName: 'icon-figma',
+    displayName: 'Figma',
+    title: 'Development Tools',
+    category: 'tools',
+  },
+  {
+    iconName: 'icon-ui-ux',
+    displayName: 'UI/UX',
+    title: 'Development Tools',
+    category: 'tools',
+  },
+  {
+    iconName: 'icon-trello',
+    displayName: 'Trello',
+    title: 'Development Tools',
+    category: 'tools',
+  },
+  {
+    iconName: 'icon-css',
+    displayName: 'CSS',
     title: 'Styling & Design',
-    skills: [
-      { name: 'icon-css', displayName: 'CSS' },
-      { name: 'icon-styled-components', displayName: 'Styled-components' },
-      { name: 'icon-bootstrap', displayName: 'Bootstrap' },
-    ],
+    category: 'style',
   },
-  mobile: {
+  {
+    iconName: 'icon-styled-components',
+    displayName: 'Styled-components',
+    title: 'Styling & Design',
+    category: 'style',
+  },
+  {
+    iconName: 'icon-bootstrap',
+    displayName: 'Bootstrap',
+    title: 'Styling & Design',
+    category: 'style',
+  },
+  {
+    iconName: 'icon-react-native',
+    displayName: 'React Native',
     title: 'Mobile Development',
-    skills: [
-      { name: 'icon-react-native', displayName: 'React Native' },
-      { name: 'icon-expo', displayName: 'Expo' },
-      { name: 'icon-android-studio', displayName: 'Android Studio' },
-    ],
+    category: 'mobile',
   },
-  agile: {
+  {
+    iconName: 'icon-expo',
+    displayName: 'Expo',
+    title: 'Mobile Development',
+    category: 'mobile',
+  },
+  {
+    iconName: 'icon-android-studio',
+    displayName: 'Android Studio',
+    title: 'Mobile Development',
+    category: 'mobile',
+  },
+  {
+    iconName: 'icon-agile',
+    displayName: 'Agile',
     title: 'Agile Methodologies',
-    skills: [
-      { name: 'icon-agile', displayName: 'Agile' },
-      { name: 'icon-scrum', displayName: 'Scrum' },
-      { name: 'icon-kanban', displayName: 'Kanban' },
-    ],
+    category: 'agile',
   },
-};
+  {
+    iconName: 'icon-scrum',
+    displayName: 'Scrum',
+    title: 'Agile Methodologies',
+    category: 'agile',
+  },
+  {
+    iconName: 'icon-kanban',
+    displayName: 'Kanban',
+    title: 'Agile Methodologies',
+    category: 'agile',
+  },
+];
 
 export default skillsData;
