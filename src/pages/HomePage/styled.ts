@@ -17,8 +17,8 @@ export const Background = styled.img`
   color: transparent;
   max-width: 100%;
   width: 100%;
-  max-height: 100%;
-  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 
   @media (min-width: ${({ theme }) => theme.breakpoints[3]}) {
     width: 1440px;

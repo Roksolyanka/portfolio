@@ -1,35 +1,33 @@
 import React, { useEffect, useMemo } from 'react';
 
-import { SkillsData } from '../../types';
 import SkillCards from './SkillCards';
+import { SkillsType } from '../../types';
+import { getElement } from '../../helpers';
 
-import {
-  CarouselInner,
-  Group,
-} from './styled';
+import { CarouselInner, Group } from './styled';
 
 interface CarouselProps {
-  data: SkillsData;
+  data: SkillsType;
 }
 
 const Carousel: React.FC<CarouselProps> = ({ data }) => {
-const skills = useMemo(() => {
-  return Object.keys(data).flatMap((category) =>
-    data[category as keyof SkillsData].map((skill, index) => ({
-      id: `${category}-${index + 1}`,
-      name: skill.name,
-      displayName: skill.displayName,
-    }))
+  const skills = useMemo(
+    () =>
+      data.map((skill, index) => ({
+        id: `${skill.category}-${index + 1}`,
+        iconName: skill.iconName,
+        displayName: skill.displayName,
+      })),
+    [data]
   );
-}, [data]);
 
   useEffect(() => {
     const cards = document.querySelectorAll('.WrapperIcon');
 
     const handleMouseMove = (ev: MouseEvent) => {
       cards.forEach((card) => {
-        const blob = card.querySelector<HTMLElement>('[data-blob]');
-        const fakeBlob = card.querySelector<HTMLElement>('[data-fakeblob]');
+        const blob = getElement<HTMLElement>(card, '[data-blob]');
+        const fakeBlob = getElement<HTMLElement>(card, '[data-fakeblob]');
 
         if (blob && fakeBlob) {
           const rec = fakeBlob.getBoundingClientRect();
