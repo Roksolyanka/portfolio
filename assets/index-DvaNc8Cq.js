@@ -1,4 +1,4 @@
-import{r as t,d as x,j as o,B as e,t as r,F as h,p as s,R as u,G as y,I as j,a as w}from"./index-CmBrs-mE.js";import{T as b}from"./index-DW2KbwQK.js";import{H as f,B as k,b as v,T as C,a as S,S as g,c as I}from"./styled-dxmrrPrF.js";const T=c=>{const[i,a]=t.useState(-1),[n,d]=t.useState(!1);return t.useEffect(()=>{const p=setInterval(()=>{i<c.length-1?a(m=>m+1):d(!0)},300);return()=>clearInterval(p)},[i,c.length]),{activeIndex:i,animationComplete:n}},L=x.span`
+import{r as t,d as x,j as o,B as e,t as r,F as h,p as s,R as u,G as y,I as j,a as w}from"./index-CWNn5md1.js";import{T as b}from"./index-CD6iPL5X.js";import{H as f,B as k,b as v,T as C,a as S,S as g,c as I}from"./styled-Cn9wTXb8.js";const T=c=>{const[i,a]=t.useState(-1),[n,d]=t.useState(!1);return t.useEffect(()=>{const p=setInterval(()=>{i<c.length-1?a(m=>m+1):d(!0)},300);return()=>clearInterval(p)},[i,c.length]),{activeIndex:i,animationComplete:n}},L=x.span`
   color: ${({theme:c})=>c.accentColor};
   font-size: 30px;
 

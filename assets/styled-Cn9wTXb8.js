@@ -1,4 +1,4 @@
-import{d as t,f as i}from"./index-CmBrs-mE.js";const a="/portfolio/assets/background-DxiBAvkg.svg",n=t.section`
+import{d as t,L as i}from"./index-CWNn5md1.js";const n="/portfolio/assets/background-DxiBAvkg.svg",a=t.section`
   display: flex;
   align-items: center;
   position: relative;
@@ -12,8 +12,8 @@ import{d as t,f as i}from"./index-CmBrs-mE.js";const a="/portfolio/assets/backgr
   color: transparent;
   max-width: 100%;
   width: 100%;
-  max-height: 100%;
-  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 
   @media (min-width: ${({theme:o})=>o.breakpoints[3]}) {
     width: 1440px;
@@ -96,4 +96,4 @@ import{d as t,f as i}from"./index-CmBrs-mE.js";const a="/portfolio/assets/backgr
   &:not(:hover) {
     transition: all 0.6s ease;
   }
-`;export{s as B,n as H,c as S,r as T,l as a,a as b,f as c};
+`;export{s as B,a as H,c as S,r as T,l as a,n as b,f as c};

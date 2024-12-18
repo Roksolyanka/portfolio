@@ -1,4 +1,4 @@
-import{d as s,j as t,G as r,p as i,F as l,R as o,b as d}from"./index-CmBrs-mE.js";import{B as c,b as h,c as p}from"./styled-dxmrrPrF.js";const m=s.section`
+import{d as s,j as t,G as r,p as i,F as l,R as o,b as d}from"./index-CWNn5md1.js";import{B as c,b as h,c as p}from"./styled-Cn9wTXb8.js";const m=s.section`
   display: flex;
   align-items: center;
   position: relative;
@@ -20,7 +20,7 @@ import{d as s,j as t,G as r,p as i,F as l,R as o,b as d}from"./index-CmBrs-mE.js
     transition: all 0.8s ease;
   }
 
-   &:not(:hover) {
+  &:not(:hover) {
     transform: scale(1);
     filter: grayscale(60%);
     transition: all 0.8s ease;
