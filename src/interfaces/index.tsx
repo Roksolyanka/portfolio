@@ -1,5 +1,6 @@
 export interface SkillItem {
-  id: string;
-  name: string;
+  iconName: string;
   displayName: string;
+  title: string;
+  category: string;
 }
