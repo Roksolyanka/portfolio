@@ -1,4 +1,6 @@
-const skillsData = [
+import { SkillsType } from '../types';
+
+const skillsData: SkillsType = [
   {
     iconName: 'icon-html',
     displayName: 'HTML',

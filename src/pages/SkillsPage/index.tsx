@@ -23,20 +23,25 @@ const SkillsPage = () => {
     localStorage.setItem('isCarousel', JSON.stringify(isCarousel));
   }, [isCarousel]);
 
-   const groupSkillsByCategory = (skills: SkillsType) => {
-     return skills.reduce<
-       Record<string, { title: string; skills: SkillItem[] }>
-     >((acc, skill) => {
-       if (!acc[skill.category]) {
-         acc[skill.category] = {
-           title: skill.title,
-           skills: [],
-         };
-       }
-       acc[skill.category].skills.push(skill);
-       return acc;
-     }, {});
-   };
+  const groupSkillsByCategory = (skills: SkillsType) => {
+    const result = skills.reduce<
+      Record<
+        string,
+        {
+          title: string;
+          skills: SkillItem[];
+        }
+      >
+    >((acc, skill) => {
+      if (!acc[skill.category]) {
+        acc[skill.category] = { title: skill.title, skills: [] };
+      }
+      acc[skill.category].skills.push(skill);
+      return acc;
+    }, {});
+
+    return Object.entries(result);
+  };
 
   return (
     <SkillsSection aria-label='skills section' isAccordeon={!isCarousel}>
@@ -64,10 +69,7 @@ const SkillsPage = () => {
       {isCarousel ? (
         <Carousel data={skillsData as SkillsType} />
       ) : (
-        <Accordion
-          data={skillsData as SkillsType}
-          groupByCategory={groupSkillsByCategory}
-        />
+        <Accordion data={groupSkillsByCategory(skillsData as SkillsType)} />
       )}
 
       <StyledLink to={ROUTE_PROJECTS}>My projects &#10174;</StyledLink>
