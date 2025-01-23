@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { fadeIn } from '../../ui';
+
 export const AboutSection = styled.section`
   display: flex;
   align-items: center;
@@ -17,6 +19,7 @@ export const PersonalPhoto = styled.img`
   float: right;
   margin: 0 auto;
   cursor: pointer;
+   animation: ${fadeIn} 1s ease-out forwards;
 
   &:hover {
     filter: grayscale(0%);

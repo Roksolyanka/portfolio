@@ -9,8 +9,7 @@ import Accordion from '../../components/Accordion';
 import { ROUTE_PROJECTS } from '../../constants';
 import background from '../../assets/background.svg';
 
-import { Box } from '../../ui';
-import { Background, StyledLink } from '../HomePage/styled';
+import { Background, Box, StyledLink } from '../../ui';
 import { SkillsSection, TitleH2 } from './styled';
 
 const SkillsPage = () => {
