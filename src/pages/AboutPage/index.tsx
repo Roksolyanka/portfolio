@@ -4,8 +4,7 @@ import personalData from '../../data/personalData';
 import background from '../../assets/background.svg';
 
 import { AboutSection, PersonalPhoto, TextAccent, TextP } from './styled';
-import { Background, StyledLink } from '../HomePage/styled';
-import { FlexBox, GridColumns } from '../../ui';
+import { Background, FlexBox, GridColumns, StyledLink } from '../../ui';
 import { ROUTE_SKILLS } from '../../constants';
 
 const AboutPage = () => (

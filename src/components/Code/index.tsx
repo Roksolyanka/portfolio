@@ -4,10 +4,10 @@ import personalData from '../../data/personalData';
 
 import { Box, FlexBox } from '../../ui';
 import theme from '../../theme';
-import { SpanText, WrapperForCode } from './styled';
+import { CodeStyle, SpanText, WrapperForCode } from './styled';
 
 const Code = () => (
-  <Box
+  <CodeStyle
     position='relative'
     borderRadius='8px'
     backgroundImage={theme.colors.gradient[4]}
@@ -195,7 +195,7 @@ const Code = () => (
         </div>
       </code>
     </WrapperForCode>
-  </Box>
+  </CodeStyle>
 );
 
 export default Code;

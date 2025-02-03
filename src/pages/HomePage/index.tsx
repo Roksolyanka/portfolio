@@ -10,11 +10,9 @@ import { ROUTE_ABOUT } from '../../constants';
 import background from '../../assets/background.svg';
 
 import theme from '../../theme';
-import { FlexBox, GridColumns } from '../../ui';
+import { Background, FlexBox, GridColumns, StyledLink } from '../../ui';
 import {
-  Background,
   HomeSection,
-  StyledLink,
   StyledSocial,
   TextSpecialty,
   TitleH1,
@@ -64,7 +62,11 @@ const HomePage = () => {
             I'm a <TextSpecialty>{personalData.designation}</TextSpecialty>
           </TitleH1>
           <FlexBox justifyContent='center' gap='20px' margin='18px 0'>
-            <StyledSocial target='_blank' href={personalData.github}>
+            <StyledSocial
+              target='_blank'
+              href={personalData.github}
+              rel='noopener noreferrer'
+            >
               <Icon
                 name='icon-github'
                 width='30px'
@@ -73,7 +75,11 @@ const HomePage = () => {
                 className='social-icon'
               />
             </StyledSocial>
-            <StyledSocial target='_blank' href={personalData.linkedIn}>
+            <StyledSocial
+              target='_blank'
+              href={personalData.linkedIn}
+              rel='noopener noreferrer'
+            >
               <Icon
                 name='icon-linkedin-circle'
                 width='30px'
@@ -82,7 +88,11 @@ const HomePage = () => {
                 className='social-icon'
               />
             </StyledSocial>
-            <StyledSocial target='_blank' href={personalData.telegram}>
+            <StyledSocial
+              target='_blank'
+              href={personalData.telegram}
+              rel='noopener noreferrer'
+            >
               <Icon
                 name='icon-telegram'
                 width='30px'
