@@ -1,5 +1,6 @@
 import { HTMLProps } from 'react';
-import styled, { CSSProperties } from 'styled-components';
+import { Link } from 'react-router-dom';
+import styled, { CSSProperties, keyframes } from 'styled-components';
 import {
   alignItems,
   background,
@@ -255,23 +256,62 @@ export const FlexButton = styled(Button)`
   ${flex};
 `;
 
-// export const Button = styled.button<CustomStyledProps>`
-//   ${width};
-//   ${space};
-//   ${typography};
-
-//   :disabled,
-//   :hover {
-//   }
-
-//   :disabled {
-//   }
-// `;
-
-export const List = styled.ul`
-  list-style: none;
-  padding: 0;
-  width: 100%;
+export const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 `;
 
-export const ListItem = styled.li``;
+export const Background = styled.img`
+  position: absolute;
+  top: -100px;
+  z-index: -10;
+  color: transparent;
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  pointer-events: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints[3]}) {
+    width: 1440px;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.accentColor};
+  text-decoration: none;
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: ${({ theme }) => theme.hoverColor};
+    transition: all 0.6s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.hoverColor};
+    transition: color 0.6s ease, transform 0.6s ease;
+    transform: translateX(10px);
+  }
+
+  &:not(:hover) {
+    transition: all 0.6s ease;
+  }
+`;
