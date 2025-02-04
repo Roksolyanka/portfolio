@@ -1,24 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 
+import { IconProps } from '../../interfaces';
 import sprite from '../../assets/sprite.svg';
-import styled, { css, keyframes, useTheme } from 'styled-components';
 
-interface IconProps {
-  name: string;
-  width?: string;
-  height?: string;
-  fill?: string;
-  className?: string;
-}
+import { useTheme } from 'styled-components';
 
-interface AnimatedIconProps extends IconProps {
-  animName: ReturnType<typeof keyframes>;
-  duration: string;
-  timingFunction: string;
-  fillMode?: string;
-}
-
-export const Icon: React.FC<IconProps> = ({
+export const Icon: FC<IconProps> = ({
   name,
   width = '24px',
   height = '24px',
@@ -34,11 +21,3 @@ export const Icon: React.FC<IconProps> = ({
     </svg>
   );
 };
-
-export const AnimatedIcon = styled(Icon)<AnimatedIconProps>`
-  &.animate {
-    animation: ${({ animName, duration, timingFunction, fillMode }) => css`
-      ${animName} ${duration} ${timingFunction} ${fillMode || ''}
-    `};
-  }
-`;

@@ -91,7 +91,7 @@ const white = ['#ffffffff'];
 const boxShadow = [
   '13px 13px 24px 1px rgb(39,81,22)',
   '8px 5px 50px 2px rgb(44,96,20)',
-  '8px 5px 24px 1px rgba(54,73,114)',
+  '0 3px 6px rgba(51, 121, 18, 0.05), 0 8px 15px rgba(51, 121, 18, 0.1), 0 0 0 1px hsla(0, 0%, 100%, 0.1)',
   '13px 13px 24px 1px rgba(36,47,71)',
   '13px 13px 24px 1px rgba(46,32,28,1)',
 ];

@@ -1,14 +1,13 @@
 import React from 'react';
 
 import background from '../../assets/background.svg';
-import projectsData from '../../data/projectsData';
-
-import ProjectCard from '../../components/ProjectCard';
+import projectsData from '../../data/projects';
+import { ROUTE_ACHIEVEMENTS } from '../../constants';
 
 import { Background, StyledLink } from '../../ui';
-import { Main, ProjectsSection } from './styled';
+import { ProjectsSection } from './styled';
 import { TitleH2 } from '../SkillsPage/styled';
-import { ROUTE_ACHIEVEMENTS } from '../../constants';
+import Projects from '../../components/Projects';
 
 const ProjectsPage = () => (
   <ProjectsSection aria-label='about section'>
@@ -24,11 +23,7 @@ const ProjectsPage = () => (
       Here's a glimpse into some of the projects I've had the pleasure of
       working on:
     </TitleH2>
-    <Main>
-      {projectsData.map((project, index) => (
-        <ProjectCard key={index} project={project} index={index} />
-      ))}
-    </Main>
+    <Projects projects={projectsData} />
     <StyledLink to={ROUTE_ACHIEVEMENTS}>My achievements &#10174;</StyledLink>
   </ProjectsSection>
 );
