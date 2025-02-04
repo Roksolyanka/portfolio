@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
+import { Icon } from '../Icon';
+import personalData from '../../data/personal';
+import { TogglerProps } from '../../interfaces';
+
+import theme from '../../theme';
 import {
   SwitchButtonFirst,
   SwitchButtonSecond,
@@ -9,23 +14,8 @@ import {
   SwitchOuter,
   SwitchToggle,
 } from './styled';
-import { Icon } from '../Icon';
-import theme from '../../theme';
-import personalData from '../../data/personalData';
 
-interface TogglerProps {
-  togglePosition: boolean;
-  setTogglePosition: (position: boolean) => void;
-  handleDownload?: () => void;
-  onToggle?: () => void;
-  cvHref?: string;
-  coverLetterHref?: string;
-  labelFirst?: string;
-  labelSecond?: string;
-  iconName: string;
-}
-
-const Toggler: React.FC<TogglerProps> = ({
+const Toggler: FC<TogglerProps> = ({
   togglePosition,
   setTogglePosition,
   handleDownload,
@@ -45,12 +35,12 @@ const Toggler: React.FC<TogglerProps> = ({
           download={personalData.cvName}
           onClick={() => {
             setTogglePosition(true);
-            if (onToggle) onToggle();
+            onToggle?.();
           }}
         />
         <SwitchToggle
           onClick={() => {
-            if (onToggle) onToggle();
+            onToggle?.();
             if (handleDownload) handleDownload();
           }}
           togglePosition={togglePosition}
@@ -67,7 +57,7 @@ const Toggler: React.FC<TogglerProps> = ({
           download={personalData.coverLetterName}
           onClick={() => {
             setTogglePosition(false);
-            if (onToggle) onToggle();
+            onToggle?.();
           }}
         />
       </SwitchOuter>

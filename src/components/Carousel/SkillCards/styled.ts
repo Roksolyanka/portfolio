@@ -1,17 +1,9 @@
 import styled from 'styled-components';
 import { AbsoluteBox, Box, FlexBox } from '../../../ui';
 
-export const Wrapper = styled(Box)`
-  position: relative;
-  min-width: 120px;
-  border-radius: 8px;
-  padding: 3px;
-  overflow: hidden;
+export const HoveredBox = styled(Box)`
   z-index: 0;
-  background: ${({ theme }) => theme.colors.white[0]};
   scroll-snap-align: center;
-  box-shadow: 0 3px 6px rgba(51, 121, 18, 0.05),
-    0 8px 15px rgba(51, 121, 18, 0.1), 0 0 0 1px hsla(0, 0%, 100%, 0.1);
   transition: transform 0.8s ease, box-shadow 0.8s ease;
 
   &:hover {
@@ -25,14 +17,7 @@ export const Wrapper = styled(Box)`
   }
 `;
 
-export const StyledFlexBox = styled(FlexBox)`
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 5px;
-  height: 100%;
-  border-radius: 8px;
-  z-index: 1;
+export const HoveredFlexBox = styled(FlexBox)`
   pointer-events: none;
 
   &:hover {
@@ -41,14 +26,6 @@ export const StyledFlexBox = styled(FlexBox)`
 `;
 
 export const Blob = styled(AbsoluteBox)`
-  width: 100px;
-  height: 80%;
-  top: 100%;
-  border-radius: 50%;
-  opacity: 0;
-  z-index: -1;
-  left: calc(20% - 50px);
-  background: ${({ theme }) => theme.colors.green[4]};
   filter: blur(40px);
   transition: opacity 0.2s linear;
 
@@ -58,9 +35,6 @@ export const Blob = styled(AbsoluteBox)`
 `;
 
 export const FakeBlob = styled(AbsoluteBox)`
-  height: 100%;
-  border-radius: 50%;
-  z-index: -1;
   visibility: hidden;
 `;
 

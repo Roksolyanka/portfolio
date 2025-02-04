@@ -1,13 +1,10 @@
-import React, { useEffect, useRef } from 'react';
-import { SkillItem } from '../../../interfaces';
+import { FC, useEffect, useRef } from 'react';
+
+import { AccordionContentProps } from '../../../interfaces';
+
 import { Content } from './styled';
 
-interface AccordionContentProps {
-  isActive: boolean;
-  skills: SkillItem[];
-}
-
-const AccordionContent: React.FC<AccordionContentProps> = ({
+const AccordionContent: FC<AccordionContentProps> = ({
   isActive,
   skills,
 }) => {
@@ -23,8 +20,8 @@ const AccordionContent: React.FC<AccordionContentProps> = ({
 
   return (
     <Content ref={contentRef} aria-hidden={!isActive}>
-      {skills.map((item: SkillItem) => (
-        <div key={item.displayName}>{item.displayName}</div>
+      {skills.map(({ displayName }) => (
+        <div key={displayName}>{displayName}</div>
       ))}
     </Content>
   );

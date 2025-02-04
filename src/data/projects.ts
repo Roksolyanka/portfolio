@@ -29,6 +29,7 @@ const projectsData: ProjectsType = [
         ${goosetrack2x} 2x
       `,
     },
+    isTeamProject: true,
     description:
       'This website enables individuals to gain a comprehensive understanding of their schedules by displaying all their tasks, events, and appointments in an easy-to-navigate layout.',
     skills:
@@ -45,6 +46,7 @@ const projectsData: ProjectsType = [
         ${truscape2x} 2x
       `,
     },
+    isTeamProject: false,
     description:
       'A CRM-like web application aimed at optimizing the management of supplier information.',
     skills:
@@ -61,6 +63,7 @@ const projectsData: ProjectsType = [
         ${awesome2x} 2x
       `,
     },
+    isTeamProject: false,
     description:
       'This is a social network that allows users to take photos and share them through their profile.',
     skills:
@@ -77,6 +80,7 @@ const projectsData: ProjectsType = [
         ${phonebook2x} 2x
       `,
     },
+    isTeamProject: false,
     description: 'User-friendly digital platform for managing contacts.',
     skills:
       'HTML | CSS | styled-components | React.js | Redux.js | Parcel | Axios | REST API | Git/GitHub | VSCode',
@@ -92,6 +96,7 @@ const projectsData: ProjectsType = [
         ${monzamotorsports2x} 2x
       `,
     },
+    isTeamProject: false,
     description:
       'The website is a boutique-style dealership specializing in premium imports, offering an advanced online vehicle purchasing experience with integrated financing and contactless home delivery.',
     skills:
@@ -108,6 +113,7 @@ const projectsData: ProjectsType = [
         ${cinemania2x} 2x
       `,
     },
+    isTeamProject: true,
     description: 'This is a movie search website.',
     skills:
       'HTML | CSS | JavaScript | Parcel | Ajax | Axios | REST API | Trello | Git/GitHub | VSCode',
@@ -123,6 +129,7 @@ const projectsData: ProjectsType = [
         ${mimiho2x} 2x
       `,
     },
+    isTeamProject: true,
     description:
       'This is a website designed for the presentation and promotion of the hotel and restaurant business.',
     skills:
@@ -139,6 +146,7 @@ const projectsData: ProjectsType = [
         ${webstudio2x} 2x
       `,
     },
+    isTeamProject: false,
     description:
       'This site is designed to help you increase the flow of customers  and sales for your business with digital marketing and growth solutions.',
     skills: 'HTML | CSS | Git/GitHub | VSCode',
@@ -154,6 +162,7 @@ const projectsData: ProjectsType = [
         ${banderogus2x} 2x
       `,
     },
+    isTeamProject: false,
     description:
       'This is a humorous website created to entertain users with humorous content.',
     skills: 'Figma | HTML | CSS | VSCode',

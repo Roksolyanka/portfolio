@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
+import { AnimatedIcon } from '../AnimatedIcon';
 import { useTheme } from '../../hooks/useTheme';
 
 import theme from '../../theme';
 import { appear, ThemeTogglerButton } from './styled';
-import { AnimatedIcon } from '../Icon';
 
 const ThemeToggler = () => {
   const { isDarkTheme, toggleTheme } = useTheme();

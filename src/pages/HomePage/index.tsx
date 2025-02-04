@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import personalData from '../../data/personalData';
+import personalData from '../../data/personal';
 import NameLetters from '../../components/NameLetters';
 import { Icon } from '../../components/Icon';
 import Code from '../../components/Code';
@@ -11,12 +11,7 @@ import background from '../../assets/background.svg';
 
 import theme from '../../theme';
 import { Background, FlexBox, GridColumns, StyledLink } from '../../ui';
-import {
-  HomeSection,
-  StyledSocial,
-  TextSpecialty,
-  TitleH1,
-} from './styled';
+import { HomeSection, StyledSocial, TextSpecialty, TitleH1 } from './styled';
 
 const HomePage = () => {
   const [togglePosition, setTogglePosition] = useState(true);

@@ -1,9 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 
-interface ThemeContextProps {
-  isDarkTheme: boolean;
-  toggleTheme: () => void;
-}
+import { ThemeContextProps } from '../interfaces';
 
 export const ThemeContext = createContext<ThemeContextProps | undefined>(
   undefined

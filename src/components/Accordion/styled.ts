@@ -2,27 +2,15 @@ import styled from 'styled-components';
 import { anime } from '../../pages/SkillsPage/styled';
 import { Box, FlexButton } from '../../ui';
 
-export const AccordionWrapper = styled(Box)`
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  opacity: 0;
+export const AnimatedBox = styled(Box)`
   transform: scale(0.95);
   animation: ${anime} 0.5s ease-in-out forwards;
 `;
 
-export const AccordionButton = styled(FlexButton)`
+export const AccordionFlexButton = styled(FlexButton)`
   font-family: 'EB Garamond', serif;
-  font-weight: 700;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  border: none;
   cursor: pointer;
   transition: all 0.8s ease;
-  color: ${({ theme }) => theme.textColor};
-  background: ${({ theme }) => theme.colors.backdropColor[3]};
 
   &:hover {
     background: ${({ theme }) => theme.accentColor};

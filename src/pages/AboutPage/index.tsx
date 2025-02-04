@@ -1,6 +1,6 @@
 import React from 'react';
 
-import personalData from '../../data/personalData';
+import personalData from '../../data/personal';
 import background from '../../assets/background.svg';
 
 import { AboutSection, PersonalPhoto, TextAccent, TextP } from './styled';
