@@ -1,8 +1,8 @@
-import{d as e,j as i,p as s,I as f,t as g}from"./index-BpXZVs8y.js";const c=e.a`
+import{d as e,j as r,p as o,I as f,t as u}from"./index-B4WdNwWO.js";const c=e.a`
   cursor: pointer;
   width: 100%;
   height: 100%;
-`,u=e(c)``,w=e.div.withConfig({shouldForwardProp:t=>t!=="togglePosition"})`
+`,w=e(c)``,m=e.div.withConfig({shouldForwardProp:t=>t!=="togglePosition"})`
   transform: ${({togglePosition:t})=>t?"translateX(-35px)":"translateX(35px)"};
   transition: transform 0.3s ease;
   background-color: ${({theme:t})=>t.colors.orange[9]};
@@ -17,7 +17,7 @@ import{d as e,j as i,p as s,I as f,t as g}from"./index-BpXZVs8y.js";const c=e.a`
   padding: 6px;
   position: relative;
   cursor: pointer;
-`,m=e.div`
+`,j=e.div`
   display: flex;
   background-color: ${({theme:t})=>t.colors.orange[0]};
   border: 1px solid ${({theme:t})=>t.colors.orange[6]};
@@ -36,7 +36,7 @@ import{d as e,j as i,p as s,I as f,t as g}from"./index-BpXZVs8y.js";const c=e.a`
   font-size: 16px;
   font-weight: 700;
   line-height: 1;
-`,j=e.div`
+`,b=e.div`
   background-color: ${({theme:t})=>t.colors.orange[7]};
   outline-offset: 0px;
   text-align: center;
@@ -49,7 +49,7 @@ import{d as e,j as i,p as s,I as f,t as g}from"./index-BpXZVs8y.js";const c=e.a`
   padding: 5px;
   line-height: 1.3;
   display: flex;
-`,b=e.div`
+`,g=e.div`
   color: ${({theme:t})=>t.colors.white[0]};
   border-radius: 10px;
   flex-direction: row;
@@ -61,4 +61,4 @@ import{d as e,j as i,p as s,I as f,t as g}from"./index-BpXZVs8y.js";const c=e.a`
   display: flex;
   inset: 0% 8% 0% auto;
   margin: 5px auto 10px;
-`,S=({togglePosition:t,setTogglePosition:o,handleDownload:n,onToggle:r,cvHref:d,coverLetterHref:l,labelFirst:x,labelSecond:p,iconName:h})=>i.jsx(b,{children:i.jsxs(j,{children:[i.jsx(a,{children:x}),i.jsxs(m,{children:[i.jsx(c,{href:d,download:s.cvName,onClick:()=>{o(!0),r&&r()}}),i.jsx(w,{onClick:()=>{r&&r(),n&&n()},togglePosition:t,children:i.jsx(f,{name:h,width:"24px",height:"24px",fill:g.colors.orange[1]})}),i.jsx(u,{href:l,download:s.coverLetterName,onClick:()=>{o(!1),r&&r()}})]}),i.jsx(a,{children:p})]})});export{S as T};
+`,S=({togglePosition:t,setTogglePosition:n,handleDownload:s,onToggle:i,cvHref:d,coverLetterHref:x,labelFirst:p,labelSecond:l,iconName:h})=>r.jsx(g,{children:r.jsxs(b,{children:[r.jsx(a,{children:p}),r.jsxs(j,{children:[r.jsx(c,{href:d,download:o.cvName,onClick:()=>{n(!0),i==null||i()}}),r.jsx(m,{onClick:()=>{i==null||i(),s&&s()},togglePosition:t,children:r.jsx(f,{name:h,width:"24px",height:"24px",fill:u.colors.orange[1]})}),r.jsx(w,{href:x,download:o.coverLetterName,onClick:()=>{n(!1),i==null||i()}})]}),r.jsx(a,{children:l})]})});export{S as T};
