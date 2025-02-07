@@ -1,31 +1,26 @@
 import React from 'react';
 
-import personalData from '../../data/personalData';
+import personalData from '../../data/personal';
 
 import { Box, FlexBox } from '../../ui';
 import theme from '../../theme';
-import { CodeStyle, SpanText, WrapperForCode } from './styled';
+import { CodeStyle, StyledSpan, WrapperForCode } from './styled';
+
+const { gradient, green, red, orange, pink, white, gray, yellow, blue } =
+  theme.colors;
 
 const Code = () => (
   <CodeStyle
     position='relative'
     borderRadius='8px'
-    backgroundImage={theme.colors.gradient[4]}
+    backgroundImage={gradient[4]}
     borderWidth='3px'
-    borderColor={theme.colors.green[6]}
+    borderColor={green[6]}
     order={[1, 1, 1, 2]}
   >
     <FlexBox flexDirection='row'>
-      <Box
-        width='100%'
-        height='1px'
-        backgroundImage={theme.colors.gradient[0]}
-      />
-      <Box
-        width='100%'
-        height='1px'
-        backgroundImage={theme.colors.gradient[1]}
-      />
+      <Box width='100%' height='1px' backgroundImage={gradient[0]} />
+      <Box width='100%' height='1px' backgroundImage={gradient[1]} />
     </FlexBox>
     <Box padding='16px'>
       <FlexBox flexDirection='row'>
@@ -33,166 +28,164 @@ const Code = () => (
           width='12px'
           height='12px'
           borderRadius='50px'
-          background={theme.colors.red[0]}
+          background={red[0]}
         />
         <Box
           width='12px'
           height='12px'
           borderRadius='50px'
-          background={theme.colors.orange[4]}
+          background={orange[4]}
           margin='0 8px'
         />
         <Box
           width='12px'
           height='12px'
           borderRadius='50px'
-          background={theme.colors.green[2]}
+          background={green[2]}
         />
       </FlexBox>
     </Box>
     <WrapperForCode
       overflow='hidden'
       borderStyle='solid'
-      borderColor={theme.colors.green[9]}
+      borderColor={green[9]}
       padding='16px'
       fontSize={['10px', '10px', '10px', '12px']}
     >
       <code>
-        <div>
-          <SpanText color={theme.colors.pink[0]}>const</SpanText>
-          <SpanText color={theme.colors.white[0]}> coder</SpanText>
-          <SpanText color={theme.colors.pink[0]}> = </SpanText>
-          <SpanText color={theme.colors.gray[0]}>&#10100;</SpanText>
-        </div>
-        <Box margin='0 0 0 16px'>
-          <SpanText color={theme.colors.white[0]}>name:</SpanText>
-          <SpanText color={theme.colors.gray[0]}> '</SpanText>
-          <SpanText color={theme.colors.yellow[0]}>
-            {personalData.name}
-          </SpanText>
-          <SpanText color={theme.colors.gray[0]}>',</SpanText>
+        <Box>
+          <StyledSpan color={pink[0]}>const</StyledSpan>
+          <StyledSpan color={white[0]}> coder</StyledSpan>
+          <StyledSpan color={pink[0]}> = </StyledSpan>
+          <StyledSpan color={gray[0]}>&#10100;</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <SpanText color={theme.colors.white[0]}>skills: </SpanText>
-          <SpanText color={theme.colors.gray[0]}>['</SpanText>
+          <StyledSpan color={white[0]}>name:</StyledSpan>
+          <StyledSpan color={gray[0]}> '</StyledSpan>
+          <StyledSpan color={yellow[0]}>{personalData.name}</StyledSpan>
+          <StyledSpan color={gray[0]}>',</StyledSpan>
+        </Box>
+        <Box margin='0 0 0 16px'>
+          <StyledSpan color={white[0]}>skills: </StyledSpan>
+          <StyledSpan color={gray[0]}>['</StyledSpan>
           {personalData.skills.map((skill, index) => (
             <React.Fragment key={index}>
-              <SpanText color={theme.colors.yellow[0]}>{skill}</SpanText>
+              <StyledSpan color={yellow[0]}>{skill}</StyledSpan>
               {index < personalData.skills.length - 1 && (
-                <SpanText color={theme.colors.gray[0]}>', '</SpanText>
+                <StyledSpan color={gray[0]}>', '</StyledSpan>
               )}
             </React.Fragment>
           ))}
-          <SpanText color={theme.colors.gray[0]}>'],</SpanText>
+          <StyledSpan color={gray[0]}>'],</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <SpanText color={theme.colors.white[0]}>hardWorker:</SpanText>
-          <SpanText color={theme.colors.orange[4]}> true</SpanText>
-          <SpanText color={theme.colors.gray[0]}>,</SpanText>
+          <StyledSpan color={white[0]}>hardWorker:</StyledSpan>
+          <StyledSpan color={orange[4]}> true</StyledSpan>
+          <StyledSpan color={gray[0]}>,</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <SpanText color={theme.colors.white[0]}>quickLearner:</SpanText>
-          <SpanText color={theme.colors.orange[4]}> true</SpanText>
-          <SpanText color={theme.colors.gray[0]}>,</SpanText>
+          <StyledSpan color={white[0]}>quickLearner:</StyledSpan>
+          <StyledSpan color={orange[4]}> true</StyledSpan>
+          <StyledSpan color={gray[0]}>,</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <SpanText color={theme.colors.white[0]}>problemSolver:</SpanText>
-          <SpanText color={theme.colors.orange[4]}> true</SpanText>
-          <SpanText color={theme.colors.gray[0]}>,</SpanText>
+          <StyledSpan color={white[0]}>problemSolver:</StyledSpan>
+          <StyledSpan color={orange[4]}> true</StyledSpan>
+          <StyledSpan color={gray[0]}>,</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <SpanText color={theme.colors.green[5]}>hireable</SpanText>
-          <SpanText color={theme.colors.gray[0]}>() &#10100;</SpanText>
+          <StyledSpan color={green[5]}>hireable</StyledSpan>
+          <StyledSpan color={gray[0]}>() &#10100;</StyledSpan>
         </Box>
         <Box margin='0 0 0 32px'>
-          <SpanText color={theme.colors.pink[0]}>const</SpanText>
-          <SpanText color={theme.colors.gray[0]}> &#10100; </SpanText>
-          <SpanText color={theme.colors.white[0]}>hardWorker</SpanText>
-          <SpanText color={theme.colors.gray[0]}>, </SpanText>
-          <SpanText color={theme.colors.white[0]}>problemSolver</SpanText>
-          <SpanText color={theme.colors.gray[0]}>, </SpanText>
-          <SpanText color={theme.colors.white[0]}>skills</SpanText>
-          <SpanText color={theme.colors.gray[0]}> &#10101; </SpanText>
-          <SpanText color={theme.colors.pink[0]}>= </SpanText>
-          <SpanText color={theme.colors.pink[0]}>this</SpanText>
-          <SpanText color={theme.colors.gray[0]}>;</SpanText>
+          <StyledSpan color={pink[0]}>const</StyledSpan>
+          <StyledSpan color={gray[0]}> &#10100; </StyledSpan>
+          <StyledSpan color={white[0]}>hardWorker</StyledSpan>
+          <StyledSpan color={gray[0]}>, </StyledSpan>
+          <StyledSpan color={white[0]}>problemSolver</StyledSpan>
+          <StyledSpan color={gray[0]}>, </StyledSpan>
+          <StyledSpan color={white[0]}>skills</StyledSpan>
+          <StyledSpan color={gray[0]}> &#10101; </StyledSpan>
+          <StyledSpan color={pink[0]}>= </StyledSpan>
+          <StyledSpan color={pink[0]}>this</StyledSpan>
+          <StyledSpan color={gray[0]}>;</StyledSpan>
         </Box>
         <Box margin='0 0 0 32px'>
-          <SpanText color={theme.colors.pink[0]}>return </SpanText>
-          <SpanText color={theme.colors.white[0]}>hardWorker</SpanText>
-          <SpanText color={theme.colors.yellow[0]}> && </SpanText>
-          <SpanText color={theme.colors.white[0]}>problemSolver</SpanText>
-          <SpanText color={theme.colors.yellow[0]}> && </SpanText>
-          <SpanText color={theme.colors.white[0]}>skills.length</SpanText>
-          <SpanText color={theme.colors.yellow[0]}> &#10095;= </SpanText>
-          <SpanText color={theme.colors.orange[4]}>7</SpanText>
-          <SpanText color={theme.colors.gray[0]}>;</SpanText>
+          <StyledSpan color={pink[0]}>return </StyledSpan>
+          <StyledSpan color={white[0]}>hardWorker</StyledSpan>
+          <StyledSpan color={yellow[0]}> && </StyledSpan>
+          <StyledSpan color={white[0]}>problemSolver</StyledSpan>
+          <StyledSpan color={yellow[0]}> && </StyledSpan>
+          <StyledSpan color={white[0]}>skills.length</StyledSpan>
+          <StyledSpan color={yellow[0]}> &#10095;= </StyledSpan>
+          <StyledSpan color={orange[4]}>7</StyledSpan>
+          <StyledSpan color={gray[0]}>;</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <SpanText color={theme.colors.gray[0]}>&#10101;,</SpanText>
+          <StyledSpan color={gray[0]}>&#10101;,</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <SpanText color={theme.colors.green[5]}>funFact</SpanText>
-          <SpanText color={theme.colors.gray[0]}>() &#10100;</SpanText>
+          <StyledSpan color={green[5]}>funFact</StyledSpan>
+          <StyledSpan color={gray[0]}>() &#10100;</StyledSpan>
         </Box>
         <Box margin='0 0 0 32px'>
-          <SpanText color={theme.colors.blue[11]}>console.</SpanText>
-          <SpanText color={theme.colors.white[0]}>log</SpanText>
-          <SpanText color={theme.colors.gray[0]}>(</SpanText>
-          <SpanText color={theme.colors.yellow[0]}>
+          <StyledSpan color={blue[11]}>console.</StyledSpan>
+          <StyledSpan color={white[0]}>log</StyledSpan>
+          <StyledSpan color={gray[0]}>(</StyledSpan>
+          <StyledSpan color={yellow[0]}>
             "I once solved a bug at 3 AM without coffee. Let's just say, I'm as
             reliable as your unit tests."
-          </SpanText>
-          <SpanText color={theme.colors.gray[0]}>);</SpanText>
+          </StyledSpan>
+          <StyledSpan color={gray[0]}>);</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <SpanText color={theme.colors.gray[0]}>&#10101;,</SpanText>
+          <StyledSpan color={gray[0]}>&#10101;,</StyledSpan>
         </Box>
-        <div>
-          <SpanText color={theme.colors.gray[0]}>&#10101;;</SpanText>
-        </div>
+        <Box>
+          <StyledSpan color={gray[0]}>&#10101;;</StyledSpan>
+        </Box>
         <br />
-        <div>
-          <SpanText color={theme.colors.pink[0]}>if</SpanText>
-          <SpanText color={theme.colors.gray[0]}> (</SpanText>
-          <SpanText color={theme.colors.white[0]}>coder.</SpanText>
-          <SpanText color={theme.colors.green[5]}>hireable</SpanText>
-          <SpanText color={theme.colors.gray[0]}>()</SpanText>
-          <SpanText color={theme.colors.gray[0]}>) &#10100;</SpanText>
-        </div>
-        <Box margin='0 0 0 8px'>
-          <SpanText color={theme.colors.white[0]}>coder.</SpanText>
-          <SpanText color={theme.colors.green[5]}>funFact</SpanText>
-          <SpanText color={theme.colors.gray[0]}>();</SpanText>
+        <Box>
+          <StyledSpan color={pink[0]}>if</StyledSpan>
+          <StyledSpan color={gray[0]}> (</StyledSpan>
+          <StyledSpan color={white[0]}>coder.</StyledSpan>
+          <StyledSpan color={green[5]}>hireable</StyledSpan>
+          <StyledSpan color={gray[0]}>()</StyledSpan>
+          <StyledSpan color={gray[0]}>) &#10100;</StyledSpan>
         </Box>
         <Box margin='0 0 0 8px'>
-          <SpanText color={theme.colors.blue[11]}>console.</SpanText>
-          <SpanText color={theme.colors.white[0]}>log</SpanText>
-          <SpanText color={theme.colors.gray[0]}>(</SpanText>
-          <SpanText color={theme.colors.yellow[0]}>
+          <StyledSpan color={white[0]}>coder.</StyledSpan>
+          <StyledSpan color={green[5]}>funFact</StyledSpan>
+          <StyledSpan color={gray[0]}>();</StyledSpan>
+        </Box>
+        <Box margin='0 0 0 8px'>
+          <StyledSpan color={blue[11]}>console.</StyledSpan>
+          <StyledSpan color={white[0]}>log</StyledSpan>
+          <StyledSpan color={gray[0]}>(</StyledSpan>
+          <StyledSpan color={yellow[0]}>
             'Hiring me means getting a hard-working problem-solver with a love
             for learning.'
-          </SpanText>
-          <SpanText color={theme.colors.gray[0]}>);</SpanText>
+          </StyledSpan>
+          <StyledSpan color={gray[0]}>);</StyledSpan>
         </Box>
-        <div>
-          <SpanText color={theme.colors.gray[0]}>&#10101; </SpanText>
-          <SpanText color={theme.colors.pink[0]}>else</SpanText>
-          <SpanText color={theme.colors.gray[0]}> &#10100;</SpanText>
-        </div>
+        <Box>
+          <StyledSpan color={gray[0]}>&#10101; </StyledSpan>
+          <StyledSpan color={pink[0]}>else</StyledSpan>
+          <StyledSpan color={gray[0]}> &#10100;</StyledSpan>
+        </Box>
         <Box margin='0 0 0 8px'>
-          <SpanText color={theme.colors.blue[11]}>console.</SpanText>
-          <SpanText color={theme.colors.white[0]}>log</SpanText>
-          <SpanText color={theme.colors.gray[0]}>(</SpanText>
-          <SpanText color={theme.colors.yellow[0]}>
+          <StyledSpan color={blue[11]}>console.</StyledSpan>
+          <StyledSpan color={white[0]}>log</StyledSpan>
+          <StyledSpan color={gray[0]}>(</StyledSpan>
+          <StyledSpan color={yellow[0]}>
             'I may not meet all criteria, but I'm still ready to improve and
             grow!'
-          </SpanText>
-          <SpanText color={theme.colors.gray[0]}>);</SpanText>
+          </StyledSpan>
+          <StyledSpan color={gray[0]}>);</StyledSpan>
         </Box>
-        <div>
-          <SpanText color={theme.colors.gray[0]}>&#10101; </SpanText>
-        </div>
+        <Box>
+          <StyledSpan color={gray[0]}>&#10101; </StyledSpan>
+        </Box>
       </code>
     </WrapperForCode>
   </CodeStyle>

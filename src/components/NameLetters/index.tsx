@@ -1,12 +1,9 @@
 import React, { FC } from 'react';
 
 import useAnimation from '../../hooks/useAnimation';
+import { NameLettersProps } from '../../interfaces';
 
 import { Letter, Name } from './styled';
-
-interface NameLettersProps {
-  name: string;
-}
 
 const NameLetters: FC<NameLettersProps> = ({ name }) => {
   const { activeIndex, animationComplete } = useAnimation(name);
