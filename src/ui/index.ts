@@ -89,33 +89,35 @@ type CustomStyledProps = HTMLProps<HTMLDivElement> & {
   overflowX?: CSSProperties['overflowX'];
 };
 
+const shouldFilterProps = [
+  'flexDirection',
+  'justifyContent',
+  'alignItems',
+  'flexWrap',
+  'flexGrow',
+  'gridTemplateColumns',
+  'width',
+  'height',
+  'maxWidth',
+  'minWidth',
+  'minHeight',
+  'maxHeight',
+  'gap',
+  'borderRadius',
+  'borderWidth',
+  'borderColor',
+  'borderStyle',
+  'position',
+  'top',
+  'left',
+  'zIndex',
+  'overflowX',
+  'backgroundImage',
+  'boxShadow',
+];
+
 export const Box = styled.div.withConfig({
-  shouldForwardProp: (prop) =>
-    ![
-      'flexDirection',
-      'justifyContent',
-      'alignItems',
-      'flexWrap',
-      'flexGrow',
-      'gridTemplateColumns',
-      'width',
-      'height',
-      'maxWidth',
-      'minWidth',
-      'minHeight',
-      'maxHeight',
-      'gap',
-      'borderRadius',
-      'borderWidth',
-      'borderColor',
-      'borderStyle',
-      'position',
-      'top',
-      'left',
-      'zIndex',
-      'overflowX',
-      'backgroundImage',
-    ].includes(prop),
+  shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
 })<CustomStyledProps>(
   width,
   maxWidth,
@@ -148,7 +150,7 @@ export const Box = styled.div.withConfig({
   zIndex,
   order,
   opacity,
-  overflowX
+  overflowX, 
 );
 
 export const FlexBox = styled(Box)`
@@ -179,37 +181,10 @@ export const GridColumns = styled(Box)`
   gap: ${(props) => props.gap};
 `;
 
-export const Text = styled.p`
-
-`;
+export const Text = styled.p``;
 
 export const Button = styled.button.withConfig({
-  shouldForwardProp: (prop) =>
-    ![
-      'flexDirection',
-      'justifyContent',
-      'alignItems',
-      'flexWrap',
-      'flexGrow',
-      'gridTemplateColumns',
-      'width',
-      'height',
-      'maxWidth',
-      'minWidth',
-      'minHeight',
-      'maxHeight',
-      'gap',
-      'borderRadius',
-      'borderWidth',
-      'borderColor',
-      'borderStyle',
-      'position',
-      'top',
-      'left',
-      'zIndex',
-      'overflowX',
-      'backgroundImage',
-    ].includes(prop),
+  shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
 })<CustomStyledProps>(
   width,
   maxWidth,

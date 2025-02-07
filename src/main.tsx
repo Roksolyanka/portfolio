@@ -6,10 +6,11 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './components/App';
 
+import { ThemeProvider } from './providers/ThemeProvider';
 import './normalize.css';
 import './fonts.css';
 import './index.css';
-import { ThemeProvider } from './hooks/useThemeLogic';
+
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 

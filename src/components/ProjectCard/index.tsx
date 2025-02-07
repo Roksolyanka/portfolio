@@ -1,9 +1,11 @@
-import { ProjectCardProps } from '../../interfaces';
+import { FC } from 'react';
 
 import { Icon } from '../Icon';
+import { ProjectCardProps } from '../../interfaces';
 
 import theme from '../../theme';
 import {
+  Badge,
   Blackout,
   Card,
   Description,
@@ -16,7 +18,7 @@ import {
   Skills,
 } from './styled';
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => (
+const ProjectCard: FC<ProjectCardProps> = ({ project, index }) => (
   <>
     <Input
       type='radio'
@@ -66,6 +68,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => (
               </Link>
             )}
           </IconContainer>
+        )}
+        {project.isTeamProject && (
+          <Badge
+            fontSize='16px'
+            fontWeight='600'
+            fontFamily='EB Garamond, serif'
+            right='0'
+            top='30%'
+            background={theme.colors.orange[5]}
+            color={theme.colors.green[10]}
+            padding='8px'
+            borderRadius='5px'
+          >
+            Team Project
+          </Badge>
         )}
         <Numeration>{index + 1}</Numeration>
         <Details

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import skillsData from '../../data/skillsData';
+import skillsData from '../../data/skills';
 import { SkillsType } from '../../types';
-import { SkillItem } from '../../interfaces';
+import { SkillCategory } from '../../interfaces';
 import Toggler from '../../components/Toggler';
 import Carousel from '../../components/Carousel';
 import Accordion from '../../components/Accordion';
@@ -22,22 +22,19 @@ const SkillsPage = () => {
     localStorage.setItem('isCarousel', JSON.stringify(isCarousel));
   }, [isCarousel]);
 
-  const groupSkillsByCategory = (skills: SkillsType) => {
-    const result = skills.reduce<
-      Record<
-        string,
-        {
-          title: string;
-          skills: SkillItem[];
+  const groupSkillsByCategory = (
+    skills: SkillsType
+  ): [string, SkillCategory][] => {
+    const result = skills.reduce<Record<string, SkillCategory>>(
+      (acc, skill) => {
+        if (!acc[skill.category]) {
+          acc[skill.category] = { title: skill.title, skills: [] };
         }
-      >
-    >((acc, skill) => {
-      if (!acc[skill.category]) {
-        acc[skill.category] = { title: skill.title, skills: [] };
-      }
-      acc[skill.category].skills.push(skill);
-      return acc;
-    }, {});
+        acc[skill.category].skills.push(skill);
+        return acc;
+      },
+      {}
+    );
 
     return Object.entries(result);
   };

@@ -11,6 +11,7 @@ import {
   ROUTE_PROJECTS,
   ROUTE_SKILLS,
 } from '../../constants';
+import { RouteConfigType } from '../../types';
 
 const HomePage = lazy(() => import('../../pages/HomePage'));
 const AboutPage = lazy(() => import('../../pages/AboutPage'));
@@ -20,12 +21,7 @@ const AchievementsPage = lazy(() => import('../../pages/AchievementsPage'));
 const ContactPage = lazy(() => import('../../pages/ContactPage'));
 const NotFound = lazy(() => import('../../pages/NotFound'));
 
-interface RouteConfig {
-  path: string;
-  element: React.ReactNode;
-}
-
-const routes: RouteConfig[] = [
+const routes: RouteConfigType = [
   { path: ROUTE_HOME, element: <HomePage /> },
   { path: ROUTE_ABOUT, element: <AboutPage /> },
   { path: ROUTE_SKILLS, element: <SkillsPage /> },

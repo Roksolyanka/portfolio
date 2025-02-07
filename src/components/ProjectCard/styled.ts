@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlexBox } from '../../ui';
+import { AbsoluteBox, FlexBox } from '../../ui';
 
 export const Input = styled.input`
   display: none;
@@ -66,6 +66,7 @@ export const IconContainer = styled(FlexBox)`
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.6s ease;
+  z-index: 1;
 
   ${Input}:checked + ${Card} & {
     opacity: 1;
@@ -91,6 +92,20 @@ export const Link = styled.a`
   &:not(:hover) svg {
     transform: scale(1);
     transition: transform 0.8s ease;
+  }
+`;
+
+export const Badge = styled(AbsoluteBox)`
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+  text-transform: uppercase;
+  border: 2px solid ${({ theme }) => theme.colors.green[10]};
+  opacity: 0;
+  transition: opacity 0.6s ease;
+
+  ${Input}:checked + ${Card} & {
+    opacity: 1;
   }
 `;
 
