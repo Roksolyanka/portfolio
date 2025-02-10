@@ -9,8 +9,8 @@ import Accordion from '../../components/Accordion';
 import { ROUTE_PROJECTS } from '../../constants';
 import background from '../../assets/background.svg';
 
-import { Background, Box, StyledLink } from '../../ui';
-import { SkillsSection, TitleH2 } from './styled';
+import { Background, Box, StyledLink, TitleH2 } from '../../ui';
+import { SkillsSection} from './styled';
 
 const SkillsPage = () => {
   const [isCarousel, setIsCarousel] = useState<boolean>(() => {
@@ -40,7 +40,15 @@ const SkillsPage = () => {
   };
 
   return (
-    <SkillsSection aria-label='skills section' isAccordeon={!isCarousel}>
+    <SkillsSection
+      aria-label='skills section'
+      isAccordeon={!isCarousel}
+      gap={['20px', '20px', '20px', '30px']}
+      padding='0 15px'
+      flexWrap='wrap'
+      justifyContent='center'
+      alignItems='baseline'
+    >
       <Background
         alt='Hero'
         loading='lazy'

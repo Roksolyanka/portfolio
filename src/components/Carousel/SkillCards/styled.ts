@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { AbsoluteBox, Box, FlexBox } from '../../../ui';
+import { AbsoluteBox, Box, FlexBox, TextP } from '../../../ui';
 
 export const HoveredBox = styled(Box)`
   z-index: 0;
@@ -38,9 +38,7 @@ export const FakeBlob = styled(AbsoluteBox)`
   visibility: hidden;
 `;
 
-export const SkillName = styled.p`
-  font-family: 'EB Garamond', serif;
-  font-weight: 500;
+export const SkillName = styled(TextP)`
   font-size: 12px;
   color: ${({ theme }) => theme.colors.green[10]};
 

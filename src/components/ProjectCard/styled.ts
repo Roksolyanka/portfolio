@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { AbsoluteBox, FlexBox } from '../../ui';
+import { AbsoluteBox, FlexBox, TextP } from '../../ui';
 
 export const Input = styled.input`
   display: none;
@@ -133,11 +133,10 @@ export const ProjectName = styled.h3`
   }
 `;
 
-export const Description = styled.p`
+export const Description = styled(TextP)`
   color: ${({ theme }) => theme.colors.green[0]};
   font-size: 12px;
-  font-family: 'EB Garamond', serif;
-  font-weight: 700;
+  text-align: start;
 
   @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     font-size: 14px;
@@ -148,11 +147,9 @@ export const Description = styled.p`
   }
 `;
 
-export const Skills = styled.p`
+export const Skills = styled(TextP)`
   color: ${({ theme }) => theme.colors.orange[5]};
   font-size: 10px;
-  font-family: 'EB Garamond', serif;
-  font-weight: 700;
   text-align: end;
 
   @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {

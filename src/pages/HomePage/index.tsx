@@ -10,8 +10,14 @@ import { ROUTE_ABOUT } from '../../constants';
 import background from '../../assets/background.svg';
 
 import theme from '../../theme';
-import { Background, FlexBox, GridColumns, StyledLink } from '../../ui';
-import { HomeSection, StyledSocial, TextSpecialty, TitleH1 } from './styled';
+import {
+  Background,
+  FlexBox,
+  GridColumns,
+  Section,
+  StyledLink,
+} from '../../ui';
+import { StyledSocial, TextSpecialty, TitleH1 } from './styled';
 
 const HomePage = () => {
   const [togglePosition, setTogglePosition] = useState(true);
@@ -28,7 +34,7 @@ const HomePage = () => {
   };
 
   return (
-    <HomeSection aria-label='hero section'>
+    <Section aria-label='hero section'>
       <Background
         alt='Hero'
         loading='lazy'
@@ -111,7 +117,7 @@ const HomePage = () => {
         </FlexBox>
         <Code />
       </GridColumns>
-    </HomeSection>
+    </Section>
   );
 };
 

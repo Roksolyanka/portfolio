@@ -39,6 +39,7 @@ import {
   ResponsiveValue,
   right,
   space,
+  textAlign,
   top,
   width,
   zIndex,
@@ -150,7 +151,7 @@ export const Box = styled.div.withConfig({
   zIndex,
   order,
   opacity,
-  overflowX, 
+  overflowX
 );
 
 export const FlexBox = styled(Box)`
@@ -240,6 +241,24 @@ export const fadeIn = keyframes`
   }
 `;
 
+export const MainSection = styled.section.withConfig({
+  shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
+})<CustomStyledProps>(padding, flexWrap);
+
+export const Section = styled(MainSection)`
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: ${(props) => props.gap};
+  ${flexDirection};
+  ${justifyContent};
+  ${alignItems};
+  ${flexWrap};
+`;
+
 export const Background = styled.img`
   position: absolute;
   top: -100px;
@@ -288,5 +307,45 @@ export const StyledLink = styled(Link)`
 
   &:not(:hover) {
     transition: all 0.6s ease;
+  }
+`;
+
+export const H2 = styled.h2.withConfig({
+  shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
+})<CustomStyledProps>(space, fontSize, fontWeight, fontFamily, padding, color);
+
+export const TitleH2 = styled(H2)`
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: ${({ theme }) => theme.textColor};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+    font-weight: 800;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+    font-size: 30px;
+  }
+`;
+
+export const P = styled.p.withConfig({
+  shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
+})<CustomStyledProps>(space, fontSize, fontWeight, fontFamily, padding, color, textAlign);
+
+export const TextP = styled(P)`
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: ${({ theme }) => theme.textColor};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+    font-size: 18px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints[3]}) {
+    font-size: 24px;
   }
 `;

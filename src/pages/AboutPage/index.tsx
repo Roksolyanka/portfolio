@@ -3,12 +3,19 @@ import React from 'react';
 import personalData from '../../data/personal';
 import background from '../../assets/background.svg';
 
-import { AboutSection, PersonalPhoto, TextAccent, TextP } from './styled';
-import { Background, FlexBox, GridColumns, StyledLink } from '../../ui';
+import { PersonalPhoto, TextAccent } from './styled';
+import {
+  Background,
+  FlexBox,
+  GridColumns,
+  Section,
+  StyledLink,
+  TextP,
+} from '../../ui';
 import { ROUTE_SKILLS } from '../../constants';
 
 const AboutPage = () => (
-  <AboutSection aria-label='about section'>
+  <Section aria-label='about section'>
     <Background
       alt='Hero'
       loading='lazy'
@@ -41,7 +48,10 @@ const AboutPage = () => (
         padding={[0, 0, '0 0 16px 0', 0]}
         gap='16px'
       >
-        <TextP>
+        <TextP
+          margin='auto'
+          fontSize={['16px', '18px', '20px', '22px', '24px']}
+        >
           Greetings! <br /> My name is{' '}
           <TextAccent>{personalData.name}</TextAccent>, and I am a frontend
           developer passionate about creating responsive, user-oriented
@@ -66,7 +76,7 @@ const AboutPage = () => (
         <StyledLink to={ROUTE_SKILLS}>My skills &#10174;</StyledLink>
       </FlexBox>
     </GridColumns>
-  </AboutSection>
+  </Section>
 );
 
 export default AboutPage;

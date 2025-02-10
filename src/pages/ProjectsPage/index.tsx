@@ -3,14 +3,20 @@ import React from 'react';
 import background from '../../assets/background.svg';
 import projectsData from '../../data/projects';
 import { ROUTE_ACHIEVEMENTS } from '../../constants';
-
-import { Background, StyledLink } from '../../ui';
-import { ProjectsSection } from './styled';
-import { TitleH2 } from '../SkillsPage/styled';
 import Projects from '../../components/Projects';
 
+import { Background, Section, StyledLink, TitleH2 } from '../../ui';
+
+
 const ProjectsPage = () => (
-  <ProjectsSection aria-label='about section'>
+  <Section
+    aria-label='projects section'
+    gap='10px'
+    padding={['0', '0', '0 25px', '0 100px']}
+    flexWrap='wrap'
+    alignItems='baseline'
+    justifyContent='center'
+  >
     <Background
       alt='Hero'
       loading='lazy'
@@ -25,7 +31,7 @@ const ProjectsPage = () => (
     </TitleH2>
     <Projects projects={projectsData} />
     <StyledLink to={ROUTE_ACHIEVEMENTS}>My achievements &#10174;</StyledLink>
-  </ProjectsSection>
+  </Section>
 );
 
 export default ProjectsPage;

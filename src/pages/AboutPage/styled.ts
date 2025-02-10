@@ -2,15 +2,6 @@ import styled from 'styled-components';
 
 import { fadeIn } from '../../ui';
 
-export const AboutSection = styled.section`
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-`;
-
 export const PersonalPhoto = styled.img`
   width: fit-content;
   height: 260px;
@@ -19,7 +10,7 @@ export const PersonalPhoto = styled.img`
   float: right;
   margin: 0 auto;
   cursor: pointer;
-   animation: ${fadeIn} 1s ease-out forwards;
+  animation: ${fadeIn} 1s ease-out forwards;
 
   &:hover {
     filter: grayscale(0%);
@@ -46,33 +37,7 @@ export const PersonalPhoto = styled.img`
   }
 `;
 
-export const TextP = styled.p`
-  text-align: center;
-  font-family: 'EB Garamond', serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: ${({ theme }) => theme.textColor};
-  margin: auto;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-    font-size: 18px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
-    font-size: 20px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints[3]}) {
-    font-size: 22px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints[3]}) {
-    font-size: 24px;
-  }
-`;
-
 export const TextAccent = styled.span`
   color: ${({ theme }) => theme.colors.orange[5]};
   font-weight: bold;
 `;
-
