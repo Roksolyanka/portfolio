@@ -1,14 +1,5 @@
 import styled from 'styled-components';
 
-export const HomeSection = styled.section`
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-`;
-
 export const TitleH1 = styled.h1`
   text-align: center;
   font-family: 'EB Garamond', serif;

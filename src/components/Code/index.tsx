@@ -6,8 +6,8 @@ import { Box, FlexBox } from '../../ui';
 import theme from '../../theme';
 import { CodeStyle, StyledSpan, WrapperForCode } from './styled';
 
-const { gradient, green, red, orange, pink, white, gray, yellow, blue } =
-  theme.colors;
+const { green, red, orange, pink, white, gray, yellow, blue } = theme.colors;
+const { gradient } = theme;
 
 const Code = () => (
   <CodeStyle
@@ -57,7 +57,7 @@ const Code = () => (
           <StyledSpan color={pink[0]}>const</StyledSpan>
           <StyledSpan color={white[0]}> coder</StyledSpan>
           <StyledSpan color={pink[0]}> = </StyledSpan>
-          <StyledSpan color={gray[0]}>&#10100;</StyledSpan>
+          <StyledSpan color={gray[0]}>{'{'}</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
           <StyledSpan color={white[0]}>name:</StyledSpan>
@@ -95,17 +95,17 @@ const Code = () => (
         </Box>
         <Box margin='0 0 0 16px'>
           <StyledSpan color={green[5]}>hireable</StyledSpan>
-          <StyledSpan color={gray[0]}>() &#10100;</StyledSpan>
+          <StyledSpan color={gray[0]}>() {'{'}</StyledSpan>
         </Box>
         <Box margin='0 0 0 32px'>
           <StyledSpan color={pink[0]}>const</StyledSpan>
-          <StyledSpan color={gray[0]}> &#10100; </StyledSpan>
+          <StyledSpan color={gray[0]}> {'{'} </StyledSpan>
           <StyledSpan color={white[0]}>hardWorker</StyledSpan>
           <StyledSpan color={gray[0]}>, </StyledSpan>
           <StyledSpan color={white[0]}>problemSolver</StyledSpan>
           <StyledSpan color={gray[0]}>, </StyledSpan>
           <StyledSpan color={white[0]}>skills</StyledSpan>
-          <StyledSpan color={gray[0]}> &#10101; </StyledSpan>
+          <StyledSpan color={gray[0]}> {'}'} </StyledSpan>
           <StyledSpan color={pink[0]}>= </StyledSpan>
           <StyledSpan color={pink[0]}>this</StyledSpan>
           <StyledSpan color={gray[0]}>;</StyledSpan>
@@ -117,32 +117,32 @@ const Code = () => (
           <StyledSpan color={white[0]}>problemSolver</StyledSpan>
           <StyledSpan color={yellow[0]}> && </StyledSpan>
           <StyledSpan color={white[0]}>skills.length</StyledSpan>
-          <StyledSpan color={yellow[0]}> &#10095;= </StyledSpan>
+          <StyledSpan color={yellow[0]}> {'>'}= </StyledSpan>
           <StyledSpan color={orange[4]}>7</StyledSpan>
           <StyledSpan color={gray[0]}>;</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <StyledSpan color={gray[0]}>&#10101;,</StyledSpan>
+          <StyledSpan color={gray[0]}>{'}'},</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
           <StyledSpan color={green[5]}>funFact</StyledSpan>
-          <StyledSpan color={gray[0]}>() &#10100;</StyledSpan>
+          <StyledSpan color={gray[0]}>() {'{'}</StyledSpan>
         </Box>
         <Box margin='0 0 0 32px'>
           <StyledSpan color={blue[11]}>console.</StyledSpan>
           <StyledSpan color={white[0]}>log</StyledSpan>
           <StyledSpan color={gray[0]}>(</StyledSpan>
           <StyledSpan color={yellow[0]}>
-            "I once solved a bug at 3 AM without coffee. Let's just say, I'm as
-            reliable as your unit tests."
+            "I once solved a bug at 3 AM without coffee. Let us just say, I am
+            as reliable as your unit tests."
           </StyledSpan>
           <StyledSpan color={gray[0]}>);</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <StyledSpan color={gray[0]}>&#10101;,</StyledSpan>
+          <StyledSpan color={gray[0]}>{'}'},</StyledSpan>
         </Box>
         <Box>
-          <StyledSpan color={gray[0]}>&#10101;;</StyledSpan>
+          <StyledSpan color={gray[0]}>{'}'};</StyledSpan>
         </Box>
         <br />
         <Box>
@@ -151,7 +151,7 @@ const Code = () => (
           <StyledSpan color={white[0]}>coder.</StyledSpan>
           <StyledSpan color={green[5]}>hireable</StyledSpan>
           <StyledSpan color={gray[0]}>()</StyledSpan>
-          <StyledSpan color={gray[0]}>) &#10100;</StyledSpan>
+          <StyledSpan color={gray[0]}>) {'{'}</StyledSpan>
         </Box>
         <Box margin='0 0 0 8px'>
           <StyledSpan color={white[0]}>coder.</StyledSpan>
@@ -169,22 +169,22 @@ const Code = () => (
           <StyledSpan color={gray[0]}>);</StyledSpan>
         </Box>
         <Box>
-          <StyledSpan color={gray[0]}>&#10101; </StyledSpan>
+          <StyledSpan color={gray[0]}>{'}'} </StyledSpan>
           <StyledSpan color={pink[0]}>else</StyledSpan>
-          <StyledSpan color={gray[0]}> &#10100;</StyledSpan>
+          <StyledSpan color={gray[0]}> {'{'}</StyledSpan>
         </Box>
         <Box margin='0 0 0 8px'>
           <StyledSpan color={blue[11]}>console.</StyledSpan>
           <StyledSpan color={white[0]}>log</StyledSpan>
           <StyledSpan color={gray[0]}>(</StyledSpan>
           <StyledSpan color={yellow[0]}>
-            'I may not meet all criteria, but I'm still ready to improve and
+            'I may not meet all criteria, but I am still ready to improve and
             grow!'
           </StyledSpan>
           <StyledSpan color={gray[0]}>);</StyledSpan>
         </Box>
         <Box>
-          <StyledSpan color={gray[0]}>&#10101; </StyledSpan>
+          <StyledSpan color={gray[0]}>{'}'} </StyledSpan>
         </Box>
       </code>
     </WrapperForCode>

@@ -2,6 +2,12 @@ import cv from '../assets/files/cv.pdf';
 import coverLetter from '../assets/files/cover_letter.pdf';
 import profile from '../assets/images/avatar.jpg';
 import profile2x from '../assets/images/avatar-2x.jpg';
+import certEnglish from '../assets/images/certenglish.jpg';
+import certEnglish2x from '../assets/images/certenglish-2x.jpg';
+import certFullstack from '../assets/images/certfullstack.jpg';
+import certFullstack2x from '../assets/images/certfullstack-2x.jpg';
+import certScrum from '../assets/images/certscrum.jpg';
+import certScrum2x from '../assets/images/certscrum-2x.jpg';
 
 const personalData = {
   name: 'Roksolana Kushnir',
@@ -32,6 +38,29 @@ const personalData = {
   cvName: 'Roksolana_Kushnir_CV.pdf',
   coverLetter: coverLetter,
   coverLetterName: 'Roksolana_Kushnir_Cover_Letter.pdf',
+  achievements: [
+    {
+      src: certFullstack,
+      srcset: `
+        ${certFullstack} 1x,
+        ${certFullstack2x} 2x
+      `,
+    },
+    {
+      src: certScrum,
+      srcset: `
+        ${certScrum} 1x,
+        ${certScrum2x} 2x
+      `,
+    },
+    {
+      src: certEnglish,
+      srcset: `
+        ${certEnglish} 1x,
+        ${certEnglish2x} 2x
+      `,
+    }, 
+  ],
 };
 
 export default personalData;

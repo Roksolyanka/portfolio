@@ -13,7 +13,7 @@ export const Content = styled(GridColumns)`
   padding: 0;
   backdrop-filter: blur(20px) saturate(100%);
   border: 1px solid ${({ theme }) => theme.accentColor};
-  background: ${({ theme }) => theme.colors.backdropColor[3]};
+  background: ${({ theme }) => theme.backdropColor[3]};
   color: ${({ theme }) => theme.textColor};
 
   @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {

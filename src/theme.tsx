@@ -15,10 +15,10 @@ export interface Theme {
     yellow: string[];
     gray: string[];
     white: string[];
-    boxShadow: string[];
-    gradient: string[];
-    backdropColor: string[];
   };
+  boxShadow: string[];
+  gradient: string[];
+  backdropColor: string[];
   breakpoints: string[];
   body?: string;
   textColor?: string;
@@ -130,33 +130,33 @@ const theme: Theme = {
     yellow,
     gray,
     white,
-    boxShadow,
-    gradient,
-    backdropColor,
   },
+  boxShadow,
+  gradient,
+  backdropColor,
   breakpoints: ['0px', '640px', '1024px', '1200px', '1440px'],
 };
 
 export const darkTheme: Theme = {
   ...theme,
-  body: theme.colors.gradient[3],
+  body: theme.gradient[3],
   textColor: theme.colors.green[0],
-  boxShadowNav: theme.colors.boxShadow[1],
+  boxShadowNav: theme.boxShadow[1],
   hoverColor: theme.colors.green[5],
   hoverColorReverse: theme.colors.green[10],
   accentColor: theme.colors.green[3],
-  backdrop: theme.colors.gradient[5],
+  backdrop: theme.gradient[5],
 };
 
 export const lightTheme: Theme = {
   ...theme,
-  body: theme.colors.gradient[2],
+  body: theme.gradient[2],
   textColor: theme.colors.green[10],
-  boxShadowNav: theme.colors.boxShadow[0],
+  boxShadowNav: theme.boxShadow[0],
   hoverColor: theme.colors.green[8],
   hoverColorReverse: theme.colors.green[0],
   accentColor: theme.colors.green[7],
-  backdrop: theme.colors.gradient[6],
+  backdrop: theme.gradient[6],
 };
 
 export default theme;

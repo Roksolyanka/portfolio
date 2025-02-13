@@ -3,6 +3,7 @@ import { FC, useEffect, useRef } from 'react';
 import { AccordionContentProps } from '../../../interfaces';
 
 import { Content } from './styled';
+import { Box } from '../../../ui';
 
 const AccordionContent: FC<AccordionContentProps> = ({
   isActive,
@@ -21,7 +22,7 @@ const AccordionContent: FC<AccordionContentProps> = ({
   return (
     <Content ref={contentRef} aria-hidden={!isActive}>
       {skills.map(({ displayName }) => (
-        <div key={displayName}>{displayName}</div>
+        <Box key={displayName} padding='5px'>{displayName}</Box>
       ))}
     </Content>
   );
