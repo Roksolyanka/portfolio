@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fadeIn, FlexBox, TextP, TitleH2 } from '../../ui';
+import { fadeIn, FlexBox,  StyledParagraph,  TitleH2 } from '../../ui';
 
 export const Title = styled(TitleH2).withConfig({
   shouldForwardProp: (prop) => prop !== 'isChecked',
@@ -8,7 +8,7 @@ export const Title = styled(TitleH2).withConfig({
   transition: opacity 0.6s;
 `;
 
-export const Subtitle = styled(TextP).withConfig({
+export const Subtitle = styled(StyledParagraph).withConfig({
   shouldForwardProp: (prop) => prop !== 'isChecked',
 })<{ isChecked?: boolean }>`
   color: ${({ theme }) => theme.colors.orange[6]};

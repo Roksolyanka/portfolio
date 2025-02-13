@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { AbsoluteBox, FlexBox, TextP } from '../../ui';
+import { AbsoluteBox, FlexBox, StyledParagraph } from '../../ui';
 
 export const Input = styled.input`
   display: none;
@@ -38,6 +38,7 @@ export const Card = styled.label<{ $background: string }>`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    cursor: auto;
 
     ${Blackout} {
       div {
@@ -133,7 +134,7 @@ export const ProjectName = styled.h3`
   }
 `;
 
-export const Description = styled(TextP)`
+export const Description = styled(StyledParagraph)`
   color: ${({ theme }) => theme.colors.green[0]};
   font-size: 12px;
   text-align: start;
@@ -147,7 +148,7 @@ export const Description = styled(TextP)`
   }
 `;
 
-export const Skills = styled(TextP)`
+export const Skills = styled(StyledParagraph)`
   color: ${({ theme }) => theme.colors.orange[5]};
   font-size: 10px;
   text-align: end;

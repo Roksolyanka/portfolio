@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 
 import personalData from '../../data/personal';
 import background from '../../assets/background.svg';
@@ -8,12 +8,12 @@ import { Image, ImageLabel, ImagesContainer, Subtitle, Title } from './styled';
 import { ROUTE_CONTACT } from '../../constants';
 
 const AchievementsPage = () => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
   const [imageAspectRatios, setImageAspectRatios] = useState<number[]>([]);
 
   const handleImageLoad = (
     index: number,
-    event: React.SyntheticEvent<HTMLImageElement>
+    event: SyntheticEvent<HTMLImageElement>
   ) => {
     const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
     const aspectRatio = naturalWidth / naturalHeight;
@@ -52,7 +52,7 @@ const AchievementsPage = () => {
         alignItems='center'
         justifyContent='center'
         width='100%'
-        gap='10px'
+        gap='20px'
         flexWrap='wrap'
         position='relative'
       >

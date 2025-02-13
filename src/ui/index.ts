@@ -330,11 +330,19 @@ export const TitleH2 = styled(H2)`
   }
 `;
 
-export const P = styled.p.withConfig({
+export const Paragraph = styled.p.withConfig({
   shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
-})<CustomStyledProps>(space, fontSize, fontWeight, fontFamily, padding, color, textAlign);
+})<CustomStyledProps>(
+  space,
+  fontSize,
+  fontWeight,
+  fontFamily,
+  padding,
+  color,
+  textAlign
+);
 
-export const TextP = styled(P)`
+export const StyledParagraph = styled(Paragraph)`
   text-align: center;
   font-family: 'EB Garamond', serif;
   font-weight: 500;

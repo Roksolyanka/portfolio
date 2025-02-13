@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { AbsoluteBox, Box, FlexBox, TextP } from '../../../ui';
+import { AbsoluteBox, Box, FlexBox, StyledParagraph } from '../../../ui';
 
 export const HoveredBox = styled(Box)`
   z-index: 0;
@@ -26,6 +26,14 @@ export const HoveredFlexBox = styled(FlexBox)`
 `;
 
 export const Blob = styled(AbsoluteBox)`
+  width: 100px;
+  height: 80%;
+  top: 100%;
+  left: calc(20% - 50px);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  background: ${({ theme }) => theme.colors.green[4]};
   filter: blur(40px);
   transition: opacity 0.2s linear;
 
@@ -35,10 +43,13 @@ export const Blob = styled(AbsoluteBox)`
 `;
 
 export const FakeBlob = styled(AbsoluteBox)`
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
   visibility: hidden;
 `;
 
-export const SkillName = styled(TextP)`
+export const SkillName = styled(StyledParagraph)`
   font-size: 12px;
   color: ${({ theme }) => theme.colors.green[10]};
 

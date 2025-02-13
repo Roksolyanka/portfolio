@@ -20,7 +20,7 @@ import {
 import { StyledSocial, TextSpecialty, TitleH1 } from './styled';
 
 const HomePage = () => {
-  const [togglePosition, setTogglePosition] = useState(true);
+  const [togglePosition, setTogglePosition] = useState<boolean>(true);
 
   const handleDownload = () => {
     const link = document.createElement('a');

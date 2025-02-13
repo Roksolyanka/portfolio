@@ -10,7 +10,8 @@ import {
   GridColumns,
   Section,
   StyledLink,
-  TextP,
+  StyledParagraph,
+
 } from '../../ui';
 import { ROUTE_SKILLS } from '../../constants';
 
@@ -48,7 +49,7 @@ const AboutPage = () => (
         padding={[0, 0, '0 0 16px 0', 0]}
         gap='16px'
       >
-        <TextP
+        <StyledParagraph
           margin='auto'
           fontSize={['16px', '18px', '20px', '22px', '24px']}
         >
@@ -72,7 +73,7 @@ const AboutPage = () => (
           , always striving to push the boundaries of what's possible. I
           continuously improve my skills and stay updated on the latest trends
           to remain at the forefront of our dynamic industry.
-        </TextP>
+        </StyledParagraph>
         <StyledLink to={ROUTE_SKILLS}>My skills &#10174;</StyledLink>
       </FlexBox>
     </GridColumns>
