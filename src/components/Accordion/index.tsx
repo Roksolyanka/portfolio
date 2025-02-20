@@ -30,7 +30,7 @@ const theme = useTheme();
               border='none'
               fontWeight='700'
               color={theme.textColor}
-              background={theme.colors.backdropColor[3]}
+              background={theme.backdropColor[3]}
             >
               <span>{title}</span>
               <span>&#9662;</span>

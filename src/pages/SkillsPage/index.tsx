@@ -9,18 +9,26 @@ import Accordion from '../../components/Accordion';
 import { ROUTE_PROJECTS } from '../../constants';
 import background from '../../assets/background.svg';
 
-import { Background, Box, StyledLink } from '../../ui';
-import { SkillsSection, TitleH2 } from './styled';
+import { Background, Box, StyledLink, TitleH2 } from '../../ui';
+import { SkillsSection} from './styled';
 
 const SkillsPage = () => {
-  const [isCarousel, setIsCarousel] = useState<boolean>(() => {
-    const savedState = localStorage.getItem('isCarousel');
-    return savedState ? JSON.parse(savedState) : true;
-  });
+  const [isCarousel, setIsCarousel] = useState<boolean | null>(null);
+
+   useEffect(() => {
+     const savedState = localStorage.getItem('isCarousel');
+     if (savedState !== null) {
+       setIsCarousel(JSON.parse(savedState));
+     } else {
+       setIsCarousel(true);
+     }
+   }, []);
 
   useEffect(() => {
-    localStorage.setItem('isCarousel', JSON.stringify(isCarousel));
-  }, [isCarousel]);
+    if (isCarousel !== null) {
+      localStorage.setItem('isCarousel', JSON.stringify(isCarousel));
+    }
+  }, [isCarousel]); 
 
   const groupSkillsByCategory = (
     skills: SkillsType
@@ -40,7 +48,14 @@ const SkillsPage = () => {
   };
 
   return (
-    <SkillsSection aria-label='skills section' isAccordeon={!isCarousel}>
+    <SkillsSection
+      aria-label='skills section'
+      isAccordeon={!isCarousel}
+      gap='20px'
+      padding='0 15px'
+      flexWrap='wrap'
+      alignItems='baseline'
+    >
       <Background
         alt='Hero'
         loading='lazy'
@@ -53,7 +68,7 @@ const SkillsPage = () => {
         <TitleH2>
           I turn these skills into beautiful web projects
           <Toggler
-            togglePosition={isCarousel}
+            togglePosition={isCarousel ?? false}
             setTogglePosition={setIsCarousel}
             labelFirst='Show scroll animation'
             labelSecond='Show categories'

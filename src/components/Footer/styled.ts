@@ -14,7 +14,7 @@ export const FooterStyle = styled.footer`
 
   @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     font-size: 18px;
-    padding: 14px;
+    padding: 14px 14px 14px 100px;
   }
 `;
 
