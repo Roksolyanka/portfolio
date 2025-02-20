@@ -21,7 +21,6 @@ export const CarouselInner = styled(FlexBox)`
 
   &:hover > div {
     animation-play-state: paused;
-    cursor: pointer;
   }
 
   &::-webkit-scrollbar {
