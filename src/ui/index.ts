@@ -1,5 +1,6 @@
 import { HTMLProps } from 'react';
 import { Link } from 'react-router-dom';
+
 import styled, { CSSProperties, keyframes } from 'styled-components';
 import {
   alignItems,

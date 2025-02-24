@@ -1,4 +1,4 @@
-import React, { FC, Suspense } from 'react';
+import { FC, Suspense } from 'react';
 
 import Navigation from '../Navigation';
 import Footer from '../Footer';

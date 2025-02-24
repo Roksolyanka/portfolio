@@ -1,14 +1,13 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, FC, ReactNode, useEffect, useState } from 'react';
 
 import { ThemeContextProps } from '../interfaces';
+import { darkTheme, lightTheme } from '../theme';
 
 export const ThemeContext = createContext<ThemeContextProps | undefined>(
   undefined
 );
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() => {
     const savedTheme = localStorage.getItem('isDarkTheme');
     return savedTheme ? JSON.parse(savedTheme) : false;
@@ -23,8 +22,12 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     localStorage.setItem('isDarkTheme', JSON.stringify(isDarkTheme));
   }, [isDarkTheme]);
 
+  const currentTheme = isDarkTheme ? darkTheme : lightTheme;
+
   return (
-    <ThemeContext.Provider value={{ isDarkTheme, toggleTheme }}>
+    <ThemeContext.Provider
+      value={{ ...currentTheme, isDarkTheme, toggleTheme }}
+    >
       {children}
     </ThemeContext.Provider>
   );

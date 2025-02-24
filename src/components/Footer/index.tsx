@@ -1,5 +1,6 @@
 import personalData from '../../data/personal';
 import { getCurrentYear } from '../../helpers';
+
 import { Creator, FooterStyle } from './styled';
 
 const { name, github } = personalData;

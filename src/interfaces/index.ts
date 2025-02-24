@@ -1,5 +1,6 @@
 import { keyframes } from 'styled-components';
 import { ProjectsType, SkillsType } from '../types';
+import { Theme } from '../theme';
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -16,7 +17,7 @@ export interface NavLink {
   label: string;
 }
 
-export interface ThemeContextProps {
+export interface ThemeContextProps extends Theme {
   isDarkTheme: boolean;
   toggleTheme: () => void;
 }

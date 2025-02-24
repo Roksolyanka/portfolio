@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import personalData from '../../data/personal';
 import NameLetters from '../../components/NameLetters';
@@ -6,10 +6,10 @@ import { Icon } from '../../components/Icon';
 import Code from '../../components/Code';
 import Toggler from '../../components/Toggler';
 import { ROUTE_ABOUT } from '../../constants';
-
 import background from '../../assets/background.svg';
 
 import theme from '../../theme';
+import { StyledSocial, TextSpecialty, TitleH1 } from './styled';
 import {
   Background,
   FlexBox,
@@ -17,7 +17,6 @@ import {
   Section,
   StyledLink,
 } from '../../ui';
-import { StyledSocial, TextSpecialty, TitleH1 } from './styled';
 
 const HomePage = () => {
   const [togglePosition, setTogglePosition] = useState<boolean>(true);

@@ -1,6 +1,7 @@
-import React from 'react';
+import { Fragment } from 'react';
 
 import personalData from '../../data/personal';
+import { ROUTE_SKILLS } from '../../constants';
 import background from '../../assets/background.svg';
 
 import { PersonalPhoto, TextAccent } from './styled';
@@ -13,7 +14,6 @@ import {
   StyledParagraph,
 
 } from '../../ui';
-import { ROUTE_SKILLS } from '../../constants';
 
 const AboutPage = () => (
   <Section aria-label='about section'>
@@ -58,17 +58,17 @@ const AboutPage = () => (
           developer passionate about creating responsive, user-oriented
           websites. My expertise lies in advanced frontend technologies like{' '}
           {personalData.skills.slice(0, 3).map((skill, index) => (
-            <React.Fragment key={skill}>
+            <Fragment key={skill}>
               <TextAccent>{skill}</TextAccent>
               {index < 2 && ', '}
-            </React.Fragment>
+            </Fragment>
           ))}
           . Currently, I am actively working with{' '}
           {personalData.skills.slice(3).map((skill, index) => (
-            <React.Fragment key={skill}>
+            <Fragment key={skill}>
               <TextAccent>{skill}</TextAccent>
               {index < personalData.skills.slice(3).length - 1 && ', '}
-            </React.Fragment>
+            </Fragment>
           ))}
           , always striving to push the boundaries of what's possible. I
           continuously improve my skills and stay updated on the latest trends
