@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import { fadeIn } from '../../ui';
 
 export const PersonalPhoto = styled.img`

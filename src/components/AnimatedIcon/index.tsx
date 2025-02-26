@@ -1,6 +1,7 @@
-import styled, { css } from 'styled-components';
 import { Icon } from '../Icon';
 import { AnimatedIconProps } from '../../interfaces';
+
+import styled, { css } from 'styled-components';
 
 const animation = ({
   animName,

@@ -1,15 +1,15 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 
 import AccordionContent from './AccordionContent';
 import { AccordionProps } from '../../interfaces';
+import { useTheme } from '../../hooks/useTheme';
 
 import { AccordionFlexButton, AnimatedBox } from './styled';
 import { Box } from '../../ui';
-import { useTheme } from 'styled-components';
 
 const Accordion: FC<AccordionProps> = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-const theme = useTheme();
+  const theme = useTheme();
   return (
     <AnimatedBox width='100%' maxWidth='800px' margin='0 auto' opacity='0'>
       {data.map(([key, { title, skills }], index) => {

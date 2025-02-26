@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import useAnimation from '../../hooks/useAnimation';
 import { NameLettersProps } from '../../interfaces';

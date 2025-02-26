@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 
 import personalData from '../../data/personal';
 
@@ -69,12 +69,12 @@ const Code = () => (
           <StyledSpan color={white[0]}>skills: </StyledSpan>
           <StyledSpan color={gray[0]}>['</StyledSpan>
           {personalData.skills.map((skill, index) => (
-            <React.Fragment key={index}>
+            <Fragment key={index}>
               <StyledSpan color={yellow[0]}>{skill}</StyledSpan>
               {index < personalData.skills.length - 1 && (
                 <StyledSpan color={gray[0]}>', '</StyledSpan>
               )}
-            </React.Fragment>
+            </Fragment>
           ))}
           <StyledSpan color={gray[0]}>'],</StyledSpan>
         </Box>
@@ -94,7 +94,7 @@ const Code = () => (
           <StyledSpan color={gray[0]}>,</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <StyledSpan color={green[5]}>hireable</StyledSpan>
+          <StyledSpan color={green[5]}>isHireable</StyledSpan>
           <StyledSpan color={gray[0]}>() {'{'}</StyledSpan>
         </Box>
         <Box margin='0 0 0 32px'>
@@ -125,7 +125,7 @@ const Code = () => (
           <StyledSpan color={gray[0]}>{'}'},</StyledSpan>
         </Box>
         <Box margin='0 0 0 16px'>
-          <StyledSpan color={green[5]}>funFact</StyledSpan>
+          <StyledSpan color={green[5]}>shareFunFact</StyledSpan>
           <StyledSpan color={gray[0]}>() {'{'}</StyledSpan>
         </Box>
         <Box margin='0 0 0 32px'>
@@ -149,13 +149,13 @@ const Code = () => (
           <StyledSpan color={pink[0]}>if</StyledSpan>
           <StyledSpan color={gray[0]}> (</StyledSpan>
           <StyledSpan color={white[0]}>coder.</StyledSpan>
-          <StyledSpan color={green[5]}>hireable</StyledSpan>
+          <StyledSpan color={green[5]}>isHireable</StyledSpan>
           <StyledSpan color={gray[0]}>()</StyledSpan>
           <StyledSpan color={gray[0]}>) {'{'}</StyledSpan>
         </Box>
         <Box margin='0 0 0 8px'>
           <StyledSpan color={white[0]}>coder.</StyledSpan>
-          <StyledSpan color={green[5]}>funFact</StyledSpan>
+          <StyledSpan color={green[5]}>shareFunFact</StyledSpan>
           <StyledSpan color={gray[0]}>();</StyledSpan>
         </Box>
         <Box margin='0 0 0 8px'>
