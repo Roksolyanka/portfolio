@@ -1,12 +1,9 @@
-import React from 'react';
-
 import background from '../../assets/background.svg';
 import projectsData from '../../data/projects';
 import { ROUTE_ACHIEVEMENTS } from '../../constants';
 import Projects from '../../components/Projects';
 
 import { Background, Section, StyledLink, TitleH2 } from '../../ui';
-
 
 const ProjectsPage = () => (
   <Section

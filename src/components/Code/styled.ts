@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import { Box, fadeIn } from '../../ui';
 
 export const CodeStyle = styled(Box)`

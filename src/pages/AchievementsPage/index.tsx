@@ -1,11 +1,11 @@
 import { SyntheticEvent, useState } from 'react';
 
 import personalData from '../../data/personal';
+import { ROUTE_CONTACT } from '../../constants';
 import background from '../../assets/background.svg';
 
-import { Background, Section, StyledLink } from '../../ui';
 import { Image, ImageLabel, ImagesContainer, Subtitle, Title } from './styled';
-import { ROUTE_CONTACT } from '../../constants';
+import { Background, Section, StyledLink } from '../../ui';
 
 const AchievementsPage = () => {
   const [isChecked, setIsChecked] = useState<boolean>(false);

@@ -1,9 +1,8 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { IconProps } from '../../interfaces';
 import sprite from '../../assets/sprite.svg';
-
-import { useTheme } from 'styled-components';
+import { useTheme } from '../../hooks/useTheme';
 
 export const Icon: FC<IconProps> = ({
   name,
