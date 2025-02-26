@@ -31,6 +31,7 @@ const personalData = {
   email: 'roksolyanakushnir@gmail.com',
   phone: '+380730801311',
   address: 'Ukraine, Lviv',
+  addressLink: 'https://www.google.com/maps?q=Lviv,+Ukraine',
   github: 'https://github.com/Roksolyanka',
   linkedIn: 'https://www.linkedin.com/in/roksolanakushnir/',
   telegram: 'https://t.me/Roksolanakushnir',
@@ -59,7 +60,7 @@ const personalData = {
         ${certEnglish} 1x,
         ${certEnglish2x} 2x
       `,
-    }, 
+    },
   ],
 };
 
