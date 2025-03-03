@@ -2,14 +2,13 @@ import { useState } from 'react';
 
 import personalData from '../../data/personal';
 import NameLetters from '../../components/NameLetters';
-import { Icon } from '../../components/Icon';
+import SocialLinks from '../../components/SocialLinks';
 import Code from '../../components/Code';
 import Toggler from '../../components/Toggler';
 import { ROUTE_ABOUT } from '../../constants';
 import background from '../../assets/background.svg';
 
-import theme from '../../theme';
-import { StyledSocial, TextSpecialty, TitleH1 } from './styled';
+import { TextSpecialty, TitleH1 } from './styled';
 import {
   Background,
   FlexBox,
@@ -37,8 +36,8 @@ const HomePage = () => {
       <Background
         alt='Hero'
         loading='lazy'
-        width='1572'
-        height='620'
+        width={1572}
+        height={620}
         decoding='async'
         src={background}
       />
@@ -61,47 +60,7 @@ const HomePage = () => {
             <NameLetters name={personalData.name} /> <br />
             I'm a <TextSpecialty>{personalData.designation}</TextSpecialty>
           </TitleH1>
-          <FlexBox justifyContent='center' gap='20px' margin='18px 0'>
-            <StyledSocial
-              target='_blank'
-              href={personalData.github}
-              rel='noopener noreferrer'
-            >
-              <Icon
-                name='icon-github'
-                width='30px'
-                height='30px'
-                fill={theme.colors.browns[9]}
-                className='social-icon'
-              />
-            </StyledSocial>
-            <StyledSocial
-              target='_blank'
-              href={personalData.linkedIn}
-              rel='noopener noreferrer'
-            >
-              <Icon
-                name='icon-linkedin-circle'
-                width='30px'
-                height='30px'
-                fill={theme.colors.browns[9]}
-                className='social-icon'
-              />
-            </StyledSocial>
-            <StyledSocial
-              target='_blank'
-              href={personalData.telegram}
-              rel='noopener noreferrer'
-            >
-              <Icon
-                name='icon-telegram'
-                width='30px'
-                height='30px'
-                fill={theme.colors.browns[9]}
-                className='social-icon'
-              />
-            </StyledSocial>
-          </FlexBox>
+          <SocialLinks />
           <Toggler
             togglePosition={togglePosition}
             setTogglePosition={setTogglePosition}
