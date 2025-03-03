@@ -36,8 +36,8 @@ const HomePage = () => {
       <Background
         alt='Hero'
         loading='lazy'
-        width='1572'
-        height='620'
+        width={1572}
+        height={620}
         decoding='async'
         src={background}
       />
