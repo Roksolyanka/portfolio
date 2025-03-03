@@ -32,8 +32,8 @@ const AchievementsPage = () => {
       <Background
         alt='Hero'
         loading='lazy'
-        width='1572'
-        height='620'
+        width={1572}
+        height={620}
         decoding='async'
         src={background}
       />
@@ -76,7 +76,7 @@ const AchievementsPage = () => {
       <Subtitle isChecked={isChecked} padding='0 0 20px 0'>
         More will be added soon ...
       </Subtitle>
-      <StyledLink to={ROUTE_CONTACT}>My contacts &#10174;</StyledLink>
+      <StyledLink to={ROUTE_CONTACT}>Let's Connect &#10174;</StyledLink>
     </Section>
   );
 };
