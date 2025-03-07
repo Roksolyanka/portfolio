@@ -84,7 +84,7 @@ const ContactPage = () => (
       </ContactLink>
     </AnimationFlexBox>
     <SocialLinks />
-    <StyledLink to={ROUTE_HOME}>🏡 Welcome Home &#10174;</StyledLink>
+    <StyledLink to={ROUTE_HOME}>Welcome Home 🏡 &#10174;</StyledLink>
   </Section>
 );
 

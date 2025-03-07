@@ -27,7 +27,9 @@ const ProjectsPage = () => (
       working on:
     </TitleH2>
     <Projects projects={projectsData} />
-    <StyledLink to={ROUTE_ACHIEVEMENTS}>My achievements &#10174;</StyledLink>
+    <StyledLink to={ROUTE_ACHIEVEMENTS}>
+      My Journey of Success 📜 &#10174;
+    </StyledLink>
   </Section>
 );
 
