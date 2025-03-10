@@ -8,7 +8,13 @@ const allData = {
   projects: projectsData,
 };
 
-const useGetData = <T extends keyof typeof allData>(dataType: T) => {
+type AllDataType = {
+  personal: typeof personalData;
+  skills: typeof skillsData;
+  projects: typeof projectsData;
+};
+
+const useGetData = <T extends keyof AllDataType>(dataType: T) => {
   return { data: allData[dataType] };
 };
 
