@@ -74,7 +74,9 @@ const AboutPage = () => (
           continuously improve my skills and stay updated on the latest trends
           to remain at the forefront of our dynamic industry.
         </StyledParagraph>
-        <StyledLink to={ROUTE_SKILLS}>My skills &#10174;</StyledLink>
+        <StyledLink to={ROUTE_SKILLS}>
+          Coding Superpowers 💪 &#10174;
+        </StyledLink>
       </FlexBox>
     </GridColumns>
   </Section>

@@ -83,7 +83,7 @@ const SkillsPage = () => {
         <Accordion data={groupSkillsByCategory(skillsData as SkillsType)} />
       )}
 
-      <StyledLink to={ROUTE_PROJECTS}>My projects &#10174;</StyledLink>
+      <StyledLink to={ROUTE_PROJECTS}>Code in Motion 🎬 &#10174;</StyledLink>
     </SkillsSection>
   );
 };
