@@ -1,4 +1,4 @@
-import{d as i,j as t,p as c,I as N,t as g}from"./index-Nu4oZnZW.js";const s=i.a`
+import{d as i,j as t,p as c,I as N,t as g}from"./index-saBTTolZ.js";const s=i.a`
   cursor: pointer;
   width: 100%;
   height: 100%;

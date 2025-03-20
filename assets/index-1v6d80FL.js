@@ -1,4 +1,4 @@
-import{d as i,B as x,F as h,A as y,c as v,j as o,I as S,t as g,m as j,S as $,r as p,G as B,g as I,u as z,a as R,T as N,b as T,h as A}from"./index-Nu4oZnZW.js";import{T as E,s as m}from"./skills-tFru2L-y.js";import{b as F}from"./background-DhGLTqEF.js";const H=i(x)`
+import{d as i,B as x,F as h,A as y,c as v,j as o,I as S,t as g,m as j,S as $,r as p,G as B,g as I,u as z,a as R,T as N,b as T,h as A}from"./index-saBTTolZ.js";import{T as E,s as m}from"./skills-D5Kwx8Qe.js";import{b as F}from"./background-DhGLTqEF.js";const H=i(x)`
   z-index: 0;
   scroll-snap-align: center;
   transition: transform 0.8s ease, box-shadow 0.8s ease;
