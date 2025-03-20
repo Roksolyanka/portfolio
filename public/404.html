@@ -4,8 +4,16 @@
     <meta charset="utf-8" />
     <meta http-equiv="refresh" content="0; url=/portfolio/" />
     <script type="text/javascript">
-      window.location.replace("/portfolio" + window.location.pathname + window.location.search + window.location.hash);
+      (function () {
+        var currentPath = window.location.pathname;
+        var basePath = "/portfolio";
+
+        if (!currentPath.startsWith(basePath)) {
+          window.location.replace(basePath + currentPath + window.location.search + window.location.hash);
+        }
+      })();
     </script>
   </head>
   <body></body>
 </html>
+
