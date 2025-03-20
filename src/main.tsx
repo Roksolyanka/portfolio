@@ -9,12 +9,17 @@ import './normalize.css';
 import './fonts.css';
 import './index.css';
 
-
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
   <StrictMode>
-    <BrowserRouter basename='/portfolio'>
+    <BrowserRouter
+      basename='/portfolio'
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
       <ThemeProvider>
         <App />
       </ThemeProvider>
