@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 
 import AccordionContent from './AccordionContent';
-import { AccordionProps } from '../../interfaces';
+import { AccordionProps } from '../../types';
 import { useTheme } from '../../hooks/useTheme';
 
 import { AccordionFlexButton, AnimatedBox } from './styled';

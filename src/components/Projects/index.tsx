@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ProjectCard from '../ProjectCard';
-import { ProjectsProps } from '../../interfaces';
+import { ProjectsProps } from '../../types';
 
 import { Main } from './styled';
 

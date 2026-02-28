@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import skillsData from '../../data/skills';
 import { SkillsType } from '../../types';
-import { SkillCategory } from '../../interfaces';
+import { SkillCategory } from '../../types';
 import Toggler from '../../components/Toggler';
 import Carousel from '../../components/Carousel';
 import Accordion from '../../components/Accordion';

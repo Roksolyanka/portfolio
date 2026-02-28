@@ -1,6 +1,6 @@
 import { createContext, FC, ReactNode, useEffect, useState } from 'react';
 
-import { ThemeContextProps } from '../interfaces';
+import { ThemeContextProps } from '../types';
 import { darkTheme, lightTheme } from '../theme';
 
 export const ThemeContext = createContext<ThemeContextProps | undefined>(

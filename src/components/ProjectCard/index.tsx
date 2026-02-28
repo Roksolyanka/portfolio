@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { Icon } from '../Icon';
-import { ProjectCardProps } from '../../interfaces';
+import { ProjectCardProps } from '../../types';
 
 import theme from '../../theme';
 import {

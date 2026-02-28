@@ -1,5 +1,5 @@
 import { Icon } from '../Icon';
-import { AnimatedIconProps } from '../../interfaces';
+import { AnimatedIconProps } from '../../types';
 
 import styled, { css } from 'styled-components';
 
