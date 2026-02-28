@@ -35,7 +35,8 @@ const HomePage = () => {
     <Section aria-label='hero section'>
       <Background
         alt='Hero'
-        loading='lazy'
+        // @ts-expect-error fetchpriority is a valid HTML attribute but may have type issues here
+        fetchpriority='high'
         width={1572}
         height={620}
         decoding='async'

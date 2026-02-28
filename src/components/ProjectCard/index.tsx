@@ -11,22 +11,24 @@ import {
   Description,
   Details,
   IconContainer,
-  Input,
   Link,
   Numeration,
   ProjectName,
   Skills,
 } from './styled';
 
-const ProjectCard: FC<ProjectCardProps> = ({ project, index }) => (
+const ProjectCard: FC<ProjectCardProps> = ({
+  project,
+  index,
+  isActive,
+  onClick,
+}) => (
   <>
-    <Input
-      type='radio'
-      name='slide'
-      id={`c-${index}`}
-      defaultChecked={index === 0}
-    />
-    <Card htmlFor={`c-${index}`} $background={project.projectImage.src}>
+    <Card
+      $background={project.projectImage.src}
+      data-active={isActive}
+      onClick={onClick}
+    >
       <Blackout
         flexDirection='column'
         justifyContent='space-between'

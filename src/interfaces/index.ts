@@ -101,4 +101,6 @@ export interface ProjectsProps {
 export interface ProjectCardProps {
   project: ProjectsItem;
   index: number;
+  isActive: boolean;
+  onClick: () => void;
 }
