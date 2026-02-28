@@ -58,7 +58,7 @@ const SkillsPage = () => {
     >
       <Background
         alt='Hero'
-        loading='lazy'
+        fetchpriority='high'
         width={1572}
         height={620}
         decoding='async'
@@ -89,3 +89,6 @@ const SkillsPage = () => {
 };
 
 export default SkillsPage;
+
+
+

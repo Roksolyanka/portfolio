@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { fadeIn } from '../../ui';
 
-export const PersonalPhoto = styled.img`
+export const PersonalPhoto = styled.img<{ fetchpriority?: 'high' | 'low' | 'auto'; fetchPriority?: 'high' | 'low' | 'auto' }>`
   width: fit-content;
   height: 260px;
   border-radius: 50%;

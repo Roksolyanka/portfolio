@@ -260,7 +260,7 @@ export const Section = styled(MainSection)`
   ${flexWrap};
 `;
 
-export const Background = styled.img`
+export const Background = styled.img<{ fetchpriority?: 'high' | 'low' | 'auto'; fetchPriority?: 'high' | 'low' | 'auto' }>`
   position: absolute;
   top: -100px;
   z-index: -10;
