@@ -17,7 +17,7 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
         return (
           <Box
             key={key}
-            border={isActive ? 'none' : `0 0 1px 0 solid ${theme.accentColor}`}
+            borderBottom={isActive ? 'none' : `1px solid ${theme.accentColor}`}
           >
             <AccordionFlexButton
               onClick={() => setActiveIndex(isActive ? null : index)}

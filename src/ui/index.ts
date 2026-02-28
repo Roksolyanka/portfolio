@@ -55,6 +55,7 @@ type CustomStyledProps = HTMLProps<HTMLDivElement> & {
   background?: CSSProperties['background'];
   backgroundImage?: CSSProperties['backgroundImage'];
   border?: CSSProperties['border'];
+  borderBottom?: CSSProperties['borderBottom'];
   borderRadius?: CSSProperties['borderRadius'];
   borderWidth?: CSSProperties['borderWidth'];
   borderColor?: CSSProperties['borderColor'];
@@ -116,44 +117,46 @@ const shouldFilterProps = [
   'overflowX',
   'backgroundImage',
   'boxShadow',
+  'borderBottom', 
 ];
 
 export const Box = styled.div.withConfig({
   shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
-})<CustomStyledProps>(
-  width,
-  maxWidth,
-  minWidth,
-  height,
-  minHeight,
-  maxHeight,
-  space,
-  fontSize,
-  fontWeight,
-  fontFamily,
-  padding,
-  margin,
-  color,
-  display,
-  border,
-  borderRadius,
-  borderWidth,
-  borderColor,
-  borderStyle,
-  boxShadow,
-  background,
-  backgroundImage,
-  overflow,
-  position,
-  top,
-  bottom,
-  left,
-  right,
-  zIndex,
-  order,
-  opacity,
-  overflowX
-);
+})<CustomStyledProps>`
+  ${width}
+  ${maxWidth}
+  ${minWidth}
+  ${height}
+  ${minHeight}
+  ${maxHeight}
+  ${space}
+  ${fontSize}
+  ${fontWeight}
+  ${fontFamily}
+  ${padding}
+  ${margin}
+  ${color}
+  ${display}
+  ${border}
+  ${borderRadius}
+  ${borderWidth}
+  ${borderColor}
+  ${borderStyle}
+  ${boxShadow}
+  ${background}
+  ${backgroundImage}
+  ${overflow}
+  ${position}
+  ${top}
+  ${bottom}
+  ${left}
+  ${right}
+  ${zIndex}
+  ${order}
+  ${opacity}
+  ${overflowX}
+  ${({ borderBottom }) => borderBottom && `border-bottom: ${borderBottom};`}
+`;
 
 export const FlexBox = styled(Box)`
   display: flex;
