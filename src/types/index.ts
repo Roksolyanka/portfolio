@@ -108,3 +108,8 @@ export type NavLinkType = NavLink[];
 export type RouteConfigType = RouteConfig[];
 export type SkillsType = SkillItem[];
 export type ProjectsType = ProjectsItem[];
+export type FetchPriority = 'high' | 'low' | 'auto';
+export type PhotoProps = {
+  fetchpriority?: FetchPriority;
+  fetchPriority?: FetchPriority;
+};

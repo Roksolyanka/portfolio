@@ -13,7 +13,7 @@ const AchievementsPage = () => {
 
   const handleImageLoad = (
     index: number,
-    event: SyntheticEvent<HTMLImageElement>
+    event: SyntheticEvent<HTMLImageElement>,
   ) => {
     const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
     const aspectRatio = naturalWidth / naturalHeight;
@@ -82,6 +82,3 @@ const AchievementsPage = () => {
 };
 
 export default AchievementsPage;
-
-
-

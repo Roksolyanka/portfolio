@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import AccordionContent from './AccordionContent';
 import { AccordionProps } from '../../types';
@@ -6,21 +6,26 @@ import { useTheme } from '../../hooks/useTheme';
 
 import { AccordionFlexButton, AnimatedBox } from './styled';
 import { Box } from '../../ui';
+import { useActiveKey } from '../../hooks/useActiveKey';
 
 const Accordion: FC<AccordionProps> = ({ data }) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeKey, toggleKey] = useActiveKey<string>();
   const theme = useTheme();
+
   return (
     <AnimatedBox width='100%' maxWidth='800px' margin='0 auto' opacity='0'>
-      {data.map(([key, { title, skills }], index) => {
-        const isActive = activeIndex === index;
+      {data.map(([key, { title, skills }]) => {
+        const isActive = activeKey === key;
+
         return (
           <Box
             key={key}
-            borderBottom={isActive ? 'none' : `1px solid ${theme.accentColor}`}
+            borderBottom={
+              isActive ? undefined : `1px solid ${theme.accentColor}`
+            }
           >
             <AccordionFlexButton
-              onClick={() => setActiveIndex(isActive ? null : index)}
+              onClick={() => toggleKey(key)}
               className={isActive ? 'active' : ''}
               fontSize={['20px', '20px', '22px']}
               width='100%'
@@ -35,6 +40,7 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
               <span>{title}</span>
               <span>&#9662;</span>
             </AccordionFlexButton>
+
             <AccordionContent isActive={isActive} skills={skills} />
           </Box>
         );

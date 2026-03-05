@@ -10,28 +10,28 @@ import { ROUTE_PROJECTS } from '../../constants';
 import background from '../../assets/background.svg';
 
 import { Background, Box, StyledLink, TitleH2 } from '../../ui';
-import { SkillsSection} from './styled';
+import { SkillsSection } from './styled';
 
 const SkillsPage = () => {
   const [isCarousel, setIsCarousel] = useState<boolean | null>(null);
 
-   useEffect(() => {
-     const savedState = localStorage.getItem('isCarousel');
-     if (savedState !== null) {
-       setIsCarousel(JSON.parse(savedState));
-     } else {
-       setIsCarousel(true);
-     }
-   }, []);
+  useEffect(() => {
+    const savedState = localStorage.getItem('isCarousel');
+    if (savedState !== null) {
+      setIsCarousel(JSON.parse(savedState));
+    } else {
+      setIsCarousel(true);
+    }
+  }, []);
 
   useEffect(() => {
     if (isCarousel !== null) {
       localStorage.setItem('isCarousel', JSON.stringify(isCarousel));
     }
-  }, [isCarousel]); 
+  }, [isCarousel]);
 
   const groupSkillsByCategory = (
-    skills: SkillsType
+    skills: SkillsType,
   ): [string, SkillCategory][] => {
     const result = skills.reduce<Record<string, SkillCategory>>(
       (acc, skill) => {
@@ -41,7 +41,7 @@ const SkillsPage = () => {
         acc[skill.category].skills.push(skill);
         return acc;
       },
-      {}
+      {},
     );
 
     return Object.entries(result);
@@ -89,6 +89,3 @@ const SkillsPage = () => {
 };
 
 export default SkillsPage;
-
-
-
