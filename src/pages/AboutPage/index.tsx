@@ -19,7 +19,7 @@ const AboutPage = () => (
   <Section aria-label='about section'>
     <Background
       alt='Hero'
-      loading='lazy'
+      fetchpriority='high'
       width={1572}
       height={620}
       decoding='async'
@@ -34,7 +34,7 @@ const AboutPage = () => (
         alt={personalData.name}
         width={1000}
         height={1000}
-        loading='lazy'
+        fetchpriority='high'
         decoding='async'
         src={personalData.photo.src}
         srcSet={personalData.photo.srcset}

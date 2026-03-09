@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { AbsoluteBox, FlexBox, StyledParagraph } from '../../ui';
 
-export const Input = styled.input`
-  display: none;
-`;
+
 
 export const Blackout = styled(FlexBox)`
   background: linear-gradient(
@@ -16,7 +14,7 @@ export const Blackout = styled(FlexBox)`
   background-position: center;
 `;
 
-export const Card = styled.label<{ $background: string }>`
+export const Card = styled.article<{ $background: string }>`
   position: relative;
   height: 80px;
   width: 90%;
@@ -32,7 +30,7 @@ export const Card = styled.label<{ $background: string }>`
   box-shadow: ${({ theme }) => theme.boxShadowNav};
   scroll-snap-align: start;
 
-  ${Input}:checked + & {
+  &[data-active='true'] {
     height: 350px;
     background-image: ${({ $background }) => `url(${$background})`};
     background-repeat: no-repeat;
@@ -55,7 +53,7 @@ export const Card = styled.label<{ $background: string }>`
     max-width: 80px;
     margin: 0 10px;
 
-    ${Input}:checked + & {
+    &[data-active='true'] {
       width: 70%;
       max-width: 740px;
       height: 100%;
@@ -69,7 +67,7 @@ export const IconContainer = styled(FlexBox)`
   transition: opacity 0.6s ease;
   z-index: 1;
 
-  ${Input}:checked + ${Card} & {
+  ${Card}[data-active='true'] & {
     opacity: 1;
     pointer-events: auto;
   }
@@ -105,7 +103,7 @@ export const Badge = styled(AbsoluteBox)`
   opacity: 0;
   transition: opacity 0.6s ease;
 
-  ${Input}:checked + ${Card} & {
+  ${Card}[data-active='true'] & {
     opacity: 1;
   }
 `;
@@ -179,7 +177,7 @@ export const Numeration = styled.div`
   opacity: 1;
   transition: opacity 0.8 ease;
 
-  ${Input}:checked + ${Card} & {
+  ${Card}[data-active='true'] & {
     display: none;
     opacity: 0;
     transition: display 0.6s ease;

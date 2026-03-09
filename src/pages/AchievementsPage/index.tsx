@@ -13,7 +13,7 @@ const AchievementsPage = () => {
 
   const handleImageLoad = (
     index: number,
-    event: SyntheticEvent<HTMLImageElement>
+    event: SyntheticEvent<HTMLImageElement>,
   ) => {
     const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
     const aspectRatio = naturalWidth / naturalHeight;
@@ -31,7 +31,7 @@ const AchievementsPage = () => {
     >
       <Background
         alt='Hero'
-        loading='lazy'
+        fetchpriority='high'
         width={1572}
         height={620}
         decoding='async'

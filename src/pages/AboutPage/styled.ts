@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { fadeIn } from '../../ui';
+import { PhotoProps } from '../../types';
 
-export const PersonalPhoto = styled.img`
+export const PersonalPhoto = styled.img<PhotoProps>`
   width: fit-content;
   height: 260px;
   border-radius: 50%;

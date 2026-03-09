@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import skillsData from '../../data/skills';
 import { SkillsType } from '../../types';
-import { SkillCategory } from '../../interfaces';
+import { SkillCategory } from '../../types';
 import Toggler from '../../components/Toggler';
 import Carousel from '../../components/Carousel';
 import Accordion from '../../components/Accordion';
@@ -10,28 +10,28 @@ import { ROUTE_PROJECTS } from '../../constants';
 import background from '../../assets/background.svg';
 
 import { Background, Box, StyledLink, TitleH2 } from '../../ui';
-import { SkillsSection} from './styled';
+import { SkillsSection } from './styled';
 
 const SkillsPage = () => {
   const [isCarousel, setIsCarousel] = useState<boolean | null>(null);
 
-   useEffect(() => {
-     const savedState = localStorage.getItem('isCarousel');
-     if (savedState !== null) {
-       setIsCarousel(JSON.parse(savedState));
-     } else {
-       setIsCarousel(true);
-     }
-   }, []);
+  useEffect(() => {
+    const savedState = localStorage.getItem('isCarousel');
+    if (savedState !== null) {
+      setIsCarousel(JSON.parse(savedState));
+    } else {
+      setIsCarousel(true);
+    }
+  }, []);
 
   useEffect(() => {
     if (isCarousel !== null) {
       localStorage.setItem('isCarousel', JSON.stringify(isCarousel));
     }
-  }, [isCarousel]); 
+  }, [isCarousel]);
 
   const groupSkillsByCategory = (
-    skills: SkillsType
+    skills: SkillsType,
   ): [string, SkillCategory][] => {
     const result = skills.reduce<Record<string, SkillCategory>>(
       (acc, skill) => {
@@ -41,7 +41,7 @@ const SkillsPage = () => {
         acc[skill.category].skills.push(skill);
         return acc;
       },
-      {}
+      {},
     );
 
     return Object.entries(result);
@@ -58,7 +58,7 @@ const SkillsPage = () => {
     >
       <Background
         alt='Hero'
-        loading='lazy'
+        fetchpriority='high'
         width={1572}
         height={620}
         decoding='async'

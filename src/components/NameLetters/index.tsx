@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import useAnimation from '../../hooks/useAnimation';
-import { NameLettersProps } from '../../interfaces';
+import { NameLettersProps } from '../../types';
 
 import { Letter, Name } from './styled';
 

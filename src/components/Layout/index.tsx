@@ -4,7 +4,7 @@ import Navigation from '../Navigation';
 import Footer from '../Footer';
 import Header from '../Header';
 import Loader from '../Loader';
-import { LayoutProps } from '../../interfaces';
+import { LayoutProps } from '../../types';
 
 import { Main } from './styled';
 import { FlexBox } from '../../ui';

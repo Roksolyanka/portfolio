@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { Icon } from '../Icon';
 import personalData from '../../data/personal';
-import { TogglerProps } from '../../interfaces';
+import { TogglerProps } from '../../types';
 
 import theme from '../../theme';
 import {

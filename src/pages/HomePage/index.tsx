@@ -5,7 +5,7 @@ import SocialLinks from '../../components/SocialLinks';
 import Code from '../../components/Code';
 import Toggler from '../../components/Toggler';
 import { ROUTE_ABOUT } from '../../constants';
-import useGetData from '../../hooks/useGetData';
+import personalData from '../../data/personal';
 import background from '../../assets/background.svg';
 
 import { TextSpecialty, TitleH1 } from './styled';
@@ -18,7 +18,6 @@ import {
 } from '../../ui';
 
 const HomePage = () => {
-  const { data: personalData } = useGetData('personal');
   const { name, designation, cv, coverLetter, cvName, coverLetterName } =
     personalData;
   const [togglePosition, setTogglePosition] = useState<boolean>(true);
@@ -36,7 +35,7 @@ const HomePage = () => {
     <Section aria-label='hero section'>
       <Background
         alt='Hero'
-        loading='lazy'
+        fetchpriority='high'
         width={1572}
         height={620}
         decoding='async'
