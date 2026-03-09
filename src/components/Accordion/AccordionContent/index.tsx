@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from 'react';
 
-import { AccordionContentProps } from '../../../interfaces';
+import { AccordionContentProps } from '../../../types';
 
 import { Content } from './styled';
 import { Box } from '../../../ui';

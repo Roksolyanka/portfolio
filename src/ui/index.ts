@@ -1,6 +1,7 @@
 import { HTMLProps } from 'react';
 import { Link } from 'react-router-dom';
 
+import { PhotoProps } from '../types';
 import styled, { CSSProperties, keyframes } from 'styled-components';
 import {
   alignItems,
@@ -55,6 +56,7 @@ type CustomStyledProps = HTMLProps<HTMLDivElement> & {
   background?: CSSProperties['background'];
   backgroundImage?: CSSProperties['backgroundImage'];
   border?: CSSProperties['border'];
+  borderBottom?: CSSProperties['borderBottom'];
   borderRadius?: CSSProperties['borderRadius'];
   borderWidth?: CSSProperties['borderWidth'];
   borderColor?: CSSProperties['borderColor'];
@@ -116,44 +118,46 @@ const shouldFilterProps = [
   'overflowX',
   'backgroundImage',
   'boxShadow',
+  'borderBottom',
 ];
 
 export const Box = styled.div.withConfig({
   shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
-})<CustomStyledProps>(
-  width,
-  maxWidth,
-  minWidth,
-  height,
-  minHeight,
-  maxHeight,
-  space,
-  fontSize,
-  fontWeight,
-  fontFamily,
-  padding,
-  margin,
-  color,
-  display,
-  border,
-  borderRadius,
-  borderWidth,
-  borderColor,
-  borderStyle,
-  boxShadow,
-  background,
-  backgroundImage,
-  overflow,
-  position,
-  top,
-  bottom,
-  left,
-  right,
-  zIndex,
-  order,
-  opacity,
-  overflowX
-);
+})<CustomStyledProps>`
+  ${width}
+  ${maxWidth}
+  ${minWidth}
+  ${height}
+  ${minHeight}
+  ${maxHeight}
+  ${space}
+  ${fontSize}
+  ${fontWeight}
+  ${fontFamily}
+  ${padding}
+  ${margin}
+  ${color}
+  ${display}
+  ${border}
+  ${borderRadius}
+  ${borderWidth}
+  ${borderColor}
+  ${borderStyle}
+  ${boxShadow}
+  ${background}
+  ${backgroundImage}
+  ${overflow}
+  ${position}
+  ${top}
+  ${bottom}
+  ${left}
+  ${right}
+  ${zIndex}
+  ${order}
+  ${opacity}
+  ${overflowX}
+  ${({ borderBottom }) => borderBottom && `border-bottom: ${borderBottom};`}
+`;
 
 export const FlexBox = styled(Box)`
   display: flex;
@@ -187,40 +191,40 @@ export const Text = styled.p``;
 
 export const Button = styled.button.withConfig({
   shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
-})<CustomStyledProps>(
-  width,
-  maxWidth,
-  minWidth,
-  height,
-  minHeight,
-  maxHeight,
-  space,
-  fontSize,
-  fontWeight,
-  fontFamily,
-  padding,
-  margin,
-  color,
-  display,
-  border,
-  borderRadius,
-  borderWidth,
-  borderColor,
-  borderStyle,
-  boxShadow,
-  background,
-  backgroundImage,
-  overflow,
-  position,
-  top,
-  bottom,
-  left,
-  right,
-  zIndex,
-  order,
-  opacity,
-  overflowX
-);
+})<CustomStyledProps>`
+  ${width}
+  ${maxWidth}
+  ${minWidth}
+  ${height}
+  ${minHeight}
+  ${maxHeight}
+  ${space}
+  ${fontSize}
+  ${fontWeight}
+  ${fontFamily}
+  ${padding}
+  ${margin}
+  ${color}
+  ${display}
+  ${border}
+  ${borderRadius}
+  ${borderWidth}
+  ${borderColor}
+  ${borderStyle}
+  ${boxShadow}
+  ${background}
+  ${backgroundImage}
+  ${overflow}
+  ${position}
+  ${top}
+  ${bottom}
+  ${left}
+  ${right}
+  ${zIndex}
+  ${order}
+  ${opacity}
+  ${overflowX}
+`;
 
 export const FlexButton = styled(Button)`
   display: flex;
@@ -244,7 +248,10 @@ export const fadeIn = keyframes`
 
 export const MainSection = styled.section.withConfig({
   shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
-})<CustomStyledProps>(padding, flexWrap);
+})<CustomStyledProps>`
+  ${padding};
+  ${flexWrap};
+`;
 
 export const Section = styled(MainSection)`
   display: flex;
@@ -260,7 +267,7 @@ export const Section = styled(MainSection)`
   ${flexWrap};
 `;
 
-export const Background = styled.img`
+export const Background = styled.img<PhotoProps>`
   position: absolute;
   top: -100px;
   z-index: -10;
@@ -302,7 +309,9 @@ export const StyledLink = styled(Link)`
 
   &:hover {
     color: ${({ theme }) => theme.hoverColor};
-    transition: color 0.6s ease, transform 0.6s ease;
+    transition:
+      color 0.6s ease,
+      transform 0.6s ease;
     transform: translateX(10px);
   }
 
@@ -313,7 +322,14 @@ export const StyledLink = styled(Link)`
 
 export const H2 = styled.h2.withConfig({
   shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
-})<CustomStyledProps>(space, fontSize, fontWeight, fontFamily, padding, color);
+})<CustomStyledProps>`
+  ${space};
+  ${fontSize};
+  ${fontWeight};
+  ${fontFamily};
+  ${padding};
+  ${color};
+`;
 
 export const TitleH2 = styled(H2)`
   text-align: center;
@@ -333,15 +349,15 @@ export const TitleH2 = styled(H2)`
 
 export const Paragraph = styled.p.withConfig({
   shouldForwardProp: (prop) => !shouldFilterProps.includes(prop),
-})<CustomStyledProps>(
-  space,
-  fontSize,
-  fontWeight,
-  fontFamily,
-  padding,
-  color,
-  textAlign
-);
+})<CustomStyledProps>`
+  ${space};
+  ${fontSize};
+  ${fontWeight};
+  ${fontFamily};
+  ${padding};
+  ${color};
+  ${textAlign};
+`;
 
 export const StyledParagraph = styled(Paragraph)`
   text-align: center;

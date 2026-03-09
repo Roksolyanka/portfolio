@@ -1,7 +1,9 @@
 import { createContext, FC, ReactNode, useEffect, useState } from 'react';
 
-import { ThemeContextProps } from '../interfaces';
+import { ThemeContextProps } from '../types';
 import { darkTheme, lightTheme } from '../theme';
+
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 export const ThemeContext = createContext<ThemeContextProps | undefined>(
   undefined
@@ -10,7 +12,11 @@ export const ThemeContext = createContext<ThemeContextProps | undefined>(
 export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() => {
     const savedTheme = localStorage.getItem('isDarkTheme');
-    return savedTheme ? JSON.parse(savedTheme) : false;
+    try {
+      return savedTheme ? JSON.parse(savedTheme) : false;
+    } catch {
+      return false;
+    }
   });
 
   const toggleTheme = () => {
@@ -28,7 +34,9 @@ export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     <ThemeContext.Provider
       value={{ ...currentTheme, isDarkTheme, toggleTheme }}
     >
-      {children}
+      <StyledThemeProvider theme={currentTheme}>
+        {children}
+      </StyledThemeProvider>
     </ThemeContext.Provider>
   );
 };

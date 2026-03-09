@@ -1,7 +1,7 @@
 import { FC, useMemo } from 'react';
 
 import SkillCards from './SkillCards';
-import { CarouselProps } from '../../interfaces';
+import { CarouselProps } from '../../types';
 
 import { CarouselInner, Group } from './styled';
 

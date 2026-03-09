@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { IconProps } from '../../interfaces';
+import { IconProps } from '../../types';
 import sprite from '../../assets/sprite.svg';
 import { useTheme } from '../../hooks/useTheme';
 
