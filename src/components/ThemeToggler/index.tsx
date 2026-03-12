@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { AnimatedIcon } from '../AnimatedIcon';
 import { useTheme } from '../../hooks/useTheme';
 
-import theme from '../../theme';
 import { appear, ThemeTogglerButton } from './styled';
 
 const ThemeToggler = () => {
-  const { isDarkTheme, toggleTheme } = useTheme();
+  const theme = useTheme();
+  const { isDarkTheme, toggleTheme } = theme;
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   const handleToggleTheme = () => {

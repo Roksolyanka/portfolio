@@ -8,8 +8,8 @@ import {
   ROUTE_SKILLS,
 } from '../../constants';
 import { NavLinkType } from '../../types';
+import { useTheme } from '../../hooks/useTheme';
 
-import theme from '../../theme';
 import { Nav, StyledNavLink } from './styled';
 
 const navLinks: NavLinkType = [
@@ -21,20 +21,24 @@ const navLinks: NavLinkType = [
   { path: ROUTE_CONTACT, icon: 'icon-quill', label: 'Contact' },
 ];
 
-const Navigation = () => (
-  <Nav>
-    {navLinks.map(({ path, icon, label }) => (
-      <StyledNavLink key={path} to={path} tooltip={label}>
-        <Icon
-          name={icon}
-          width='18px'
-          height='18px'
-          fill={theme.colors.green[10]}
-          className='icon-navigation'
-        />
-      </StyledNavLink>
-    ))}
-  </Nav>
-);
+const Navigation = () => {
+  const theme = useTheme();
+
+  return (
+    <Nav>
+      {navLinks.map(({ path, icon, label }) => (
+        <StyledNavLink key={path} to={path} tooltip={label}>
+          <Icon
+            name={icon}
+            width='18px'
+            height='18px'
+            fill={theme.colors.green[10]}
+            className='icon-navigation'
+          />
+        </StyledNavLink>
+      ))}
+    </Nav>
+  );
+};
 
 export default Navigation;
