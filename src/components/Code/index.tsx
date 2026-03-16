@@ -71,7 +71,7 @@ const Code = () => {
             <StyledSpan color={white[0]}>skills: </StyledSpan>
             <StyledSpan color={gray[0]}>['</StyledSpan>
             {personalData.skills.map((skill, index) => (
-              <Fragment key={index}>
+              <Fragment key={skill}>
                 <StyledSpan color={yellow[0]}>{skill}</StyledSpan>
                 {index < personalData.skills.length - 1 && (
                   <StyledSpan color={gray[0]}>', '</StyledSpan>
