@@ -8,26 +8,21 @@ import Carousel from '../../components/Carousel';
 import Accordion from '../../components/Accordion';
 import { ROUTE_PROJECTS } from '../../constants';
 import background from '../../assets/background.svg';
+import {
+  readBooleanFromStorage,
+  writeBooleanToStorage,
+} from '../../helpers/storage';
 
 import { Background, Box, StyledLink, TitleH2 } from '../../ui';
 import { SkillsSection } from './styled';
 
 const SkillsPage = () => {
-  const [isCarousel, setIsCarousel] = useState<boolean | null>(null);
+  const [isCarousel, setIsCarousel] = useState<boolean>(() =>
+    readBooleanFromStorage('isCarousel', true),
+  );
 
   useEffect(() => {
-    const savedState = localStorage.getItem('isCarousel');
-    if (savedState !== null) {
-      setIsCarousel(JSON.parse(savedState));
-    } else {
-      setIsCarousel(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (isCarousel !== null) {
-      localStorage.setItem('isCarousel', JSON.stringify(isCarousel));
-    }
+    writeBooleanToStorage('isCarousel', isCarousel);
   }, [isCarousel]);
 
   const groupSkillsByCategory = (
@@ -68,7 +63,7 @@ const SkillsPage = () => {
         <TitleH2>
           I turn these skills into beautiful web projects
           <Toggler
-            togglePosition={isCarousel ?? false}
+            togglePosition={isCarousel}
             setTogglePosition={setIsCarousel}
             labelFirst='Show scroll animation'
             labelSecond='Show categories'
