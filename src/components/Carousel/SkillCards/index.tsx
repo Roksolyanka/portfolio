@@ -10,7 +10,7 @@ import {
   HoveredFlexBox,
   SkillName,
 } from './styled';
-import theme from '../../../theme';
+import { useTheme } from '../../../hooks/useTheme';
 
 type SkillCardsProps = {
   skills: SkillsType;
@@ -18,6 +18,7 @@ type SkillCardsProps = {
 };
 
 const SkillCards: FC<SkillCardsProps> = ({ skills, isHidden = false }) => {
+  const theme = useTheme();
   const { white } = theme.colors;
   const { boxShadow } = theme;
 
