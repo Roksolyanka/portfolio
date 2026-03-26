@@ -12,7 +12,7 @@ const NameLetters: FC<NameLettersProps> = ({ name }) => {
     <Name>
       {name.split('').map((letter, index) => (
         <Letter
-          key={index}
+          key={`${letter}-${index}`}
           isCustom={letter === 'R' || letter === 'K'}
           className={`nameLetter ${
             !animationComplete && (activeIndex === index ? 'active' : '')

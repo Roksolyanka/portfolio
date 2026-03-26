@@ -1,6 +1,10 @@
 import { createContext, FC, ReactNode, useEffect, useState } from 'react';
 
 import { ThemeContextProps } from '../types';
+import {
+  readBooleanFromStorage,
+  writeBooleanToStorage,
+} from '../helpers/storage';
 import { darkTheme, lightTheme } from '../theme';
 
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
@@ -10,14 +14,9 @@ export const ThemeContext = createContext<ThemeContextProps | undefined>(
 );
 
 export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() => {
-    const savedTheme = localStorage.getItem('isDarkTheme');
-    try {
-      return savedTheme ? JSON.parse(savedTheme) : false;
-    } catch {
-      return false;
-    }
-  });
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() =>
+    readBooleanFromStorage('isDarkTheme', false),
+  );
 
   const toggleTheme = () => {
     setIsDarkTheme((prevTheme) => !prevTheme);
@@ -25,7 +24,7 @@ export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   useEffect(() => {
     document.body.classList.toggle('dark', isDarkTheme);
-    localStorage.setItem('isDarkTheme', JSON.stringify(isDarkTheme));
+    writeBooleanToStorage('isDarkTheme', isDarkTheme);
   }, [isDarkTheme]);
 
   const currentTheme = isDarkTheme ? darkTheme : lightTheme;

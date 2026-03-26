@@ -58,7 +58,7 @@ const AchievementsPage = () => {
       >
         {personalData.achievements.map(({ src, srcset }, index) => (
           <ImageLabel
-            key={index}
+            key={src}
             htmlFor='click'
             position={index}
             isChecked={isChecked}
