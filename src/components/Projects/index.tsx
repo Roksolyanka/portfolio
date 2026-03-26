@@ -11,7 +11,7 @@ const Projects = ({ projects }: ProjectsProps) => {
     <Main>
       {projects.map((project, index) => (
         <ProjectCard
-          key={index}
+          key={`${project.projectName}-${project.github || project.website || project.projectImage.src}`}
           project={project}
           index={index}
           isActive={index === activeIndex}
